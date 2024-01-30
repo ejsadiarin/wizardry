@@ -1,5 +1,6 @@
 # WIZARDY
 
+## Network Configuration (Tailscale)
 
 
 
