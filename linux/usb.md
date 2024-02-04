@@ -1,4 +1,10 @@
-2024-02-02-2201
+---
+title: USB on Linux
+date: 2024-02-02-2201 (February 02, 2024 10:01 PM)
+tags:
+- Linux
+- USB
+---
 
 # 3 ways:
 - the classic way

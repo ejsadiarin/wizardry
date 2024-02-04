@@ -1,7 +1,14 @@
-// 2024-02-04-1211
-// this script will expand all comments and posts on the current page in Facebook
-// paste it in dev tools -> console and press enter
-// then you can now easily use ctrl + f to find/search
+// this script will expand all comments and posts on the current page in Facebook paste it in dev tools -> console and press enter then you can now easily use ctrl + f to find/search
+/*
+ * title: Expand all comments and posts in Facebook
+ * date: 2024-02-04-1211 (February 4th, 2024 12:11pm)
+ * tags:
+ * - JavaScript 
+ * description: 
+ * this script will expand all comments and posts on the current page in Facebook 
+ * paste it in dev tools -> console and press enter 
+ * then you can now easily use ctrl + f to find/search
+ * */
 
 const DELAY = 500;
 function sleep(ms) {

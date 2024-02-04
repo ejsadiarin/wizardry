@@ -1,3 +1,12 @@
+---
+title: TLDR.sh (man but simpler)
+date: 2024-02-03-1733 (February 03, 2024 05:33 PM)
+tags:
+- Linux
+- Terminal
+- Tools and Utils
+---
+
 # TLDR.sh
 - [tldr](https://tldr.sh/)
 - like `man` pages, but simplified and with practical examples
