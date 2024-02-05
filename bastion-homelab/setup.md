@@ -26,12 +26,19 @@ tags:
   - self-hosted cloud storage
   - for documents and other files
 
+## What do I need right now?
+- Storage (TrueNAS) for backups and central storage
+- [] Get a Server:
+  - Dell Optiplex Line
+
 ## Backups
-- USB drives or external HDD/SSD
+- should consist of 4: physical copy, cloud copy, and local copy (self-hosted and/or synced)
+1. USB drives or external HDD/SSD
   - important photos and videos
-- Immich running on docker (self-hosted via NAS)
+2. Immich running on docker (self-hosted via NAS)
+  - self-hosted
   - important photos and videos
-- Nextcloud (in the cloud)
+3. Nextcloud (in the cloud)
   - documents and other files
-- Syncthing devices (connected via tailnet)
+4. Syncthing devices (connected via tailnet)
   - "local" synced copy
