@@ -12,8 +12,11 @@ description: The legendary collection of technology, wield the power of the thin
 # WIZARDY
 - the legendary collection of technology, wield the power of the thing closest to magic.
 
-## Network Configuration (Tailscale)
-
+## The Legendary Collection - Directories Explanation
+- `scripts-magic-spells` - contains scripts or "magic spells"
+- `bastion-homelab` - contains notes related to setting up the perfect homelab 
+  - also contains `CLI` tools necessary for homelabbing (e.g. `docker`, `kubernetes`, `tailscale`, `aws-cli`, `ansible`, `terraform`, etc.)
+- `useful-cli-tools` - contains CLI tools for everyday use
 
 ## Programming
 - any language works
