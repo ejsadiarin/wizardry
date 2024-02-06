@@ -7,3 +7,6 @@ tags:
 - Tailnet
 reference: https://forum.syncthing.net/t/is-it-possible-to-use-syncthing-with-no-internet-access-and-is-it-possible-to-have-all-changes-go-through-a-single-server/16194/6
 ---
+
+# References
+- [https://forum.syncthing.net/t/is-it-possible-to-use-syncthing-with-no-internet-access-and-is-it-possible-to-have-all-changes-go-through-a-single-server/16194/6](https://forum.syncthing.net/t/is-it-possible-to-use-syncthing-with-no-internet-access-and-is-it-possible-to-have-all-changes-go-through-a-single-server/16194/6)

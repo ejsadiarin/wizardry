@@ -4,9 +4,6 @@ date: 2024-02-05-1705 (February 05, 2024 5:05 PM)
 tags:
 - Homelab
 - Server
-description:
-references:
-- https://www.reddit.com/r/homelab/comments/nv1tww/which_optiplex_do_people_recomend_to_start_with/
 ---
 
 # Choosing Servers

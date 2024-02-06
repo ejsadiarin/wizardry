@@ -8,9 +8,10 @@ tags:
 - Proxmox
 - Networking
 - Fortress, Bastion, Kingdom
-reference: https://www.youtube.com/watch?v=QJzjJozAYJo
 ---
 
 # Tailscale inside LXC | Secure remote access to your server | Proxmox Home Server | Home Lab
+
+# References
 - reference yt vid: [https://www.youtube.com/watch?v=QJzjJozAYJo](https://www.youtube.com/watch?v=QJzjJozAYJo)
 

@@ -3,8 +3,6 @@ title: Clean ways to append text to a file
 date: 2024-02-06-1210 (February 6, 2024 12:10 PM)
 tags:
 - Linux
-description:
-reference: https://stackoverflow.com/questions/17701989/how-do-i-append-text-to-a-file
 ---
 
 # Appending text to a file (no text editor, perfect for scripts)
