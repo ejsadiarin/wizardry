@@ -74,4 +74,4 @@ tags:
 - then drag and drop files to and from USB drives
 
 ### References
--[https://www.ejmastnak.com/tutorials/arch/usb](https://www.ejmastnak.com/tutorials/arch/usb)
+- [https://www.ejmastnak.com/tutorials/arch/usb](https://www.ejmastnak.com/tutorials/arch/usb)

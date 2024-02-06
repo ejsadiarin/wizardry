@@ -1,11 +1,11 @@
----
+<!--
 title: Mosh - The Mobile Shell
 date: 2024-02-06-1707 (February 6, 2024 5:07 PM)
 tags:
 - Linux
 - SSH
 reference: https://github.com/mobile-shell/mosh?tab=readme-ov-file#how-it-works
----
+-->
 
 # Mosh - The Mobile Shell
 - great alternative to `ssh`

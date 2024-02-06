@@ -1,4 +1,4 @@
----
+<!--
 title: Wizardry - The Legendary Collection of Technology
 date: 2024-01-23-2357 (January 23, 2024 11:57 PM)
 tags:
@@ -7,7 +7,7 @@ tags:
 - Legendary Wizardry
 - Wizardry
 description: The legendary collection of technology, wield the power of the thing closest to magic.
----
+-->
 
 # WIZARDY
 - the legendary collection of technology, wield the power of the thing closest to magic.
