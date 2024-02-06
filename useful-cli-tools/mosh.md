@@ -7,8 +7,12 @@ tags:
 ---
 
 # Mosh - The Mobile Shell
+- Mosh is a remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes. 
+- Simply put, Mosh is a UDP-based SSH that have unbreakable, persistent connection
 - great alternative to `ssh`
 - UDP version of `ssh`
+- uses symmetric key encryption
+- NOTE: `mosh` requires `ssh` to establish the initial connection for auth
 
 # How it works?
 (1) establish connection to the remote server via `ssh`
