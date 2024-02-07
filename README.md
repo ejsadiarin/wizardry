@@ -12,6 +12,22 @@ description: The legendary collection of technology, wield the power of the thin
 # WIZARDY
 - the legendary collection of technology, wield the power of the thing closest to magic.
 
+# Philosophy
+- I want all my data to be accessible from anywhere, securely, and privately
+- phone data in a self-hosted server
+  - mainly photos and videos
+  - backed up on a physical USB drive
+- computer data in a self-hosted server
+  - notes and tech files in GitHub
+  - notes synced with syncthing (phone, computer, server)
+  - backed up on a physical USB drive
+- self-hosted server:
+  - running Proxmox VE with:
+    - NAS (TrueNAS)
+    - Immich
+    - Nextcloud
+    - local services for labbing
+
 ## The Legendary Collection - Directories Explanation
 - `scripts-magic-spells` - contains scripts or "magic spells"
 - `bastion-homelab` - contains notes related to setting up the perfect homelab 
