@@ -8,5 +8,9 @@ tags:
 reference: https://forum.syncthing.net/t/is-it-possible-to-use-syncthing-with-no-internet-access-and-is-it-possible-to-have-all-changes-go-through-a-single-server/16194/6
 ---
 
+# Use Syncthing with Tailnet LAN
+- In Syncthing Web GUI:
+  - just set the 'Addresses' to `tcp://<device-tailnet-ip>:22000`
+
 # References
 - [https://forum.syncthing.net/t/is-it-possible-to-use-syncthing-with-no-internet-access-and-is-it-possible-to-have-all-changes-go-through-a-single-server/16194/6](https://forum.syncthing.net/t/is-it-possible-to-use-syncthing-with-no-internet-access-and-is-it-possible-to-have-all-changes-go-through-a-single-server/16194/6)

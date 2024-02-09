@@ -10,6 +10,9 @@ tags:
 # Philosophy
 - everything should be reproducible and disposable
 - simple and clear
+- portability is core
+  - Containers and VMs
+  - Raspberry Pi 4 and 5 - cheap, quiet, and low power
 
 # Setup Architecture
 - [Tailscale](https://tailscale.com/) (VPN)
@@ -25,11 +28,23 @@ tags:
 - [Nextcloud](https://nextcloud.com/) (Cloud Storage)
   - self-hosted cloud storage
   - for documents and other files
+- [Vaultwarden]()
 
 ## What do I need right now?
-- Storage (TrueNAS) for backups and central storage
-- [] Get a Server:
-  - Dell Optiplex Line
+- Dell Optiplex Line or Lenovo M900 Mini PC (Intel i5 6500T with 16 GB RAM) or HP EliteDesk
+- PI 5 (Raspberry Pi 5) 8GB
+  - with 500 GB external SSD
+  - running: Immich, Nextcloud, and Vaultwarden
+  - shares directories via SMB for data like Proxmox ISOs, Docker volumes, and personal files
+- PI 4 (Raspberry Pi 5) 4GB
+  - running: 
+    - docker containers,
+    - arr stack (radarr, sonarr, lidarr, jackett, and transmission) - idk if i need
+    - proxmox vm running LXC container with PiHole,
+    - vm for "core services" like nginx proxy manager, GitHub runner, Grafana, and InfluxDB server
+    - 3 node k3s cluster for learning Kubernetes
+
+- Storage (TrueNAS) for backups and central storage (should be immutable)
 
 ## Backups
 - should consist of 4: physical copy, cloud copy, and local copy (self-hosted and/or synced)
