@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+from_sourcedir="$1"
+to_destdir="$2"
+
+dir_fromsource=$(find "$from_sourcedir" -type d)
+
+if [ -z "$dir_fromsource" ]; then
+	echo "Error: No directories found."
+	exit 1
+fi
+
+echo "Extracting..."
+
+for dir in $dir_fromsource; do
+	# dir_name=$(basename $file)
+	md_files=$(find "$dir" -type f -name '*.md')
+	if [ -n "$md_files" ]; then
+		mv "$md_files" "$to_destdir"
+	fi
+done
+
+# empty_dirs=$(find "$from_sourcedir" -type d -empty -delete)
+empty_dirs=$(find "$from_sourcedir" -type d -empty)
+if [ -e "$empty_dirs" ]; then
+	echo "Removing empty directories..."
+	rm -rf "$empty_dirs"
+fi
+
+echo "Done!"
