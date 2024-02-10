@@ -117,7 +117,7 @@ pass show <entry> # should error (gpg-related), if not then something is wrong y
     # to download (use curl or aria2c):
     curl -o <filename>.tar.gz.gpg "https://<download-link>"
     # to decrypt/extract (will prompt for password):
-    gpg -d --output - "<filename>.tar.gz.gpg" | tar xzf -
+    gpg -d --output - "<filename>.tar.gz.gpg"| tar xzf - # or just: gpg --decrypt "<filename>.tar.gz.gpg" | tar xz
 
     # if you used ,encryptshare:
     # to download (use curl or aria2c):
