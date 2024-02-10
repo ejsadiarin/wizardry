@@ -38,3 +38,6 @@ pass otp Google/example
 # you will then see the 6-digit code
 # NOTE: this changes every x seconds (like in Authenticator Apps)
 ```
+
+# References
+- [this yt vid](https://www.youtube.com/watch?v=sVkURNfxPd4&t=67s&pp=ygUIcGFzcyBvdHA%3D)
