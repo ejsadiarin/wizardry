@@ -16,6 +16,8 @@ fscrypt unlock <directory-you-want-to-sync>
 3. after syncing, lock the directory again:
   ```bash
   fscrypt lock <directory>
+  # if error do (NOTE: read the error message on how to kill the process using the directory):
+  find "<directory_name>" -print0 | xargs -0 fuser -k
   ```
   - this will cause Syncthing to warn you and encrypted directory will be "Stopped"
   - no syncing will happen when the directory is locked
