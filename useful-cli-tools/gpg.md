@@ -18,7 +18,7 @@ tags:
 `gpg --gen-revoke <uid>` or `gpg --generate-revocation <uid>` - generate revoke certificate
   - you can import this to other machines to revoke the key
 
-`gpg --edit-key <key>` - if you want to change expiration date
+`gpg --edit-key <public-key>` - if you want to change expiration date
   - it will open a gpg-shell:
   ```bash
   expire
