@@ -18,11 +18,11 @@ tags:
       - e.g. identify what tools to use and identify what problems to does DevOps solve
     - then identify the most efficient way to learn them
       - e.g. speaking to people (natives)
-- **Set aside 10% of your time for planning (pre-learning):** avoid procrastination
+- **Set aside 10% of your time for planning (pre-learning):** to avoid procrastination
   - e.g. the exam is in 10 days, spend 1 day planning the roadmap
 
 # Learning Phase
-Focus on this 3 things:
+**Focus on these 3 things:**
 1. Focusing - focused learning is the key to effective learning
   - do whatever it takes to be in the state of **being focused** 
   - e.g. no distractions, meditation, pomodoro, etc.
