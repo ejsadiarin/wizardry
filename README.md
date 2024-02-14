@@ -9,7 +9,7 @@ tags:
 description: The legendary collection of technology, wield the power of the thing closest to magic.
 -->
 
-# WIZARDY
+# Wizardry: The Akashic Records of Technology
 - the legendary collection of technology, wield the power of the thing closest to magic.
 
 # Philosophy
