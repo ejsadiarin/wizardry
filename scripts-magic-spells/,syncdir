@@ -2,3 +2,21 @@
 
 # should be like cp -r dirs and clean up duplicates but rsync has this kekw
 # rsync -avt <source> <destination>
+usb_mountpoint="/run/media/$USER/EJSMAIN/"
+wizardry="$HOME/wizardry/scripts-magic-spells/"
+dotfiles="$HOME/dotfiles/scripts-magic-spells"
+
+echo "[ CHECK ] USB Mount..."
+
+# sync system scripts
+rsync -avt "$wizardry" "$dotfiles"
+# rsync -rvtp ~/wizardry/scripts-magic-spells/ ~/dotfiles/scripts-magic-spells
+
+if [ -d "$usb_mountpoint" ]; then
+	echo "[ SUCCESS ] USB is mounted, now syncing..."
+	# sync usb
+	rsync -avt ~/Sync/Lock/ "$usb_mountpoint"/Lock/
+	echo "[ SUCCESS ] Synced!"
+else
+	echo "[ ERROR ] USB is not mounted."
+fi
