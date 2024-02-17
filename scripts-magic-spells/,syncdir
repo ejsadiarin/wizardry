@@ -9,6 +9,7 @@ dotfiles="$HOME/dotfiles/scripts-magic-spells"
 echo "[ CHECK ] USB Mount..."
 
 # sync system scripts
+echo "[ SYNCING ] scripts magic spells..."
 rsync -avt "$wizardry" "$dotfiles"
 # rsync -rvtp ~/wizardry/scripts-magic-spells/ ~/dotfiles/scripts-magic-spells
 
@@ -18,5 +19,5 @@ if [ -d "$usb_mountpoint" ]; then
 	rsync -avt ~/Sync/Lock/ "$usb_mountpoint"/Lock/
 	echo "[ SUCCESS ] Synced!"
 else
-	echo "[ ERROR ] USB is not mounted."
+	echo "[ ERROR ] USB is not mounted. Skipping..."
 fi

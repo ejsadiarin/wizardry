@@ -77,18 +77,31 @@ pass show <entry> # should error (gpg-related), if not then something is wrong y
     mkdir ~/exported-keys
 
     # get public key
-    gpg --output ~/public.gpg --armor --export <email> # use email instead of uid to reference which key you want to use
+    gpg --output ~/exported-keys/public.gpg --armor --export <email> # use email instead of uid to reference which key you want to use
+    # or:
+    gpg --armor --export <email> > ~/exported-keys/public.gpg
 
     # get private key
-    gpg --output ~/private.gpg --armor --export-secret-keys <email> # use email again
+    gpg --output ~/exported-keys/private.gpg --armor --export-secret-keys <email> # use email again
+    # or:
+    gpg --armor --export-secret-keys <email> > ~/exported-keys/private.gpg
     ```
+    - may also compress it:
+    ```bash
+    tar -czvf exported-keys.tar.gz ~/exported-keys
+    ```
+
     - from remote: 
     ```bash
     mkdir ~/imported-keys
-    scp -r user@local:/path/to/exported-keys ~/imported-keys
-    # import the keys to gpg
-    gpg --import imported-keys/private.gpg # will prompt for password
-    gpg --import imported-keys/public.gpg
+
+    # get keys (via scp or encryptshare-tar 0x0.st (see details below) or usb flash drive):
+    scp -r user@local:/path/to/exported-keys.tar.gz ~/imported-keys
+    tar xzf ~/imported-keys/exported-keys.tar.gz -C ~/imported-keys
+
+    # IMPORTANT: import the keys to gpg
+    gpg --import ~/imported-keys/public.gpg
+    gpg --import ~/imported-keys/private.gpg # will prompt for password
 
     # now check if pass if working as expected
     pass
@@ -177,3 +190,4 @@ aws lambda list-functions --region=us-east-1
 # References
 - main docs/website: [passwordstore.org](https://www.passwordstore.org/)
 - [dreamsofcode yt vid](https://www.youtube.com/watch?v=FhwsfH2TpFA&pp=ygUTZHJlYW1zIG9mIGNvZGUgcGFzcw%3D%3D)
+- [bugswriter hacker guide](https://www.youtube.com/watch?v=QE9Qj_qI6Q4)
