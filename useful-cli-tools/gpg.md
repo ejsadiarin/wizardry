@@ -42,7 +42,8 @@ tags:
 ## gpg-agent
 - `gpg-agent` is a daemon to manage secret keys for GPG
 - `ps -A | grep gpg-agent` - check if gpg-agent is running
-- if want, create gpg-agent.conf file in ~/.gnupg/ and add `use-standard-socket` to it
+- if want, create gpg-agent.conf file in ~/.gnupg/ and add `use-standard-socket` to it for better performance
+  - then restart gpg-agent
 ```bash
 default-cache-ttl 604800 # 7 days
 max-cache-ttl 604800 # 7 days
