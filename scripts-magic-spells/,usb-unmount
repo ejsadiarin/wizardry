@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -e
+
+mountpoint="/run/media/$(whoami)/ejsmain"
+usbdisk="/dev/sdb"
+
+# ensure that the mountpoint exists
+if [ -d "$mountpoint" ]; then
+	# unmount
+	sudo umount "$mountpoint" || {
+		echo "[ ERROR ] Unable to unmount the device."
+		exit 1
+	}
+
+	echo "[ INFO ] Device unmounted."
+	notify-send "Device unmounted." "$mountpoint has been unmounted."
+
+	# close with cryptsetup (encrypt)
+	if ! sudo cryptsetup close ejsmain; then
+		echo "[ ERROR ] Unable to close the device."
+		exit 1
+	fi
+
+	sudo eject "$usbdisk"
+	# this is simplified by `set -e`:
+	# if [ $? -ne 0 ]; then
+	# 	echo "[ ERROR ] Unable to eject the device."
+	# fi
+
+	echo "[ SUCCESS ] 🔒 Device is now ENCRYPTED and LOCKED. "
+	notify-send " 🔒 Device is now ENCRYPTED and LOCKED." "You can now safely remove your USB Device."
+fi

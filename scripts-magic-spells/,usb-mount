@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# NOTE: use `lsblk` to identify the correct usbpart (if different then change usbpart value)
+
+mountpoint="/run/media/$(whoami)/ejsmain"
+usbpart="/dev/sdb1"
+
+# ensure that the mountpoint exists
+if [ ! -d "$mountpoint" ]; then
+	# create mountpoint
+	echo "[ INFO ] No ejsmain detected.... creating mountpoint at $mountpoint"
+	sudo mkdir "$mountpoint"
+fi
+
+# open with cryptsetup
+sudo cryptsetup open "$usbpart" ejsmain || {
+	echo "[ ERROR ] Unable to open device."
+	exit 1
+}
+
+# mount
+sudo mount /dev/mapper/ejsmain "$mountpoint"
+
+echo "[ SUCCESS ] Device mounted at $mountpoint"
