@@ -17,6 +17,7 @@ if [ -d "$usb_mountpoint" ]; then
 	echo "[ SUCCESS ] USB is mounted, now syncing..."
 	# sync usb
 	rsync -avt ~/Sync/Lock/ "$usb_mountpoint"/Lock/
+	rsync -avt "$wizardry" "$usb_mountpoint"/scripts-magic-spells/
 	echo "[ SUCCESS ] Synced!"
 else
 	echo "[ ERROR ] USB is not mounted. Skipping..."

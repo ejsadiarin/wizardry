@@ -48,3 +48,5 @@ description: The legendary collection of technology, wield the power of the thin
   - both are perfect for scripts alongside bash (use bash for scripts)
 
 <!-- Happy Birthday To Me!!!!!!!, 20th, January 23, 2024 11:59 PM -->
+
+<!-- ejsadiarin -->
