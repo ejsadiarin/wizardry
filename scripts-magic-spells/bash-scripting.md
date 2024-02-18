@@ -53,6 +53,7 @@ Example: [ -n "$variable" ]
 
 `-z`:
 Checks if a string is empty.
+- if empty, return `true` (0)
 Example: [ -z "$variable" ]
 
 `-d`:
