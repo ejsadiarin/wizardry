@@ -88,7 +88,7 @@ pass show <entry> # should error (gpg-related), if not then something is wrong y
     ```
     - may also compress it:
     ```bash
-    tar -czvf exported-keys.tar.gz ~/exported-keys
+    tar czvf exported-keys.tar.gz ~/exported-keys
     ```
 
     - from remote: 

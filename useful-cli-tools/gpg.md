@@ -7,6 +7,19 @@ tags:
 
 # GPG with GnuPG
 
+## Daily Usage
+- with `tar`:
+```bash
+# compress and encrypt with symmetric password only (flexible)
+tar czf - <file-or-dir> | pv | gpg --symmetric -o <file-or-dir>.tar.gz.gpg
+# decrypt and extract (will be prompted for password)
+gpg --decrypt <file-or-dir>.tar.gz.gpg | pv | tar xz
+
+# encrypt using keypair (need to import the ultimate keypair first, see below)
+gpg --encrypt <file-or-dir>.tar.gz # encrypting a tar.gz file
+gpg --encrypt <file-or-dir> # encrypting any file or directory
+```
+
 `gpg --list-keys` - list existing keys
 
 `gpg --full-gen-key` - full process to generate a new key
@@ -30,14 +43,26 @@ tags:
 
 `gpg --passwd <email>` - change password
 
+## Backing up
+### Exporting keys
+- `gpg --export-secret-keys --armor --output ~/exported-keys/private.gpg <email>` - export private key in a file
+  ```bash
+  # examples:
+  gpg --export-secret-keys --armor --output ~/exported-keys/private.gpg <email>
+  gpg --armor --export-secret-keys <email> > ~/exported-keys/private.gpg
+  ``` 
+- `gpg --export --armor --output <filename>.gpg <email>` - export public key in a file
+  ```bash
+  # examples:
+  gpg --export --armor --output ~/exported-keys/public.gpg <email>
+  gpg --armor --export <email> > ~/exported-keys/public.gpg
+  ``` 
+### Importing keys
+- see [Importing Keys from Another Machine](https://github.com/ejsadiarin/wizardry/blob/main/linux/perfect-grade-password-store.md#importing-keys-from-another-machine)
+
 ## Revoking keys with revoke certificates
 `gpg --import` revoke-cert.asc
 - this will automatically revoke the key
-
-## Exporting keys (Backing up)
-`gpg --export-secret-keys --armor --output <filename>.gpg <email>` - private key?
-`gpg --export --armor <email>` - public key
-`gpg --export --armor --output <filename>.gpg.pub <email>` - public key in a file
 
 ## gpg-agent
 - `gpg-agent` is a daemon to manage secret keys for GPG
