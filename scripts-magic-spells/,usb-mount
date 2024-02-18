@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # NOTE: use `lsblk` to identify the correct usbpart (if different then change usbpart value)
+# --> i know there are two error handling logic `set -e` and `|| {...; exit 1}`, im just paranoid kek
 
 set -e
 
