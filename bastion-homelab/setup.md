@@ -20,6 +20,8 @@ tags:
   - controlled via tailscale control server web interface (not a hub and spoke)
 - [Immich](https://immich.app/docs/overview/introduction) (Backup photos and videos)
   - self-hosted backup solution for photos and videos
+- [Photoprism](https://) (Backup photos and videos)
+  - self-hosted backup solution for photos and videos
 - [Syncthing](https://syncthing.net/) (File Sync)
   - sync files between devices
   - note that this is strictly for syncing files (includes photos and videos) and not for backup

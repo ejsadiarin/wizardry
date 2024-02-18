@@ -28,3 +28,4 @@ sudo mount /dev/mapper/ejsmain "$mountpoint" || {
 }
 
 echo "[ SUCCESS ] Device mounted at $mountpoint"
+notify-send "You can now use your USB Device on $mountpoint" "Don't forget to LOCK it after use."
