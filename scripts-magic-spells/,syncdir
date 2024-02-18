@@ -1,22 +1,26 @@
 #!/bin/bash
 
-usb_mountpoint="/run/media/$(whoami)/EJSMAIN/"
+usb_mountpoint="/mnt/$(whoami)/ejsmain/"
 wizardry="$HOME/wizardry/scripts-magic-spells/"
-dotfiles="$HOME/dotfiles/scripts-magic-spells"
+dotfiles="$HOME/dotfiles/scripts-magic-spells/"
 
-echo "[ CHECK ] USB Mount..."
+set -e
 
-# sync system scripts
+# sync scripts magic spells
 echo "[ SYNCING ] scripts magic spells..."
-rsync -avt "$wizardry" "$dotfiles"
-# rsync -rvtp ~/wizardry/scripts-magic-spells/ ~/dotfiles/scripts-magic-spells
+{
+	rsync -avt "$wizardry" "$dotfiles"
+	# rsync -avt "$wizardry" "$usb_mountpoint"/scripts-magic-spells/
+} | pv -p --timer --rate --bytes | cat
+# rsync -rvtp ~/wizardry/scripts-magic-spells/ ~/dotfiles/scripts-magic-spells/
 
 # sync usb
+echo "[ CHECK ] USB Mount..."
 if [ -d "$usb_mountpoint" ]; then
 	echo "[ SUCCESS ] USB is mounted, now syncing..."
 
 	echo "[ SYNCING ] Scripts / Magic Spells..."
-	rsync -avt "$wizardry" "$usb_mountpoint"/scripts-magic-spells/ | pv -ptrb --size "$(du -sb "$wizardry" | awk '{print $1}')" >/dev/null
+	sudo rsync -avt "$wizardry" "$usb_mountpoint"/scripts-magic-spells/ | pv -p --timer --rate --bytes | cat
 
 	######## check Lock-encrypt: ########
 	lock_encrypt_file=$(find "$usb_mountpoint" -type f -name "Lock-encrypt.tar.gz.gpg")
@@ -32,23 +36,25 @@ if [ -d "$usb_mountpoint" ]; then
 
 	# can put in a function i think
 	echo "[ SYNCING ] Lock-encrypt directory..."
-	rsync -avt ~/Sync/Lock/ "$usb_mountpoint"/Lock-encrypt/ | pv -ptrb --size "$(du -sb ~/Sync/Lock/ | awk '{print $1}')"
+	sudo rsync -avt ~/Sync/Lock/ "$usb_mountpoint"/Lock-encrypt/ | pv -ptrb --size "$(du -sb ~/Sync/Lock/ | awk '{print $1}')"
 
-	echo "[ AUTHENTICATE ] Encrypting Lock-encrypt directory..."
-	tar -cvzf - "$usb_mountpoint"/Lock-encrypt | pv -ptrb --size "$(du -sb "$usb_mountpoint"/Lock-encrypt | awk '{print $1}')" | gpg --symmetric -o "$usb_mountpoint"/Lock-encrypt.tar.gz.gpg || {
-		echo "[ ERROR ] Failed to encrypt Lock-encrypt directory."
-		exit 1
-	}
-
-	printf "[ WARNING ] Lock-encrypt directory will be removed from USB."
-	while true; do
-		read -rp " Do you wish to continue? [y/N]: " yn
-		case $yn in
-		[Yy]*) rm -rf "$usb_mountpoint"/Lock-encrypt ;;
-		[Nn]*) exit ;;
-		*) printf " Error: only write 'y' or 'n'\n\n" ;;
-		esac
-	done
+	####### cannot encrypt large files (need to split?) #######
+	# echo "[ AUTHENTICATE ] Encrypting Lock-encrypt directory..."
+	# sudo tar -cvzf - "$usb_mountpoint"/Lock-encrypt | pv -ptrb --size "$(du -sb "$usb_mountpoint"/Lock-encrypt | awk '{print $1}')" | sudo gpg --symmetric -o "$usb_mountpoint"/Lock-encrypt.tar.gz.gpg || {
+	# 	echo "[ ERROR ] Failed to encrypt Lock-encrypt directory."
+	# 	exit 1
+	# }
+	#
+	# printf "[ WARNING ] Lock-encrypt directory will be removed from USB."
+	# while true; do
+	# 	read -rp " Do you wish to continue? [y/N]: " yn
+	# 	case $yn in
+	# 	[Yy]*) sudo rm -rf "$usb_mountpoint"/Lock-encrypt ;;
+	# 	[Nn]*) exit ;;
+	# 	*) printf " Error: only write 'y' or 'n'\n\n" ;;
+	# 	esac
+	# done
+	###########################################################
 
 	echo "[ SUCCESS ] Synced and Encrypted!"
 else
