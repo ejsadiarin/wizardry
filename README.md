@@ -42,6 +42,7 @@ description: The legendary collection of technology, wield the power of the thin
   2. distinguishable own custom scripts
   3. prevents name conflicts (script collisions on custom vs system)
   4. can have a script with the same name as a system command (e.g. `,ls`)
+- ref: https://rhodesmill.org/brandon/2009/commands-with-comma/
 
 # Programming
 - any language works
