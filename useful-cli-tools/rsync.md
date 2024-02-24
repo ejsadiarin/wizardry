@@ -72,3 +72,4 @@ rsync --rsh 'ssh -p port' --info=progress2 host:path/to/source path/to/destinati
 - more details on man pages: `man rsync`
 - use `tldr` to see practical uses: `tldr rsync`
 - [rsync needs proper mounting](https://www.reddit.com/r/linuxquestions/comments/slnv4q/comment/hvscc6u/?utm_source=share&utm_medium=web2x&context=3)
+- [rsync sync diff only](https://www.tecmint.com/sync-new-changed-modified-files-rsync-linux/)

@@ -18,7 +18,20 @@ tags:
     You can use ssh -D to route traffic via a socks4/5 proxy. For example configure your web browser to use the port in proxy settings, and all your traffic goes through ssh to the remote host. D for 'dynamic'
     My understanding of ssh -L is that it forwards tcp ports and unix sockets, which to my layman's understanding is similar, but a bit more limited. I use -L to bind remote guis to my localhost - mainly syncthing's gui.
 
-  > -D sets up a socks proxy where an incoming connection (listen on the remote side, connections are made from the remote side( includes instruction on where to go. This requires that the client be socks aware (or it can be made so with proxychains) but it can go anywhere.
+> 4. -D sets up a socks proxy where an incoming connection (listen on the remote side, connections are made from the remote side( includes instruction on where to go. This requires that the client be socks aware (or it can be made so with proxychains) but it can go anywhere.
+
+# SSH magics 
+- port forward from local to remote
+`ssh -L 8080:localhost:80 user@remote`
+- port forward from remote to local
+`ssh -R 8080:localhost:80 user@remote`
+
+# Can use nginx as a reverse proxy
+- more configurable
+
+### Check listening ports first via `netstat`
+`netstat -tupln` - checks the listening ports (can prefix with `sudo`)
 
 # References
 - https://www.reddit.com/r/linux/comments/1ajslo3/what_are_your_most_valuable_and_loved_command/?share_id=jCXi6jsOro0-56gY9wXD9
+- [yt vid BugsWriter](https://www.youtube.com/watch?v=lKIRHDY7OhU)
