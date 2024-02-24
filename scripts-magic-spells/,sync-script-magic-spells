@@ -12,12 +12,12 @@ set -e
 echo "[ SYNCING ] scripts magic spells..."
 
 {
-	rsync -avt "$wizardry" "$dotfiles"
+	rsync -auz "$wizardry" "$dotfiles"
 	echo "[ CHECKING ] is USB mounted?... "
 	if [ -d "$usb_mountpoint" ]; then
 		echo "[ SUCCESS ] USB is mounted, now syncing..."
 		echo "[ SYNCING ] Scripts / Magic Spells..."
-		sudo rsync -avt "$wizardry" "$usb_mountpoint"/scripts-magic-spells/
+		sudo rsync -auz "$wizardry" "$usb_mountpoint"/scripts-magic-spells/
 	else
 		echo "[ SKIPPING ] USB is not mounted. Now skipping..."
 	fi
