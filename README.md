@@ -57,7 +57,8 @@ description: The legendary collection of technology, wield the power of the thin
   - **You need to make sure you communicate what you work on in business impact terms.** 
     > I've seen plenty of people who will work hard and never get fairly promoted because leadership doesn't understand what they do and how valuable it is.
   - This is also super important for interviewing.
-### 2. Learn how to earn more (a lot of people seem to do the first two, without the 3rd, stop being the idea guy and complainer). 
+### 2. Learn how to earn more 
+a lot of people seem to do the first two, without the 3rd, (stop being the idea guy and complainer): 
   - show impact and value early
   - learn fast and be proactive
   - point out problems, propose solutions and implement solutions
