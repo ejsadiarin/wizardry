@@ -36,4 +36,4 @@ I just turn off the bridge networking and NAT that it enables, by adding this to
     "bridge": "none"
 }
 ```
-Then, I use everything in network_mode: host. Otherwise, I don't get good IPv6 usage going. 
+Then, I use everything in `network_mode: host`. Otherwise, I don't get good IPv6 usage going. 
