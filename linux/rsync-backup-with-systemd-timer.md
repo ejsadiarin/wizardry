@@ -87,6 +87,7 @@ WantedBy=default.target
 
 > Comment (about only sending rsync diffs):
   > Rsync is one of my favorite tools. In your case, while it works, you give up one of the best features; only sending diffs. If your backups are small or have a lot of changes it probably won't help much but otherwise, it might be worth looking at keeping one directory in sync remotely and rotating the tree backwards in time on the remote side. That way you're not transferring the full tree over the network - every time.
+  > incremental backup (for entire system): `rsync -aAXv --progress --delete --exclude=".*" --exclude="lost+found" /src /dst`
 
 # References
 - [reddit](https://www.reddit.com/r/archlinux/comments/1ayd68v/comment/kru7cm6/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
