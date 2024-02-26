@@ -30,11 +30,14 @@ tags:
 - simple usage using archive mode:
 ```bash
 # most basic usage (sufficient simple transfers)
-rsync -avt <source> <destination>
-rsync -avt <source>/ <destination> # the / means to just copy the contents of the directory
+rsync -avh <source> <destination>
+rsync -avh <source>/ <destination> # the / means to just copy the contents of the directory
 
 # with ssh (for network transfers)
-rsync -avtz -e ssh <source> user@remote_host:/path/to/destination
+rsync -avhz -e ssh <source> user@remote_host:/path/to/destination
+
+# for updating (sending only diffs)
+rsync -auzh <source> <destination>
 ```
 
 - [from `tldr`] Use archive mode, resolve symlinks and skip files that are newer on the destination:
@@ -57,6 +60,7 @@ rsync --rsh 'ssh -p port' --info=progress2 host:path/to/source path/to/destinati
 - `-a` - archive mode (preserves permissions, ownership, is recursive, etc.)
   - or `-rlptgoD` (long version of `-a`)
 - `-r` or `--recursive` - recursive
+- `-u` or `--update` - update (send only diffs)
 - `-v` or `--verbose` - verbose output
 - `-t` or `--times` - preserve modification times
 - `-h` or `--human-readable` - output in human-readable format

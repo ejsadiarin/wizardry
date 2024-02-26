@@ -29,6 +29,9 @@ fd -tf -tx --glob ",*" --search-path $HOME -x basename {} | awk '!seen[$0]++' | 
 # or (but slower)
 find $HOME -type f -executable -name ",*" -exec basename {} \; | awk '!seen[$0]++' | fzf
 
+# finds all custom scripts with fzf --preview (extensible with a custom script)
+fd -tf -tx --glob ",*" --search-path $HOME/wizardry/scripts-magic-spells | awk '!seen[$0]++' | fzf --header "Select script to cat" --preview 'head -$LINES {}'
+
 # fzf all commands in system and see its documentation via man pages
 compgen -c | fzf | xargs man
 
