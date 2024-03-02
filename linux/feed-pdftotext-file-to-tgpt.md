@@ -7,6 +7,7 @@ tags:
 
 # Using pdftotext and tgpt together
 - use `tldr` for quick reference
+- no need for paid SaaS services for this feature
 
 ### Basic Usage
 - Feed pdftoteext output file to `tgpt`
