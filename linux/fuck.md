@@ -11,3 +11,20 @@ tags:
 - corrects errors in previous console commands
 - perfect for dealing with typos
 - install [https://github.com/nvbn/thefuck](https://github.com/nvbn/thefuck)
+
+## Usage
+- Correct previous command (try to match a rule)
+```bash
+fuck
+```
+- Confirm first choice
+```bash
+fuck --yes
+# or
+fuck --yeah
+# or
+fuck --hard
+```
+
+# References
+- [https://github.com/nvbn/thefuck](https://github.com/nvbn/thefuck)
