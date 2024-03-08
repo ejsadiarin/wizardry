@@ -8,6 +8,8 @@ tags:
 ---
 
 # Guide to Mastering Firewall Configuration
+- Read the classic documentation: [Netfilter](https://netfilter.org/documentation/index.html)
+
 ## MUST READ FIRST:
 - `ufw` is just a persistent frontend to `iptables`
 - LEARN `iptables` functionality (more difficult to grasp) - anything/everything else will sort of fall into place in time
@@ -29,3 +31,8 @@ Thing is, it's really easy to make a mistake and render your system unusable (de
  
 ## The Practical Way
 <!-- TODO: add guide here-->
+1. Set up a LAN and play around with firewall rules to get quick feedback. 
+- first figure out how iptables work and then try to figure out the nftables approach.
+2. Next step: set up a simple web server on Amazon EC2 free tier and play with firewall rules over a VPC/Security group.
+
+Just change stuff and see what happens
