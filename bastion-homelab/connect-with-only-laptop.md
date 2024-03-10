@@ -31,7 +31,7 @@ If you frequently need to access the mini PC from your laptop, consider purchasi
 1. **Purchase a Docking Station**: Look for a docking station that supports the connection types available on your mini PC (e.g., HDMI, VGA, USB-C).
 2. **Connect the Mini PC**: Connect your mini PC to the docking station using the appropriate cables.
 3. **Connect the Docking Station to Your Laptop**: Use a USB cable to connect the docking station to your laptop.
-4. **Configure Display Settings**: Adjust your laptop's diplay settings to use the external display.
+4. **Configure Display Settings**: Adjust your laptop's display settings to use the external display.
 ### 5. Use a KVM Switch
 A KVM (Keyboard, Video, Mouse) switch allows you to control multiple computers with a single keyboard, monitor, and mouse. This can be a more permanent solution if you frequently need to access the mini PC.
 1. **Purchase a KVM Switch**: Choose a KVM switch that supports the connection types available on your mini PC and laptop.
