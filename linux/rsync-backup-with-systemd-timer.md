@@ -10,7 +10,7 @@ tags:
 # Rsync Backup with Systemd Timer
 > I have a systemd timer that runs every 3 days that backs up to a server with rsync, here's the setup:
 
-`/usr/local/bin/backup.sh`
+- `/usr/local/bin/backup.sh`
 
 ```bash
 #!/bin/bash
@@ -34,7 +34,7 @@ ssh user@server "ls -dt ${DESTINATION}/* | tail -n +6 | xargs --no-run-if-empty 
 notify-send "Backup Complete" "Your computer has finished the backup process."
 ```
 
-`/etc/systemd/system/backup.service`
+- `/etc/systemd/system/backup.service`
 ```toml
 [Unit]
 Description=Backup Service
@@ -57,7 +57,8 @@ Unit=backup.service
 [Install]
 WantedBy=timers.target
 ```
-`/usr/local/bin/backup-notify.sh`
+
+- `/usr/local/bin/backup-notify.sh`
 ```bash
 #!/bin/bash
 
