@@ -13,6 +13,7 @@ tags:
 - portability is core
   - Containers and VMs
   - Raspberry Pi 4 and 5 - cheap, quiet, and low power
+  - Mini PCs (Dell Optiplex, Lenovo M900, HP EliteDesk)
 
 # Setup Architecture
 - [Tailscale](https://tailscale.com/) (VPN)
@@ -30,7 +31,10 @@ tags:
 - [Nextcloud](https://nextcloud.com/) (Cloud Storage)
   - self-hosted cloud storage
   - for documents and other files
-- [Vaultwarden]()
+- [NTFY](https://ntfy.rtfd.io/) (Notifications)
+  - notifications for long running commands
+- [PiHole](https://pi-hole.net/) (DNS)
+  - self-hosted DNS server with Ad block
 
 ## What do I need right now?
 - Dell Optiplex Line or Lenovo M900 Mini PC (Intel i5 6500T with 16 GB RAM) or HP EliteDesk

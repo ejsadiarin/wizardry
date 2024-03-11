@@ -140,3 +140,5 @@ fi
 - [Become a shell wizard in ~12 mins]()
 - [Advanced Bash Scripting Guide: an in-depth exploration of the art of shell scripting](https://hangar118.sdf.org/p/bash-scripting-guide/index.html)
 - [Some collection of scripts in Reddit](https://www.reddit.com/r/sysadmin/comments/rs4546/any_scripts_you_guys_have_that_make_your_life_so/)
+- [Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
+- [Unofficial Bash Strict Mode](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
