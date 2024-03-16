@@ -33,5 +33,5 @@ tags:
 `netstat -tupln` - checks the listening ports (can prefix with `sudo`)
 
 # References
-- https://www.reddit.com/r/linux/comments/1ajslo3/what_are_your_most_valuable_and_loved_command/?share_id=jCXi6jsOro0-56gY9wXD9
+- [Gold mine commands](https://www.reddit.com/r/linux/comments/1ajslo3/what_are_your_most_valuable_and_loved_command/?share_id=jCXi6jsOro0-56gY9wXD9)
 - [yt vid BugsWriter](https://www.youtube.com/watch?v=lKIRHDY7OhU)
