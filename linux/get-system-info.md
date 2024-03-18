@@ -55,3 +55,17 @@ tags:
 - `lshw` - prints the hardware information
 - `htop` - top-like interactive system-monitor
 - `top` - OG system monitor
+
+# Linux Performance Observability and Security Tools
+- `strace` - system call tracer
+- `iotop` - I/O monitor
+- `ruptime` - uptime of remote machines
+
+## Security focused
+- `selinux` - security-enhanced Linux
+- `auditctl` - a utility to assist controlling the kernel's audit system
+- `rsyslog` - system logging
+- `nftables` - firewall, NAT, and packet filtering (successor of `iptables`)
+- `fail2ban` - intrusion prevention software framework
+- `apparmor` - Mandatory Access Control (MAC) system
+- `osquery` - SQL-based operating system instrumentation, monitoring, and analytics
