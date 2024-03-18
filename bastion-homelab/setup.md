@@ -8,17 +8,20 @@ tags:
 ---
 
 # Philosophy
-- everything should be reproducible and disposable
+- everything should be reproducible and disposable (redundancy)
 - simple and clear
-- portability is core
-  - Containers and VMs
+- portability is core (quiet, low power, and portable)
+  - run everything as containers and/or VMs
+  - Mini PCs (Dell Optiplex, Lenovo M720/M900, HP EliteDesk)
+    - use atleast 8th gen intel i5 or i7
   - Raspberry Pi 4 and 5 - cheap, quiet, and low power
-  - Mini PCs (Dell Optiplex, Lenovo M900, HP EliteDesk)
+- devices are just "interfaces", the data is the core (and the data is backed up in multiple places)
 
-# Setup Architecture
+# Services
 - [Tailscale](https://tailscale.com/) (VPN)
   - devices are connected via tailnet
   - controlled via tailscale control server web interface (not a hub and spoke)
+  - with Mullvad VPN for exit nodes as a service
 - [Immich](https://immich.app/docs/overview/introduction) (Backup photos and videos)
   - self-hosted backup solution for photos and videos
 - [Photoprism](https://) (Backup photos and videos)
@@ -29,15 +32,21 @@ tags:
   - suitable for photos, videos, and notes (md, obsidian)
   - login via CLI: `syncthing` (web gui)
 - [Nextcloud](https://nextcloud.com/) (Cloud Storage)
-  - self-hosted cloud storage
-  - for documents and other files
+  - run in a docker container or a VM
+  - self-hosted cloud storage (main storage)
+  - for documents, bookmarks, contact, and calendar 
 - [NTFY](https://ntfy.rtfd.io/) (Notifications)
   - notifications for long running commands
 - [PiHole](https://pi-hole.net/) (DNS)
   - self-hosted DNS server with Ad block
+- [Gitea](https://gitea.com/) (Git Server)
+  - 
 
 ## What do I need right now?
 - Dell Optiplex Line or Lenovo M900 Mini PC (Intel i5 6500T with 16 GB RAM) or HP EliteDesk
+- Synology NAS (DS220+ or DS420+) --> run as NFS volume
+  - run as NFS volume for Proxmox
+  - can run Nextcloud
 - PI 5 (Raspberry Pi 5) 8GB
   - with 500 GB external SSD
   - running: Immich, Nextcloud, and Vaultwarden
@@ -49,7 +58,6 @@ tags:
     - proxmox vm running LXC container with PiHole,
     - vm for "core services" like nginx proxy manager, GitHub runner, Grafana, and InfluxDB server
     - 3 node k3s cluster for learning Kubernetes
-
 - Storage (TrueNAS) for backups and central storage (should be immutable)
 
 ## Backups
@@ -63,3 +71,6 @@ tags:
   - documents and other files
 4. Syncthing devices (connected via tailnet)
   - "local" synced copy
+
+# Network Architecture
+
