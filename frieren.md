@@ -40,4 +40,4 @@ tags:
 i want to be immortalized through my influence, impact, and positivity i shared with other people. 
 collect scripts (and tech tools) just like how frieren collects grimoires (and magic tools)
 
-![[2024-03-18_14-39.png]]
+![iconic](/2024-03-18_14-39.png)
