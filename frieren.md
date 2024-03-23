@@ -23,6 +23,7 @@ tags:
 - It is best to be silly and happy while finding the joy of what happens in the present moment than to be overly serious and pedantic about what happens in the future.
 - The best foking approach in life is to plan your goal and expect for the worse to anticipate failures (so you don't get wiped out when you experience a failure). Plan dynamically with the same goal in mind. It doesn't matter how you get there as long as you get there regardless. THEN make your journey towards that goal as silly and as fun as possible, enjoying the hardships of life with your companions along the way.
 - Sometimes, the things considered by many as "impractical" are the most practical ones.
+- silly little help and things change the world
 - Himmel gigachad, be like Himmel.
 
 
@@ -41,3 +42,7 @@ i want to be immortalized through my influence, impact, and positivity i shared 
 collect scripts (and tech tools) just like how frieren collects grimoires (and magic tools)
 
 ![iconic](/2024-03-18_14-39.png)
+
+- update March 23, 2024 6:45 PM: no more frieren fridays, last episode. But a tearful farewell doesn't suit us, because I'd be embarrassing if we meet again
+
+wtfok from copilot: I want to be remembered as the Himmel of the tech world. wtfok is this cringe bruv but i like it
