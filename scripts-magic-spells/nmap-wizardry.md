@@ -56,4 +56,4 @@ tags:
 
 # Resources
 [see nmap cheat sheet](./nmap-cheat-sheet-output.txt)
-
+[Ethical Hacking Deep Dive: Metasploit, Nmap, and Advanced Techniques (41m:55s)](https://www.youtube.com/watch?v=Ft6tLATCIVQ)

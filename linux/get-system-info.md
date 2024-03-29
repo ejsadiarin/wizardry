@@ -26,6 +26,7 @@ tags:
 - `lspci` - prints the PCI devices information
 - `lsusb` - prints the USB devices information
 - `lsmod` - prints the loaded kernel modules
+- `lsof` - lists open files
 - `uptime` - prints the system uptime and load averages
 
 ## `cat` the `/proc` directory
