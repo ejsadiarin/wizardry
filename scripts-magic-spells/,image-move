@@ -1,0 +1,48 @@
+#!/bin/bash
+
+set -e
+
+if [ "$#" -ne 2 ]; then
+	echo "Usage: $0 <from_dir> <to_dir>"
+	exit 1
+fi
+
+from_sourcedir="$1"
+to_destdir="$2"
+
+mkdir -p "$to_destdir/assets"
+
+echo "Extracting..."
+
+# Store directories with images, videos, etc. in an array
+dir_with_assets=()
+while IFS= read -r -d '' dir; do
+	dir_with_assets+=("$dir")
+	dirname=$(basename "$dir")
+
+	# Rename images to their directory name and move them to to_destdir/assets
+	find "$dir" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.mov" -o -iname "*.webp" -o -iname "*.gif" -o -iname "*.mp4" \) -print0 | while IFS= read -r -d '' file; do
+		# Rename images to their directory name and move them to to_destdir/assets
+		filename=$(basename "$file")
+		new_filename="$to_destdir/assets/$dirname-${filename// /_}" # Replace spaces with underscores
+		mv -n "$file" "$new_filename"
+		echo "Moved $file to $new_filename"
+	done
+
+	# Handle renaming image references in markdown files
+	echo "Updating image references in markdown files..."
+	find "$from_sourcedir" -type f -name "$dirname.md" -print0 | while IFS= read -r -d '' file; do
+		# Update image references in markdown files
+		sed -i "s/!\[.*\](.*\/)*Untitled[[:space:]]*\(\.jpg\|\.jpeg\|\.png\|\.mov\|\.webp\|\.gif\|\.mp4\)/![${dirname}](assets\/${dirname}-/g" "$file"
+	done
+
+	# Remove empty directories
+	find "$dir" -depth -type d -exec rmdir {} + 2>/dev/null || true
+done < <(find "$from_sourcedir" -mindepth 1 -maxdepth 1 -type d -print0)
+
+if [ ${#dir_with_assets[@]} -eq 0 ]; then
+	echo "Error: No directories found."
+	exit 1
+fi
+
+echo "Extraction completed."
