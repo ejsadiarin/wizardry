@@ -4,7 +4,7 @@ aliases: []
 tags:
   - System Information
   - Linux
-  - How To
+  - How-To
 date: 2024-03-13-1923 (March 13, 2024 7:23 PM)
 title: How to get the whole System Information in a Linux Machine
 ---

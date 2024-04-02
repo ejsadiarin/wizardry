@@ -3,7 +3,7 @@ id: how-to-actually-learn
 aliases: []
 tags:
   - Learning
-  - How To
+  - How-To
 date: 2024-02-11-2318 (February 11, 2024 11:18 PM)
 title: How to Actually Learn
 ---

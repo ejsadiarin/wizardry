@@ -3,7 +3,7 @@ id: bootstrapping-k3s-with-cilium
 aliases: []
 tags:
   - Kubernetes
-  - How To
+  - How-To
 date: 2024-03-17-1007 (March 17, 2024 10:07 AM)
 title: Bootstrapping K3s with Cilium
 ---

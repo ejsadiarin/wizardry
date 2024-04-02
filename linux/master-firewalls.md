@@ -1,10 +1,13 @@
 ---
-title: Guide to Mastering Firewalls
+id: master-firewalls
+aliases: []
+tags:
+  - Linux
+  - Firewall
+  - Security
+  - How-To
 date: 2024-03-07-2205 (March 8, 2024 10:05 PM)
-tags: 
-- Linux
-- Firewall
-- Security
+title: Guide to Mastering Firewalls
 ---
 
 # Guide to Mastering Firewall Configuration

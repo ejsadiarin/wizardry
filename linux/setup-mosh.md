@@ -5,7 +5,7 @@ tags:
   - Mosh
   - Linux
   - Server
-  - How To
+  - How-To
 date: 2024-02-06-1847 (February 6, 2024 6:47 PM)
 title: How to Setup Mosh
 ---

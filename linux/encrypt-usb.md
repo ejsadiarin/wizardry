@@ -1,11 +1,14 @@
 ---
-title: Encrypt USB (with LUKS and cryptsetup)
-date: 2024-02-17-2205 (February 17, 2024 10:05 PM)
+id: encrypt-usb
+aliases: []
 tags:
-- Linux
-- Security
-- Encryption
-- USB
+  - Linux
+  - Security
+  - Encryption
+  - USB
+  - How-To
+date: 2024-02-17-2205 (February 17, 2024 10:05 PM)
+title: Encrypt USB (with LUKS and cryptsetup)
 ---
 
 # Daily Usage (via CLI)

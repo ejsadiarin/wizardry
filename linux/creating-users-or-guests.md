@@ -1,8 +1,11 @@
 ---
-title: Creating Users or Guests to a Linux Machine
+id: creating-users-or-guests
+aliases: []
+tags:
+  - System Administration
+  - How-To
 date: 2024-03-28-1509 (March 28, 2024 3:09 PM)
-tags: 
-- System Administration
+title: Creating Users or Guests to a Linux Machine
 ---
 
 # Creating Users or Guests to a Linux Machine

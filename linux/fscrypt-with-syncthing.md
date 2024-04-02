@@ -5,7 +5,7 @@ tags:
   - Encryption
   - Syncthing
   - Linux
-  - How To
+  - How-To
 date: 2024-02-10-15:18 (February 10, 2024 3:18 PM)
 title: fscrypt with Syncthing
 ---

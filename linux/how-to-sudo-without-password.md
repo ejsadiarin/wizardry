@@ -4,7 +4,7 @@ aliases: []
 tags:
   - Linux
   - Recovery
-  - How To
+  - How-To
 date: 2024-03-28-1452 (March 28, 2024 2:52 PM)
 title: How to `sudo` without password (recovery guide)
 ---

@@ -3,7 +3,7 @@ id: ssh-nc
 aliases: []
 tags:
   - Wizardry
-  - How To
+  - How-To
 date: 2024-02-22 22:18 (February 22, 2024 10:18 PM)
 title: SSH + nc
 ---

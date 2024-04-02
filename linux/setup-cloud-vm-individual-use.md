@@ -1,10 +1,13 @@
 ---
-title: Setting Up a Cloud VM for Individual Use
-date: 2024-02-06-1919 (February 6, 2024 7:19 PM)
+id: setup-cloud-vm-individual-use
+aliases: []
 tags:
-- Linux
-- Server
-- Cloud
+  - Linux
+  - Server
+  - Cloud
+  - How-To
+date: 2024-02-06-1919 (February 6, 2024 7:19 PM)
+title: Setting Up a Cloud VM for Individual Use
 ---
 
 # Setting Up a Cloud VM for Individual Use

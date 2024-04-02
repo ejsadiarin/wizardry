@@ -1,12 +1,15 @@
 ---
-title: The Perfect Grade Password Store
-date: 2024-02-10-18:22 (February 10, 2024 6:22 PM)
+id: perfect-grade-password-store
+aliases: []
 tags:
-- Security
-- CLI (pass, gpg)
-- Linux
-- Password
-- OTP, 2FA, MFA
+  - Security
+  - CLI (pass, gpg)
+  - Linux
+  - Password
+  - OTP, 2FA, MFA
+  - How-To
+date: 2024-02-10-18:22 (February 10, 2024 6:22 PM)
+title: The Perfect Grade Password Store
 ---
 
 # The Perfect Grade Password Store

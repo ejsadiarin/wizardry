@@ -1,9 +1,12 @@
 ---
-title: SSH Wizardry
+id: ssh-wizardry
+aliases: []
+tags:
+  - SSH
+  - Wizardry
+  - How-To
 date: 2024-03-12-1507 (March 12, 2024 3:07 PM)
-tags: 
-- SSH
-- Wizardry
+title: SSH Wizardry
 ---
 
 # SSH Wizardry (The Only Guide You'll Ever Need)

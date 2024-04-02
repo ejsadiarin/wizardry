@@ -3,7 +3,7 @@ id: clean-ways-to-append-text-to-file
 aliases: []
 tags:
   - Linux
-  - How To
+  - How-To
 date: 2024-02-06-1210 (February 6, 2024 12:10 PM)
 title: Clean ways to append text to a file
 ---

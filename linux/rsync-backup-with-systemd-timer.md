@@ -1,10 +1,13 @@
 ---
-title: Rsync Backup with Systemd Timer
-date: 2024-02-24-20:37 (February 24, 2024 8:37 PM)
+id: rsync-backup-with-systemd-timer
+aliases: []
 tags:
-- Backup
-- Systemd
-- Linux
+  - Backup
+  - Systemd
+  - Linux
+  - How-To
+date: 2024-02-24-20:37 (February 24, 2024 8:37 PM)
+title: Rsync Backup with Systemd Timer
 ---
 
 # Rsync Backup with Systemd Timer

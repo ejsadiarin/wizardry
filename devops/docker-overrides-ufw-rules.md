@@ -1,11 +1,14 @@
 ---
-title: Docker overrides ufw and iptables rules by injecting it's own rules
-date: 2024-02-22 21:30 (February 22, 2024 9:30 PM)
+id: docker-overrides-ufw-rules
+aliases: []
 tags:
-- Docker
-- Security
-- Debug
-- Containers
+  - Docker
+  - Security
+  - Debug
+  - Containers
+  - How-To
+date: 2024-02-22 21:30 (February 22, 2024 9:30 PM)
+title: Docker overrides ufw and iptables rules by injecting it's own rules
 ---
 
 # Docker overriding UFW rules and iptables issue

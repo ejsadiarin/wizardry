@@ -1,12 +1,15 @@
 ---
-title: Using pass-otp for 2FA, MFA, OTP authentication
-date: 2024-02-10-19:15 (February 10, 2024 7:15 PM)
+id: use-pass-for-2FA-MFA-otp-auth
+aliases: []
 tags:
-- Security
-- CLI (pass, gpg)
-- Linux
-- Password
-- OTP, 2FA, MFA
+  - Security
+  - CLI (pass, gpg)
+  - Linux
+  - Password
+  - OTP, 2FA, MFA
+  - How-To
+date: 2024-02-10-19:15 (February 10, 2024 7:15 PM)
+title: Using pass-otp for 2FA, MFA, OTP authentication
 ---
 
 # Using pass-otp for 2FA, MFA, OTP authentication

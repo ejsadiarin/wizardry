@@ -1,9 +1,12 @@
 ---
-title: Docker Containers Access Tailscale Network
+id: docker-access-tailscale-network
+aliases: []
+tags:
+  - Docker
+  - Tailscale
+  - How-To
 date: 2024-03-03-1823 (March 3, 2024 6:23 PM)
-tags: 
-- Docker
-- Tailscale
+title: Docker Containers Access Tailscale Network
 ---
 
 # Docker Containers Access Tailscale Network

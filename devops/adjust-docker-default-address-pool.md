@@ -1,10 +1,21 @@
-This is for people who are either new to using docker or who haven't been bitten by this issue yet.
+---
+id: adjust-docker-default-address-pool
+aliases: []
+tags:
+  - How-To
+date: 2024-02-25 4:05 PM (February 25, 2024 4:05 PM)
+title: Ad just Docker Default Address Pool
+---
+
+# Adjust Docker Default Address Pool
+
+- This is for people who are either new to using docker or who haven't been bitten by this issue yet.
 
 When you create a network in docker it's default size is /20. That's 4,094 usable addresses. Now obviously that is overkill for a home network. By default it will use the 172.16.0.0/12 address range but when that runs out, it will eat into the 192.168.0.0/16 range which a lot of home networks use, including mine.
 
-My recommendation is to adjust the default pool size to something more sane like /24 (254 usable addresses). You can do this by editing the /etc/docker/daemon.json file and restarting the docker service.
+- My recommendation is to adjust the default pool size to something more sane like /24 (254 usable addresses). You can do this by editing the /etc/docker/daemon.json file and restarting the docker service.
 
-The file will look something like this:
+**The file will look something like this:**
 ```json
 {
   "log-level": "warn",

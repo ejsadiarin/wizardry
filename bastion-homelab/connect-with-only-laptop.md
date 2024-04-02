@@ -3,7 +3,7 @@ id: connect-with-only-laptop
 aliases: []
 tags:
   - Homelab
-  - How To
+  - How-To
 date: 2024-03-08-1814 (March 8, 2024 6:14 PM)
 title: Connect to a Mini PC with Only a Laptop
 ---
