@@ -7,9 +7,9 @@
 # TODO: 3: move wizardry and ejs to obsidian vault then sync the vault
 
 usb_mountpoint="/mnt/$(whoami)/ejsmain"
-wizardry_sms="$HOME/wizardry/scripts-magic-spells"
+wizardry_sms="$HOME/vault/wizardry/scripts-magic-spells"
 dotfiles_sms="$HOME/dotfiles/scripts-magic-spells"
-wizardry="$HOME/wizardry"
+wizardry="$HOME/vault/wizardry"
 dotfiles="$HOME/dotfiles"
 ejs="$HOME/ejs"
 sync_lock="$HOME/Sync/Lock"

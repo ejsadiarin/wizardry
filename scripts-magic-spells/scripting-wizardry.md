@@ -1,10 +1,12 @@
 ---
-title: Scripting Wizardry
-date: 2024-02-18-0004 (February 18, 2024 12:04 AM)
+id: scripting-wizardry
+aliases: []
 tags:
-- Linux
-- Bash
-- Scripting
+  - Linux
+  - Bash
+  - Scripting
+date: 2024-02-18-0004 (February 18, 2024 12:04 AM)
+title: Scripting Wizardry
 ---
 
 # Scripting Wizardry - The Only Practical Guide You'll Ever Need
@@ -30,7 +32,7 @@ fd -tf -tx --glob ",*" --search-path $HOME -x basename {} | awk '!seen[$0]++' | 
 find $HOME -type f -executable -name ",*" -exec basename {} \; | awk '!seen[$0]++' | fzf
 
 # finds all custom scripts with fzf --preview (extensible with a custom script)
-fd -tf -tx --glob ",*" --search-path $HOME/wizardry/scripts-magic-spells | awk '!seen[$0]++' | fzf --header "Select script to cat" --preview 'head -$LINES {}'
+fd -tf -tx --glob ",*" --search-path $HOME/vault/wizardry/scripts-magic-spells | awk '!seen[$0]++' | fzf --header "Select script to cat" --preview 'head -$LINES {}'
 
 # fzf all commands in system and see its documentation via man pages
 compgen -c | fzf | xargs man
