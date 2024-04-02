@@ -4,26 +4,25 @@
 
 # TODO: 1: read input with options (sync all or sync specific dirs)
 # TODO: 2: add flags support
-# TODO: 3: move wizardry and ejs to obsidian vault then sync the vault
 
 usb_mountpoint="/mnt/$(whoami)/ejsmain"
 wizardry_sms="$HOME/vault/wizardry/scripts-magic-spells"
 dotfiles_sms="$HOME/dotfiles/scripts-magic-spells"
-wizardry="$HOME/vault/wizardry"
+vault="$HOME/vault"
 dotfiles="$HOME/dotfiles"
-ejs="$HOME/ejs"
 sync_lock="$HOME/Sync/Lock"
 reddit="$HOME/Sync/reddit"
 pkse_desktop="$HOME/Pictures/pkse"
 screenshots_desktop="$HOME/Pictures/ScreenShots"
 
 dirs_to_sync_usb=(
-	"$wizardry_sms"
-	"$ejs"
+	"$vault"
 	"$sync_lock"
+	"$dotfiles"
 	"$reddit"
 	"$pkse_desktop"
 	"$screenshots_desktop"
+	"$wizardry_sms"
 )
 
 set -e
@@ -57,6 +56,14 @@ for dir in "${dirs_to_sync_usb[@]}"; do
 			echo "[ SYNCING USB ] NEW: Lock-encrypt directory..."
 			sudo rsync -auz "$sync_lock" "$usb_mountpoint"/Lock-encrypt
 
+		elif [[ "$dir" == "$vault" ]]; then
+			echo "[ SYNCING USB ] NEW: VAULT..."
+			sudo rsync -auzv "$dir" "$usb_mountpoint"
+
+		elif [[ "$dir" == "$dotfiles" ]]; then
+			echo "[ SYNCING USB ] Dotfiles..."
+			sudo rsync -auzv "$dir" "$usb_mountpoint"
+
 		elif [[ "$dir" == "$pkse_desktop" ]]; then
 			echo "[ SYNCING USB ] NEW: exquisite pics..."
 			sudo rsync -auz "$dir" "$usb_mountpoint"
@@ -64,10 +71,6 @@ for dir in "${dirs_to_sync_usb[@]}"; do
 		elif [[ "$dir" == "$screenshots_desktop" ]]; then
 			echo "[ SYNCING USB ] NEW: personal screenshots..."
 			sudo rsync -auz "$dir" "$usb_mountpoint"
-
-		elif [[ "$dir" == "$ejs" ]]; then
-			echo "[ SYNCING USB ] NEW: personal ejs..."
-			sudo rsync -auzv "$dir" "$usb_mountpoint"
 
 		elif [[ "$dir" == "$reddit" ]]; then
 			echo "[ SYNCING USB ] NEW: personal reddit..."
@@ -95,6 +98,14 @@ for dir in "${dirs_to_sync_usb[@]}"; do
 				echo "[ SYNCING USB ] Lock-encrypt directory..."
 				sudo rsync -auz "$sync_lock/" "$usb_mountpoint"/Lock-encrypt/ # | pv -ptrb --size "$(du -sb "$sync_lock" | awk '{print $1}')
 
+			elif [[ "$dir" == "$vault" ]]; then
+				echo "[ SYNCING USB ] VAULT..."
+				sudo rsync -auzv "$dir/" "$usb_mountpoint/$basename_dir/"
+
+			elif [[ "$dir" == "$dotfiles" ]]; then
+				echo "[ SYNCING USB ] Dotfiles..."
+				sudo rsync -auzv "$dir/" "$usb_mountpoint/$basename_dir/"
+
 			elif [[ "$dir" == "$pkse_desktop" ]]; then
 				echo "[ SYNCING USB ] exquisite pics..."
 				sudo rsync -auz "$dir/" "$usb_mountpoint/$basename_dir/"
@@ -106,10 +117,6 @@ for dir in "${dirs_to_sync_usb[@]}"; do
 			elif [[ "$dir" == "$screenshots_desktop" ]]; then
 				echo "[ SYNCING USB ] exquisite screenshots..."
 				sudo rsync -auz "$dir/" "$usb_mountpoint/$basename_dir/"
-
-			elif [[ "$dir" == "$ejs" ]]; then
-				echo "[ SYNCING USB ] personal ejs..."
-				sudo rsync -auzv "$dir/" "$usb_mountpoint/$basename_dir/"
 
 			elif [[ "$dir" == "$reddit" ]]; then
 				echo "[ SYNCING USB ] personal reddit..."
