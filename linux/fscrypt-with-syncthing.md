@@ -1,10 +1,13 @@
 ---
-title: fscrypt with Syncthing
-date: 2024-02-10-15:18 (February 10, 2024 3:18 PM)
+id: fscrypt-with-syncthing
+aliases: []
 tags:
-- Encryption
-- Syncthing
-- Linux
+  - Encryption
+  - Syncthing
+  - Linux
+  - How To
+date: 2024-02-10-15:18 (February 10, 2024 3:18 PM)
+title: fscrypt with Syncthing
 ---
 
 # Using fscrypt with Syncthing

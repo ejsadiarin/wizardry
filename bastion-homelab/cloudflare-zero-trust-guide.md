@@ -1,8 +1,11 @@
 ---
-title: Securely gain access to locally self-hosted services with Cloudflare Zero Trust
+id: cloudflare-zero-trust-guide
+aliases: []
+tags:
+  - Cloudflare
+  - How To
 date: 2024-03-25-1508 (Mrach 25, 2024 3:08 PM)
-tags: 
-- Cloudflare
+title: Securely gain access to locally self-hosted services with Cloudflare Zero Trust
 ---
 
 # Securely gain access to locally self-hosted services with Cloudflare Zero Trust

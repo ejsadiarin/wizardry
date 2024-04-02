@@ -1,12 +1,15 @@
 ---
-title: Mosh with Tailscale
-date: 2024-02-07-2235 (February 7, 2024 at 10:35 PM)
+id: mosh-with-tailscale
+aliases: []
 tags:
-- Tailscale
-- Mosh
-- Linux
-- Homelab
-- Bastion
+  - Tailscale
+  - Mosh
+  - Linux
+  - Homelab
+  - Bastion
+  - How To
+date: 2024-02-07-2235 (February 7, 2024 at 10:35 PM)
+title: Mosh with Tailscale
 ---
 
 # Using Mosh instead of SSH with Tailscale

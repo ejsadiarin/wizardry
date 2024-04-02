@@ -1,10 +1,12 @@
 ---
-title: Frieren Beyond Journey's End
+id: frieren
+aliases: []
+tags:
+  - Frieren
+  - Anime
+  - Favorites
 date: 2024-03-10-1804 (March 10, 2024 6:04 PM)
-tags: 
-- Frieren
-- Anime
-- Favorites
+title: Frieren Beyond Journey's End
 ---
 
 # Frieren: Beyond Journey's End
@@ -41,7 +43,7 @@ tags:
 i want to be immortalized through my influence, impact, and positivity i shared with other people. 
 collect scripts (and tech tools) just like how frieren collects grimoires (and magic tools)
 
-![iconic](/2024-03-18_14-39.png)
+![iconic](./2024-03-18_14-39.png)
 
 - update March 23, 2024 6:45 PM: no more frieren fridays, last episode. But a tearful farewell doesn't suit us, because I'd be embarrassing if we meet again
 

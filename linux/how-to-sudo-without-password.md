@@ -1,9 +1,12 @@
 ---
-title: How to `sudo` without password (recovery guide)
+id: how-to-sudo-without-password
+aliases: []
+tags:
+  - Linux
+  - Recovery
+  - How To
 date: 2024-03-28-1452 (March 28, 2024 2:52 PM)
-tags: 
-- Linux
-- Recovery
+title: How to `sudo` without password (recovery guide)
 ---
 
 # How to `sudo` without password (recovery guide)

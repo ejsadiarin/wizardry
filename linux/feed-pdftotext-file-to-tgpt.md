@@ -1,8 +1,11 @@
 ---
-title: Feed pdftotext file to TGPT
+id: feed-pdftotext-file-to-tgpt
+aliases: []
+tags:
+  - Productivity
+  - How To
 date: 2024-03-01-2100 (March 1, 2024 9:00 PM)
-tags: 
-- Productivity
+title: Feed pdftotext file to TGPT
 ---
 
 # Using pdftotext and tgpt together

@@ -1,9 +1,12 @@
 ---
-title: How to get the whole System Information in a Linux Machine
+id: get-system-info
+aliases: []
+tags:
+  - System Information
+  - Linux
+  - How To
 date: 2024-03-13-1923 (March 13, 2024 7:23 PM)
-tags: 
-- System Information
-- Linux
+title: How to get the whole System Information in a Linux Machine
 ---
 
 # How to get the whole System Information in a Linux Machine

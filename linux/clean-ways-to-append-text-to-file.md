@@ -1,8 +1,11 @@
 ---
-title: Clean ways to append text to a file
-date: 2024-02-06-1210 (February 6, 2024 12:10 PM)
+id: clean-ways-to-append-text-to-file
+aliases: []
 tags:
-- Linux
+  - Linux
+  - How To
+date: 2024-02-06-1210 (February 6, 2024 12:10 PM)
+title: Clean ways to append text to a file
 ---
 
 # Appending text to a file (no text editor, perfect for scripts)

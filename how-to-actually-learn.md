@@ -1,8 +1,11 @@
 ---
-title: How to Actually Learn
-date: 2024-02-11-2318 (February 11, 2024 11:18 PM)
+id: how-to-actually-learn
+aliases: []
 tags:
-- Learning
+  - Learning
+  - How To
+date: 2024-02-11-2318 (February 11, 2024 11:18 PM)
+title: How to Actually Learn
 ---
 
 # Pre-learning Phase (Preparation/Planning)
