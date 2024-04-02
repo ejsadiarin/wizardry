@@ -14,3 +14,4 @@ tags:
   - Counter (worst outcome): recruiter will say "If I'm going to hire you, then we'll know".
 
 ### Test
+![[social-engineering/test.md]]

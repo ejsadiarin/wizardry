@@ -10,7 +10,7 @@ fi
 from_sourcedir="$1"
 to_destdir="$2"
 
-mkdir -p "$to_destdir"
+mkdir -p "$to_destdir/assets"
 
 echo "Extracting..."
 
@@ -20,25 +20,28 @@ while IFS= read -r -d '' dir; do
 	dir_with_assets+=("$dir")
 	dirname=$(basename "$dir")
 
-	# Rename images to their directory name and move them to to_destdir/assets
+	# Rename images to their directory name and move them to to_destdir
 	find "$dir" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.mov" -o -iname "*.webp" -o -iname "*.gif" -o -iname "*.mp4" \) -print0 | while IFS= read -r -d '' file; do
-		# Rename images to their directory name and move them to to_destdir/assets
 		filename=$(basename "$file")
-		new_filename="$to_destdir/$dirname-${filename// /_}" # Replace spaces with underscores
-		mv -n "$file" "$new_filename"
-		echo "Moved $file to $new_filename"
-	done
+		new_filename="$dirname-${filename// /_}" # Replace spaces with underscores
+		# If file already exists, append a random number to the filename
+		while [ -f "${to_destdir}/assets/${new_filename}" ]; do
+			new_filename="$dirname-${filename// /_}-${RANDOM}"
+		done
+		mv "$file" "${to_destdir}/assets/${new_filename}"
+		echo "Moved $file to ${to_destdir}/assets/${new_filename}"
 
-	# Handle renaming image references in markdown files
-	echo "Updating image references in markdown files..."
-	find "$from_sourcedir" -type f -name "$dirname.md" -print0 | while IFS= read -r -d '' file; do
-		# Update image references in markdown files
-		sed -i "s/!\[.*\](.*\/)*Untitled[[:space:]]*\(\.jpg\|\.jpeg\|\.png\|\.mov\|\.webp\|\.gif\|\.mp4\)/![${dirname}](${to_destdir}\/${dirname}-/g" "$file"
+		# Handle renaming image references in markdown files
+		echo "Updating image references in markdown files..."
+		find "$from_sourcedir" -type f -name "$dirname.md" -print0 | while IFS= read -r -d '' mdfile; do
+			# Update image references in markdown files
+			sed -i "s/!\[.*\](.*\/)*Untitled[[:space:]]*\(\.jpg\|\.jpeg\|\.png\|\.mov\|\.webp\|\.gif\|\.mp4\)/![${dirname}](${to_destdir// /%20}\/assets\/${new_filename// /%20})/g" "$mdfile"
+		done
 	done
-
-	# Remove empty directories
-	find "$dir" -depth -type d -exec rmdir {} + 2>/dev/null || true
 done < <(find "$from_sourcedir" -mindepth 1 -maxdepth 1 -type d -print0)
+
+# Remove empty directories
+find "$from_sourcedir" -type d -empty -delete
 
 if [ ${#dir_with_assets[@]} -eq 0 ]; then
 	echo "Error: No directories found."
