@@ -36,7 +36,13 @@ notify-send "Get some coffee" "Automation is peak."
 
 # sync scripts magic spells to dotfiles
 echo "[ SYNCING ] scripts magic spells..."
-sudo rsync -auzv --delete "$wizardry_sms" "$dotfiles_sms"
+if [ ! -d "$dotfiles_sms/scripts-magic-spells" ]; then
+	# if new then add
+	sudo rsync -auzv "$wizardry_sms" "$dotfiles_sms"
+else
+	# just sync the files
+	sudo rsync -auzv --delete "$wizardry_sms"/ "$dotfiles_sms"/
+fi
 
 # ############################ #
 #           USB SYNC           #
