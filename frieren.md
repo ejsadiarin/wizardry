@@ -38,7 +38,6 @@ title: Frieren Beyond Journey's End
 - damn foking hitting in the gspot feels bruv
 - then go on listen to the whole WITH You-th album by TWICE
 
-
 # My Ultimate Goal
 i want to be immortalized through my influence, impact, and positivity i shared with other people. 
 collect scripts (and tech tools) just like how frieren collects grimoires (and magic tools)
