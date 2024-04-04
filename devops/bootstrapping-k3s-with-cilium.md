@@ -4,9 +4,10 @@ aliases: []
 tags:
   - Kubernetes
   - How-To
-date: 2024-03-17-1007 (March 17, 2024 10:07 AM)
+date: 2024-03-17T10:07
 title: Bootstrapping K3s with Cilium
 ---
+<!-- 2024-03-17-1007 (March 17, 2024 10:07 AM) -->
 
 # Bootstrapping K3s with Cilium
 - original blog: [here](https://blog.stonegarden.dev/articles/2024/02/bootstrapping-k3s-with-cilium/)

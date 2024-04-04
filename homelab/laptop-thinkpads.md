@@ -1,8 +1,10 @@
 ---
-title: Choose the right ThinkPad laptop for IT
+id: laptop-thinkpads
+aliases: []
+tags:
+  - Laptops
 date: 2024-03-25-1128 (March 25, 2024 11:28 AM)
-tags: 
-- Laptops
+title: Choose the right ThinkPad laptop for IT
 ---
 
 # Choose the right ThinkPad laptop for IT

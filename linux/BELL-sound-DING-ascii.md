@@ -1,10 +1,13 @@
 ---
+id: BELL-sound-DING-ascii
+aliases: []
+tags:
+  - ASCII magic
+  - meme
+date: 2024-03-06T01:09
 title: the echo ^G or echo $'\x07'
-date: 2024-03-06-0109 (March 6, 2024 1:09 AM)
-tags: 
-- ASCII magic
-- meme
 ---
+<!-- 2024-03-06-0109 (March 6, 2024 1:09 AM) -->
 
 # Just some DING!
 - using `ctrl + G`:

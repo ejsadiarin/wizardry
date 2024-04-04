@@ -1,10 +1,13 @@
 ---
-title: Mosh - The Mobile Shell
-date: 2024-02-06-1707 (February 6, 2024 5:07 PM)
+id: mosh
+aliases: []
 tags:
-- Linux
-- SSH
+  - Linux
+  - SSH
+date: 2024-02-06T17:07
+title: Mosh - The Mobile Shell
 ---
+<!-- 2024-02-06-1707 (February 6, 2024 5:07 PM) -->
 
 # Mosh - The Mobile Shell
 - Mosh is a remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes. 

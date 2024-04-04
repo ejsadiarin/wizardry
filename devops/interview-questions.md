@@ -1,8 +1,10 @@
 ---
-title: SRE/DevOps Interview Questions
+id: interview-questions
+aliases: []
+tags:
+  - Interview
 date: 2024-03-25-1111 (March 25, 2024 11:11 AM)
-tags: 
-- Interview
+title: SRE/DevOps Interview Questions
 ---
 
 # SRE/DevOps Interview Questions

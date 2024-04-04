@@ -1,9 +1,12 @@
 ---
-title: GPG
-date: 2024-02-10-16:00 (February 10, 2024 4:00 PM)
+id: gpg
+aliases: []
 tags:
-- Encryption
+  - Encryption
+date: 2024-02-10T16:00
+title: GPG
 ---
+<!-- 2024-02-10-1600 (February 10, 2024 4:00 PM) -->
 
 # GPG with GnuPG
 

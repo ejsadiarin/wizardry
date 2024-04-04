@@ -1,3 +1,9 @@
+---
+id: the-utimate-dashboard
+aliases: []
+tags: []
+---
+
 has all the syncs and monitoring to everything:
 - still encouraged to modify/write (read-only in the dashboard) in the actual web app of the service itself (think on this)
 

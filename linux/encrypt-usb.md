@@ -7,9 +7,10 @@ tags:
   - Encryption
   - USB
   - How-To
-date: 2024-02-17-2205 (February 17, 2024 10:05 PM)
+date: 2024-02-17T22:05
 title: Encrypt USB (with LUKS and cryptsetup)
 ---
+<!-- 2024-02-17-2205 (February 17, 2024 10:05 PM) -->
 
 # Daily Usage (via CLI)
 - Opening the Encrypted USB:

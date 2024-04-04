@@ -6,9 +6,10 @@ tags:
   - Systemd
   - Linux
   - How-To
-date: 2024-02-24-20:37 (February 24, 2024 8:37 PM)
+date: 2024-02-24T20:37
 title: Rsync Backup with Systemd Timer
 ---
+<!-- 2024-02-24-2037 (February 24, 2024 8:37 PM) -->
 
 # Rsync Backup with Systemd Timer
 > I have a systemd timer that runs every 3 days that backs up to a server with rsync, here's the setup:

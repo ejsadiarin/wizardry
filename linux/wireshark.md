@@ -1,11 +1,15 @@
 ---
-title: Wireshark
-date: 2024-02-20-2154 (February 20, 2024 9:54 PM)
+id: wireshark
+aliases: []
 tags:
-- Security
-- Networking
-- Linux
+  - Security
+  - Networking
+  - Linux
+date: 2024-02-20T21:54
+title: Wireshark
 ---
+<!-- 2024-02-20-2154 (February 20, 2024 9:54 PM) -->
+
 # Wireshark
 - wireshark is a network protocol analyzer
 - tracking network packets

@@ -3,9 +3,10 @@ id: how-to-generate-date
 aliases: []
 tags:
   - How-To
-date: 2024-04-03 (April 03, 2024 10:01:55 PM)
+date: 2024-04-03T22:01
 title: How to Generate (Format) Date and Time
 ---
+<!-- 2024-04-03 (April 03, 2024 10:01:55 PM) -->
 
 |   Format String   |         Example Output               |
 | ----------------- | ---------------------------------    |
@@ -23,7 +24,7 @@ title: How to Generate (Format) Date and Time
 
 - generate: `2024-04-03-2156 (April 03, 2024 09:56:19 PM)`
 ```bash
-:pu=strftime('%Y-%m-%d (%B %d, %Y %X)')
+:pu=strftime('%Y-%m-%d-%H%M (%B %d, %Y %X)')
 # or (%F works only on some systems)
 :pu=strftime('%F-%H%M (%B %d, %Y %X)')
 ```

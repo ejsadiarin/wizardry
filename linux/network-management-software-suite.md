@@ -1,9 +1,12 @@
 ---
+id: network-management-software-suite
+aliases: []
+tags:
+  - Networking
+date: 2024-03-10T15:40
 title: Network Management Software Suite
-date: 2024-03-10-1540 (March 10, 2024 3:40 PM)
-tags: 
-- Networking
 ---
+<!-- 2024-03-10-1540 (March 10, 2024 3:40 PM) -->
 
 # Basic Network Management Suite
 - monitor (and set up the right alerts):

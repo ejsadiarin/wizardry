@@ -1,9 +1,12 @@
 ---
+id: iperf-measuring-bandwidth
+aliases: []
+tags:
+  - Network Bandwidth Performance
+date: 2024-03-10T10:51
 title: iperf for measuring network bandwidth between computers
-date: 2024-03-10-1051 (March 10, 2024 10:51 AM)
-tags: 
-- Network Bandwidth Performance
 ---
+<!-- 2024-03-10-1051 (March 10, 2024 10:51 AM) -->
 
 # iperf
 - Measure network bandwidth between computers.

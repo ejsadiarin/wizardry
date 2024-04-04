@@ -1,3 +1,9 @@
+---
+id: README
+aliases: []
+tags: []
+---
+
 
 
 ## Stages of Homelabbing

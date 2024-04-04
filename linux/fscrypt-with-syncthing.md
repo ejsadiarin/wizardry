@@ -6,9 +6,10 @@ tags:
   - Syncthing
   - Linux
   - How-To
-date: 2024-02-10-15:18 (February 10, 2024 3:18 PM)
+date: 2024-02-10T15:18
 title: fscrypt with Syncthing
 ---
+<!-- 2024-02-10-1518 (February 10, 2024 3:18 PM) -->
 
 # Using fscrypt with Syncthing
 1. since fscrypt encrypts directories when locked (obsfucates the file names and contents), you want to sync when it is "unlocked"

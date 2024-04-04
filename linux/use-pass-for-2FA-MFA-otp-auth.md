@@ -8,9 +8,10 @@ tags:
   - Password
   - OTP, 2FA, MFA
   - How-To
-date: 2024-02-10-19:15 (February 10, 2024 7:15 PM)
+date: 2024-02-10T19:15
 title: Using pass-otp for 2FA, MFA, OTP authentication
 ---
+<!-- 2024-02-10-1915 (February 10, 2024 7:15 PM) -->
 
 # Using pass-otp for 2FA, MFA, OTP authentication
 - install `pass` (password manager) and `pass-otp` (for TOTP support)

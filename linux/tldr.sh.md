@@ -1,11 +1,14 @@
 ---
-title: TLDR.sh (man but simpler)
-date: 2024-02-03-1733 (February 03, 2024 05:33 PM)
+id: tldr.sh
+aliases: []
 tags:
-- Linux
-- Terminal
-- Tools and Utils
+  - Linux
+  - Terminal
+  - Tools and Utils
+date: 2024-02-03T17:33
+title: TLDR.sh (man but simpler)
 ---
+<!-- 2024-02-03-1733 (February 03, 2024 05:33 PM) -->
 
 # TLDR.sh
 - [tldr](https://tldr.sh/)

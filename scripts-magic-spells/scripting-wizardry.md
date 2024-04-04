@@ -5,9 +5,10 @@ tags:
   - Linux
   - Bash
   - Scripting
-date: 2024-02-18-0004 (February 18, 2024 12:04 AM)
+date: 2024-02-18T00:04
 title: Scripting Wizardry
 ---
+<!-- 2024-02-18-0004 (February 18, 2024 12:04 AM) -->
 
 # Scripting Wizardry - The Only Practical Guide You'll Ever Need
 - become a wizard in the terminal/shell

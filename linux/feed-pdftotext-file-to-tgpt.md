@@ -4,9 +4,10 @@ aliases: []
 tags:
   - Productivity
   - How-To
-date: 2024-03-01-2100 (March 1, 2024 9:00 PM)
+date: 2024-03-01T21:00
 title: Feed pdftotext file to TGPT
 ---
+<!-- 2024-03-01-2100 (March 1, 2024 9:00 PM) -->
 
 # Using pdftotext and tgpt together
 - use `tldr` for quick reference

@@ -1,10 +1,12 @@
 ---
-title: (Almost) Every infrastructure decision I endorse or regret after 4 years running infrastructure at a startup
+id: infra-decisions-at-startup
+aliases: []
+tags:
+  - Infrastructure
+  - AWS
+  - DevOps
 date: 2024-03-25-1502 (March 25, 2024 3:02 PM)
-tags: 
-- Infrastructure
-- AWS
-- DevOps
+title: (Almost) Every infrastructure decision I endorse or regret after 4 years running infrastructure at a startup
 ---
 
 # (Almost) Every infrastructure decision I endorse or regret after 4 years running infrastructure at a startup

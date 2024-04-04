@@ -1,9 +1,11 @@
 ---
-title: Golang Scripting
+id: go-scripting
+aliases: []
+tags:
+  - Scripting
+  - Go
 date: 2024-03-17-1536 (March 17 2024 3:36 PM)
-tags: 
-- Scripting
-- Go
+title: Golang Scripting
 ---
 
 # Read These:

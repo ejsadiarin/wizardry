@@ -1,9 +1,12 @@
 ---
+id: perfect-backup-strategy
+aliases: []
+tags:
+  - Backups
+date: 2024-03-12T10:39
 title: Perfect Backup Strategy
-date: 2024-03-12-1039 (March 12, 2024 10:39 AM)
-tags: 
-- Backups
 ---
+<!-- 2024-03-12-1039 (March 12, 2024 10:39 AM) -->
 
 # Perfect Backup Strategy
 opts:

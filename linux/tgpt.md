@@ -1,12 +1,15 @@
 ---
-title: tgpt
-date: 2024-02-02-2222 (February 02, 2024 10:22 PM)
+id: tgpt
+aliases: []
 tags:
-- Chatbot
-- AI
-- Tools and Utils
-- Terminal
+  - Chatbot
+  - AI
+  - Tools and Utils
+  - Terminal
+date: 2024-02-02T22:22
+title: tgpt
 ---
+<!-- 2024-02-02-2222 (February 02, 2024 10:22 PM) -->
 
 # TGPT
 ### [tgpt](https://github.com/aandrew-me/tgpt)

@@ -1,11 +1,13 @@
 ---
-title: Go Networking Wizardry
+id: go-networking-wizardry
+aliases: []
+tags:
+  - Go
+  - Leap Year btw
+  - Networking
+  - Wizardry
 date: 2024-02-29-2223 (February 29, 2024 10:23 PM)
-tags: 
-- Go
-- Leap Year btw
-- Networking
-- Wizardry
+title: Go Networking Wizardry
 ---
 
 # Go Networking Wizardry - The Only Practical Guide You'll Ever Need

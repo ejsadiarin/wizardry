@@ -6,9 +6,10 @@ tags:
   - Linux
   - Server
   - How-To
-date: 2024-02-06-1847 (February 6, 2024 6:47 PM)
+date: 2024-02-06T18:47
 title: How to Setup Mosh
 ---
+<!-- 2024-02-06-1847 (February 6, 2024 6:47 PM) -->
 
 # Use Cases
 - perfect combination with `tmux` for persistent sessions

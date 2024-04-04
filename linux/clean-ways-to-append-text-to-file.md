@@ -4,9 +4,10 @@ aliases: []
 tags:
   - Linux
   - How-To
-date: 2024-02-06-1210 (February 6, 2024 12:10 PM)
+date: 2024-02-06T12:10
 title: Clean ways to append text to a file
 ---
+<!-- 2024-02-06-1210 (February 6, 2024 12:10 PM) -->
 
 # Appending text to a file (no text editor, perfect for scripts)
 - `>>` - for appending text to a file

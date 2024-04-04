@@ -1,9 +1,12 @@
 ---
+id: lynis-security-audit
+aliases: []
+tags:
+  - System and Security Auditing
+date: 2024-03-10T10:45
 title: Lynix for system and security auditing
-date: 2024-03-10-1045 (March 10, 2024 10:45 AM)
-tags: 
-- System and Security Auditing
 ---
+<!-- 2024-03-10-1045 (March 10, 2024 10:45 AM) -->
 
 # Lynis
 - System and security auditing tool.

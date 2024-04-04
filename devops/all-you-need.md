@@ -1,9 +1,13 @@
 ---
-title: All you need to learn/adopt DevOps
-date: 2024-02-19-1336 (February 19, 2024 1:36 PM)
+id: all-you-need
+aliases: []
 tags:
-- DevOps
+  - DevOps
+date: 2024-02-19T13:36
+title: All you need to learn/adopt DevOps
 ---
+<!-- 2024-02-19-1336 (February 19, 2024 1:36 PM) -->
+
 # All you need to learn/adopt DevOps
 1. Everything should be centered around **automation** and **Git** (version control)
   - Understand Git *deeply*

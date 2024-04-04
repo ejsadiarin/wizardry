@@ -1,9 +1,11 @@
 ---
-title: Go Wizardry Ultimate
+id: go-wizardry-ultimate
+aliases: []
+tags:
+  - Go
+  - Wizardry
 date: 2024-03-20-2319 (March 20, 2023, 11:19 PM)
-tags: 
-- Go
-- Wizardry
+title: Go Wizardry Ultimate
 ---
 
 # Go Wizardry Ultimate Guide

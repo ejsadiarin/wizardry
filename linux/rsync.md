@@ -1,12 +1,15 @@
 ---
-title: Rsync
-date: 2024-02-10-22:54 (February 10, 2024 10:54 PM)
+id: rsync
+aliases: []
 tags:
-- Linux
-- CLI
-- File Transfer
-- Synchronization
+  - Linux
+  - CLI
+  - File Transfer
+  - Synchronization
+date: 2024-02-10T22:54
+title: Rsync
 ---
+<!-- 2024-02-10-2254 (February 10, 2024 10:54 PM) -->
 
 # Rsync
 - `rsync` is a file transfer and synchronization tool for Linux

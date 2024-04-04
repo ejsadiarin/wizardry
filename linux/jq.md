@@ -1,9 +1,13 @@
 ---
-title: jq - Command-line JSON magic
-date: 2024-02-09-1029 (February 9, 2024 10:29 AM)
+id: jq
+aliases: []
 tags:
-- CLI
+  - CLI
+date: 2024-02-09T10:29
+title: jq - Command-line JSON magic
 ---
+<!-- 2024-02-09-1029 (February 9, 2024 10:29 AM) -->
+
 # jq 
 - text manipulation tool for JSON data
 - perfect for filtering and transforming 

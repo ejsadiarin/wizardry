@@ -1,10 +1,11 @@
 ---
-title: Why does SSH freeze when idle?
-date: 2024-02-07-2114 (February 7, 2024 at 9:14 PM)
 tags:
-- SSH
-- Linux
+  - SSH
+  - Linux
+date: 2024-02-07T21:14
+title: Why does SSH freeze when idle?
 ---
+<!-- 2024-02-07-2114 (February 7, 2024 at 9:14 PM) -->
 
 # Why does SSH freeze when idle?
 - It disconnects after a while of inactivity.
@@ -33,7 +34,7 @@ ServerAliveInterval 60 # or ServerAliveInterval 100
 - save and restart the sshd service: `sudo service sshd restart` or `sudo service ssh restart`
 
 ## 2. use `mosh`
-- see [setup-mosh.md](/linux/setup-mosh.md)
+- see [[setup-mosh#setup]]
 
 ### NOTE
 > Whenever any modification is performed on a Production instance, please ensure to create a backup.

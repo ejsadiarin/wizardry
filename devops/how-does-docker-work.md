@@ -1,9 +1,11 @@
 ---
-title: How does Docker work?
-date: 2024-02-08-0107 (February 8, 2024 at 1:07 AM)
+id: how-does-docker-work
+aliases: []
 tags:
-- Docker
-- DevOps
+  - Docker
+  - DevOps
+date: 2024-02-08-0107 (February 8, 2024 at 1:07 AM)
+title: How does Docker work?
 ---
 
 # How does Docker work? 

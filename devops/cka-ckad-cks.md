@@ -1,13 +1,16 @@
 ---
+id: cka-ckad-cks
+aliases: []
+tags:
+  - Kubernetes
+  - CKS
+  - Security
+  - CKA
+  - CKAD
+date: 2024-03-17T07:05
 title: Kubernetes Certifications Resources
-date: 2024-03-17-0705 (March 17, 2024 7:05 AM)
-tags: 
-- Kubernetes
-- CKS
-- Security
-- CKA
-- CKAD
 ---
+<!-- 2024-03-17-0705 (March 17, 2024 7:05 AM) -->
 
 # Resources
 https://github.com/SebastianUA/Certified-Kubernetes-Security-Specialist

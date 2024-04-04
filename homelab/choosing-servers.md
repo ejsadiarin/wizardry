@@ -1,9 +1,11 @@
 ---
-title: Choosing Servers for Homelab
-date: 2024-02-05-1705 (February 05, 2024 5:05 PM)
+id: choosing-servers
+aliases: []
 tags:
-- Homelab
-- Server
+  - Homelab
+  - Server
+date: 2024-02-05-1705 (February 05, 2024 5:05 PM)
+title: Choosing Servers for Homelab
 ---
 
 # Choosing Servers

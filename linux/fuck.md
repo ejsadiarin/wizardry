@@ -1,11 +1,14 @@
 ---
-title: The Fuck Cli - Based Tool
-date: 2024-02-19-1619 (February 19, 2024 4:19 PM)
+id: fuck
+aliases: []
 tags:
-- CLI
-- Typos
-- Linux
+  - CLI
+  - Typos
+  - Linux
+date: 2024-02-19T16:19
+title: The Fuck Cli - Based Tool
 ---
+<!-- 2024-02-19-1619 (February 19, 2024 4:19 PM) -->
 
 # The Fuck
 - corrects errors in previous console commands

@@ -4,9 +4,10 @@ aliases: []
 tags:
   - System Administration
   - How-To
-date: 2024-03-28-1509 (March 28, 2024 3:09 PM)
+date: 2024-03-28T15:09
 title: Creating Users or Guests to a Linux Machine
 ---
+<!-- 2024-03-28-1509 (March 28, 2024 3:09 PM) -->
 
 # Creating Users or Guests to a Linux Machine
 ### login as root

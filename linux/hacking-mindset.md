@@ -1,11 +1,14 @@
 ---
-title: Hacking Mindset
-date: 2024-02-06-1837 (February 6, 2024 6:37 PM)
+id: hacking-mindset
+aliases: []
 tags:
-- Hacking
-- Starters
-- Mindset
+  - Hacking
+  - Starters
+  - Mindset
+date: 2024-02-06T18:37
+title: Hacking Mindset
 ---
+<!-- 2024-02-06-1837 (February 6, 2024 6:37 PM) -->
 
 # Hacking mindset for starters
 - identify open ports

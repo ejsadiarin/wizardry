@@ -1,0 +1,6 @@
+---
+id: syncthing
+aliases: []
+tags: []
+---
+

@@ -8,9 +8,10 @@ tags:
   - Password
   - OTP, 2FA, MFA
   - How-To
-date: 2024-02-10-18:22 (February 10, 2024 6:22 PM)
+date: 2024-02-10T18:22
 title: The Perfect Grade Password Store
 ---
+<!-- 2024-02-10-1822 (February 10, 2024 6:22 PM) -->
 
 # The Perfect Grade Password Store
 - **pass** is a password manager that uses GPG and Git for Linux

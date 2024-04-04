@@ -1,10 +1,13 @@
 ---
-title: fscrypt for encrypting directories
-date: 2024-02-10-14:43 (February 10, 2024 2:43 PM)
+id: fscrypt
+aliases: []
 tags:
-- Encryption
-- Linux
+  - Encryption
+  - Linux
+date: 2024-02-10T14:43
+title: fscrypt for encrypting directories
 ---
+<!-- 2024-02-10-1443 (February 10, 2024 2:43 PM) -->
 
 # fscrypt for encrypting directories
 - Install `fscrypt` package

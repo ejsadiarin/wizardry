@@ -1,10 +1,12 @@
 ---
-title: my very own setup architecture
-date: 2024-02-05-1209 (February 05, 2024 12:09 PM)
+id: setup
+aliases: []
 tags:
-- Homelab
-- Architecture
-- Bastion Setup
+  - Homelab
+  - Architecture
+  - Bastion Setup
+date: 2024-02-05-1209 (February 05, 2024 12:09 PM)
+title: my very own setup architecture
 ---
 
 # Philosophy

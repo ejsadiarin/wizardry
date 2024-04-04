@@ -5,9 +5,10 @@ tags:
   - SSH
   - Wizardry
   - How-To
-date: 2024-03-12-1507 (March 12, 2024 3:07 PM)
+date: 2024-03-12T15:07
 title: SSH Wizardry
 ---
+<!-- 2024-03-12-1507 (March 12, 2024 3:07 PM) -->
 
 # SSH Wizardry (The Only Guide You'll Ever Need)
 - install `openssh`

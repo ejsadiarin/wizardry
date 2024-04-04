@@ -1,10 +1,13 @@
 ---
-title: USB on Linux
-date: 2024-02-02-2201 (February 02, 2024 10:01 PM)
+id: usb
+aliases: []
 tags:
-- Linux
-- USB
+  - Linux
+  - USB
+date: 2024-02-02T22:01
+title: USB on Linux
 ---
+<!-- 2024-02-02-2201 (February 02, 2024 10:01 PM) -->
 
 # 3 ways:
 - the classic way

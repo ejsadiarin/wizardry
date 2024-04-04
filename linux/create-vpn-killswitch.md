@@ -3,9 +3,10 @@ id: create-vpn-killswitch
 aliases: []
 tags:
   - How-To
-date: 2024-04-02-2200 (April 2, 2024 10:00 PM)
+date: 2024-04-02T22:00
 title: Create VPN Killswitch in Linux using iptables
 ---
+<!-- 2024-04-02-2200 (April 2, 2024 10:00 PM) -->
 
 # Create VPN Killswitch in Linux using iptables
 

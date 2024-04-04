@@ -6,9 +6,10 @@ tags:
   - Firewall
   - Security
   - How-To
-date: 2024-03-07-2205 (March 8, 2024 10:05 PM)
+date: 2024-03-07T22:05
 title: Guide to Mastering Firewalls
 ---
+<!-- 2024-03-07-2205 (March 8, 2024 10:05 PM) -->
 
 # Guide to Mastering Firewall Configuration
 - Read the classic documentation: [Netfilter](https://netfilter.org/documentation/index.html)

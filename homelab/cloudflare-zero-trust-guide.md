@@ -4,9 +4,10 @@ aliases: []
 tags:
   - Cloudflare
   - How-To
-date: 2024-03-25-1508 (Mrach 25, 2024 3:08 PM)
+date: 2024-03-25T15:08
 title: Securely gain access to locally self-hosted services with Cloudflare Zero Trust
 ---
+<!-- 2024-03-25-1508 (March 25, 2024 3:08 PM) -->
 
 # Securely gain access to locally self-hosted services with Cloudflare Zero Trust
 If you dig here a bit, I had some... troubles with Oracle cloud hosting, so I decided to go full on-premise, homelab self-hosting. But as you can imagine, I'd like to have access to some services, like Jellyfin or Zabbix from outside, not only from my own network.

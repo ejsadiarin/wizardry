@@ -6,9 +6,10 @@ tags:
   - Server
   - Cloud
   - How-To
-date: 2024-02-06-1919 (February 6, 2024 7:19 PM)
+date: 2024-02-06T19:19
 title: Setting Up a Cloud VM for Individual Use
 ---
+<!-- 2024-02-06-1919 (February 6, 2024 7:19 PM) -->
 
 # Setting Up a Cloud VM for Individual Use
 - get a Linux server up and running on the cloud via Linode, DigitalOcean, AWS EC2, or any VPS or VM in the cloud (look for one with free credits)
