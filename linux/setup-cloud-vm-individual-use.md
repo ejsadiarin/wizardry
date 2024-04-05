@@ -1,6 +1,4 @@
 ---
-id: setup-cloud-vm-individual-use
-aliases: []
 tags:
   - Linux
   - Server
@@ -15,24 +13,25 @@ title: Setting Up a Cloud VM for Individual Use
 - get a Linux server up and running on the cloud via Linode, DigitalOcean, AWS EC2, or any VPS or VM in the cloud (look for one with free credits)
 1. Enable Automatic Updates (only if the Linux system is for private/individual use only)
     
-    ```bash
-    apt update
-    apt upgrade
-    apt install unattended-upgrades
-    dpkg-reconfigure --priority=low unattended-upgrades
-    ```
-    
-    - or perhaps create a cronjob to update once a month
-        - note that cronjobs don’t test the updates
-        - good for private/individual use only
-    - schedule updates every month if the Linux Server is a production system (essentially, don’t enable automatic updates) → for corporate/business setting
-        - also always test updates in a test/dev/QA environment before making changes to prod
-    - The ideal situation is using a repository host, whether that's something like Red Hat Satellite, Oracle Spacewalker, or using simple webserver which synchronizes repositories.
-        - You then control your packages on the upstream, so that when they are downloaded by the host - only the packages that have been tested are applied.
-        - This is how we automate patching - determine what updates we want > synchronise packages to repo host > create test environment to mimic prod > schedule ansible jobs via Tower to auto patch test hosts with smoke tests > when smoke tests pass, execute job on prod > run smoke tests, and if it fails, execute a job to undo the patch.
+```bash
+apt update
+apt upgrade
+apt install unattended-upgrades
+dpkg-reconfigure --priority=low unattended-upgrades
+```
+
+- or perhaps create a cronjob to update once a month
+    - note that cronjobs don’t test the updates
+    - good for private/individual use only
+- schedule updates every month if the Linux Server is a production system (essentially, don’t enable automatic updates) → for corporate/business setting
+    - also always test updates in a test/dev/QA environment before making changes to prod
+- The ideal situation is using a repository host, whether that's something like Red Hat Satellite, Oracle Spacewalker, or using simple webserver which synchronizes repositories.
+    - You then control your packages on the upstream, so that when they are downloaded by the host - only the packages that have been tested are applied.
+    - This is how we automate patching - determine what updates we want > synchronise packages to repo host > create test environment to mimic prod > schedule ansible jobs via Tower to auto patch test hosts with smoke tests > when smoke tests pass, execute job on prod > run smoke tests, and if it fails, execute a job to undo the patch.
+
 2. Limited User Account
-    - create a user with `adduser <username>`
-    - add to sudo user groups with: `usermod -aG  sudo <username>`
+- create a user with `adduser <username>`
+- add to sudo user groups with: `usermod -aG  sudo <username>`
     - remember to add the public key to this new `<user>`
 3. Add a SSH keypair and disable password for server login using SSH (see above)
     - can change ssh port of remote server in `/etc/ssh/sshd_config`

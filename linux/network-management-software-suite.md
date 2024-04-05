@@ -1,6 +1,4 @@
 ---
-id: network-management-software-suite
-aliases: []
 tags:
   - Networking
 date: 2024-03-10T15:40

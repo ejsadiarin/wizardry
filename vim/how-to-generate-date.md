@@ -1,6 +1,4 @@
 ---
-id: how-to-generate-date
-aliases: []
 tags:
   - How-To
 date: 2024-04-03T22:01

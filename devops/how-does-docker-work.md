@@ -1,6 +1,4 @@
 ---
-id: how-does-docker-work
-aliases: []
 tags:
   - Docker
   - DevOps
