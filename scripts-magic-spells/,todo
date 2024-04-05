@@ -25,6 +25,7 @@ new_todo() {
 	touch "$todo_file"
 	cat >"$todo_file" <<EOF
 # TODO for $date_today:
+
 - [ ] 100 Pushups
 - [ ] 
 - [ ] 
