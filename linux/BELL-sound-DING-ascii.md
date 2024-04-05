@@ -1,6 +1,4 @@
 ---
-id: BELL-sound-DING-ascii
-aliases: []
 tags:
   - ASCII magic
   - meme

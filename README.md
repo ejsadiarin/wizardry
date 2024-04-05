@@ -1,9 +1,3 @@
----
-id: README
-aliases: []
-tags: []
----
-
 <!--
 title: Wizardry - The Legendary Collection of Technology
 date: 2024-01-23-2357 (January 23, 2024 11:57 PM)

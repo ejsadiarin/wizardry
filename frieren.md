@@ -1,6 +1,4 @@
 ---
-id: frieren
-aliases: []
 tags:
   - Frieren
   - Anime
