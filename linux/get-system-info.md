@@ -1,6 +1,4 @@
 ---
-id: get-system-info
-aliases: []
 tags:
   - System Information
   - Linux

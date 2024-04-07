@@ -1,11 +1,11 @@
 ---
-id: generate-numbered-list
-aliases: []
 tags:
   - Vim / Neovim
-date: 2024-02-17-1021 (February 17, 2024, 10:21 AM)
+date: 2024-02-17T10:21
 title: Generate Numbered List in Vim/Neovim
 ---
+<!-- 2024-02-17-1021 (February 17, 2024, 10:21 AM) -->
+
 # Generate Numbered List in Vim/Neovim
 1. Enter `VISUAL BLOCK` mode by pressing `Ctrl + V` 
   - or use `vim-multi-line`: mine: `ctrl + alt` {k,j}

@@ -1,6 +1,4 @@
 ---
-id: tgpt
-aliases: []
 tags:
   - Chatbot
   - AI

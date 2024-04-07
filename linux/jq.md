@@ -1,6 +1,4 @@
 ---
-id: jq
-aliases: []
 tags:
   - CLI
 date: 2024-02-09T10:29

@@ -1,6 +1,4 @@
 ---
-id: bootstrapping-k3s-with-cilium
-aliases: []
 tags:
   - Kubernetes
   - How-To

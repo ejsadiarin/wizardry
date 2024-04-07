@@ -1,6 +1,4 @@
 ---
-id: multi-cursors-native
-aliases: []
 tags:
   - Multi Cursors
 date: 2024-03-24T21:50

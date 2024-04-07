@@ -1,6 +1,4 @@
 ---
-id: how-to-sudo-without-password
-aliases: []
 tags:
   - Linux
   - Recovery

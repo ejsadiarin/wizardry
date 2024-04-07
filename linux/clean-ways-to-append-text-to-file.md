@@ -1,6 +1,4 @@
 ---
-id: clean-ways-to-append-text-to-file
-aliases: []
 tags:
   - Linux
   - How-To

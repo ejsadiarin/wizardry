@@ -1,6 +1,4 @@
 ---
-id: threat-model
-aliases: []
 tags:
   - Security
 date: 2024-02-26T14:00

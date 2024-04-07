@@ -1,6 +1,4 @@
 ---
-id: usb
-aliases: []
 tags:
   - Linux
   - USB

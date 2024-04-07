@@ -1,12 +1,12 @@
 ---
-id: start-devops-with-this
-aliases: []
 tags:
   - DevOps
   - How-To
-date: 2024-03-04-1608 (March 04, 2024 04:08 PM)
+date: 2024-03-04T16:08
 title: Start DevOps
 ---
+<!-- 2024-03-04-1608 (March 04, 2024 04:08 PM) -->
+
 # Starting DevOps (Practical)
 - Full Roadmap: [https://roadmap.sh/devops](https://roadmap.sh/devops)
 

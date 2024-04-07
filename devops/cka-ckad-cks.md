@@ -1,6 +1,4 @@
 ---
-id: cka-ckad-cks
-aliases: []
 tags:
   - Kubernetes
   - CKS

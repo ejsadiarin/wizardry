@@ -1,6 +1,4 @@
 ---
-id: setup-mosh
-aliases: []
 tags:
   - Mosh
   - Linux

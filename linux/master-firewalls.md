@@ -1,6 +1,4 @@
 ---
-id: master-firewalls
-aliases: []
 tags:
   - Linux
   - Firewall

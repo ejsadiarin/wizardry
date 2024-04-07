@@ -1,6 +1,4 @@
 ---
-id: mosh
-aliases: []
 tags:
   - Linux
   - SSH

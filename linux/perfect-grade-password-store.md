@@ -1,6 +1,4 @@
 ---
-id: perfect-grade-password-store
-aliases: []
 tags:
   - Security
   - CLI (pass, gpg)

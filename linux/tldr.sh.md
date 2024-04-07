@@ -1,6 +1,4 @@
 ---
-id: tldr.sh
-aliases: []
 tags:
   - Linux
   - Terminal

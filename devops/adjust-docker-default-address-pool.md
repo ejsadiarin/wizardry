@@ -1,6 +1,4 @@
 ---
-id: adjust-docker-default-address-pool
-aliases: []
 tags:
   - How-To
 date: 2024-02-25T16:05

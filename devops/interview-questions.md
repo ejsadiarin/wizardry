@@ -1,11 +1,10 @@
 ---
-id: interview-questions
-aliases: []
 tags:
   - Interview
-date: 2024-03-25-1111 (March 25, 2024 11:11 AM)
+date: 2024-03-25T11:11
 title: SRE/DevOps Interview Questions
 ---
+<!-- 2024-03-25-1111 (March 25, 2024 11:11 AM) -->
 
 # SRE/DevOps Interview Questions
 ### 1. Is a five nines SLO good or bad.

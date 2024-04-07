@@ -1,6 +1,4 @@
 ---
-id: lynis-security-audit
-aliases: []
 tags:
   - System and Security Auditing
 date: 2024-03-10T10:45

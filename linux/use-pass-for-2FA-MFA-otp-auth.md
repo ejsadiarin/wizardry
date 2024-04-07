@@ -1,6 +1,4 @@
 ---
-id: use-pass-for-2FA-MFA-otp-auth
-aliases: []
 tags:
   - Security
   - CLI (pass, gpg)

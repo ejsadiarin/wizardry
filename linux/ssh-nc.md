@@ -1,6 +1,4 @@
 ---
-id: ssh-nc
-aliases: []
 tags:
   - Wizardry
   - How-To

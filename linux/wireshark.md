@@ -1,6 +1,4 @@
 ---
-id: wireshark
-aliases: []
 tags:
   - Security
   - Networking

@@ -2,9 +2,10 @@
 tags:
   - Docker
   - DevOps
-date: 2024-02-08-0107 (February 8, 2024 at 1:07 AM)
+date: 2024-02-08T01:07
 title: How does Docker work?
 ---
+<!-- 2024-02-08-0107 (February 8, 2024 at 1:07 AM) -->
 
 # How does Docker work? 
 

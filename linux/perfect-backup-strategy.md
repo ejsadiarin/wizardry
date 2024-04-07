@@ -1,6 +1,4 @@
 ---
-id: perfect-backup-strategy
-aliases: []
 tags:
   - Backups
 date: 2024-03-12T10:39

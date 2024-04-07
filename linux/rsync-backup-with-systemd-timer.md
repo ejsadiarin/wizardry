@@ -1,6 +1,4 @@
 ---
-id: rsync-backup-with-systemd-timer
-aliases: []
 tags:
   - Backup
   - Systemd

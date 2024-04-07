@@ -1,6 +1,4 @@
 ---
-id: how-to-luxon-formatting-datetime
-aliases: []
 tags:
   - How-To
 date: 2024-04-04T22:48

@@ -1,6 +1,4 @@
 ---
-id: gpg
-aliases: []
 tags:
   - Encryption
 date: 2024-02-10T16:00

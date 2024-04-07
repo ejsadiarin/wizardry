@@ -1,6 +1,4 @@
 ---
-id: hacking-mindset
-aliases: []
 tags:
   - Hacking
   - Starters

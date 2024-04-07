@@ -1,6 +1,4 @@
 ---
-id: pv
-aliases: []
 tags:
   - CLI
   - Linux

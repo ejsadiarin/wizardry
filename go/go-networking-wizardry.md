@@ -1,14 +1,13 @@
 ---
-id: go-networking-wizardry
-aliases: []
 tags:
   - Go
   - Leap Year btw
   - Networking
   - Wizardry
-date: 2024-02-29-2223 (February 29, 2024 10:23 PM)
+date: 2024-02-29T22:23
 title: Go Networking Wizardry
 ---
+<!-- 2024-02-29-2223 (February 29, 2024 10:23 PM) -->
 
 # Go Networking Wizardry - The Only Practical Guide You'll Ever Need
 the `net`
@@ -47,3 +46,6 @@ func main() {
  resolution.
 7. **IP Address Manipulation**
 - The `net` package for parsing and manipulating IP addresses.
+
+# Resources
+[Go Networking](https://github.com/vladimirvivien/go-networking)

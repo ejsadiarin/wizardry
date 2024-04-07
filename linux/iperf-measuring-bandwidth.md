@@ -1,6 +1,4 @@
 ---
-id: iperf-measuring-bandwidth
-aliases: []
 tags:
   - Network Bandwidth Performance
 date: 2024-03-10T10:51

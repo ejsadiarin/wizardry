@@ -1,13 +1,12 @@
 ---
-id: docker-k8s-networking
-aliases: []
 tags:
   - Docker
   - Kubernetes
   - Networking
-date: 2024-03-24-1125 (March 24, 2024 11:25 AM)
+date: 2024-03-24T11:25
 title: How Docker and Kubernetes differ from Traditional Networking
 ---
+<!-- 2024-03-24-1125 (March 24, 2024 11:25 AM) -->
 
 # How Docker and Kubernetes differ from Traditional Networking
 

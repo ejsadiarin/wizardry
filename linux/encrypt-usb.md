@@ -1,6 +1,4 @@
 ---
-id: encrypt-usb
-aliases: []
 tags:
   - Linux
   - Security

@@ -1,6 +1,4 @@
 ---
-id: rsync
-aliases: []
 tags:
   - Linux
   - CLI
