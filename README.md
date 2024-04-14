@@ -17,8 +17,7 @@ description: The legendary collection of technology, wield the power of the thin
 - phone data in a self-hosted server
   - mainly photos and videos
   - backed up on a physical USB drive
-- computer data in a self-hosted server
-  - notes and tech files in GitHub
+- computer data in a self-hosted server notes and tech files in GitHub
   - notes synced with syncthing (phone, computer, server)
   - backed up on a physical USB drive
 - self-hosted server:
