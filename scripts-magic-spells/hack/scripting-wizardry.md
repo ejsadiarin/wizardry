@@ -91,6 +91,14 @@ find $HOME -type f -size 0
 if ! sudo eject "$usbdisk"; then
   echo "[ ERROR ] Unable to eject the device."
 fi
+
+- $#
+  - checks if there is an argument specified
+```bash
+title="$*" # handles spaces for args
+if [ $# -eq 0 ]; then
+  echo "[ ERROR ] No argument specified"
+fi
 ```
 
 ### `if` flags:
