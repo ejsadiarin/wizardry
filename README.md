@@ -29,9 +29,8 @@ description: The legendary collection of technology, wield the power of the thin
 
 # The Legendary Collection - Directories Explanation
 - `scripts-magic-spells` - contains scripts or "magic spells"
-- `bastion-homelab` - contains notes related to setting up the perfect homelab 
+- `homelab` - contains notes related to setting up the perfect homelab 
   - also contains `CLI` tools necessary for homelabbing (e.g. `docker`, `kubernetes`, `tailscale`, `aws-cli`, `ansible`, `terraform`, etc.)
-- `useful-cli-tools` - contains CLI tools for everyday use
 
 # Scripts - Magic Spells
 - all custom scripts are prefixed with `,`
@@ -70,7 +69,6 @@ a lot of people seem to do the first two, without the 3rd, (stop being the idea 
   > <br><br> Instead of trying to show off all the work I do, I’d let the messages that my manager would get do the talking for me. Why does this matter? It shows that I am valuable above what he is aware of. My manager knows I do ABC, but he doesn’t know I’ve also helped a bunch on XYZ.
 
 [TLDR:](https://www.reddit.com/r/ITCareerQuestions/comments/1az1nvt/good_or_bad_career_advice_that_worked_from_a_30/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) just be mindful of how you portray yourself (perception management). Understand how people are, and control what you say and with who. Job hopping helps but just hopping non stop won’t get you long term gains. You need to have title growth too. Staying in the same role but hopping for incremental raises won’t get you long term high TC. 
-
 
 <!-- Happy Birthday To Me!!!!!!!, 20th, January 23, 2024 11:59 PM -->
 
