@@ -145,3 +145,6 @@ fi
 - [Some collection of scripts in Reddit](https://www.reddit.com/r/sysadmin/comments/rs4546/any_scripts_you_guys_have_that_make_your_life_so/)
 - [Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
 - [Unofficial Bash Strict Mode](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
+
+-  [mischavandenburg's github](https://github.com/mischavandenburg/dotfiles/blob/main/scripts/)
+- [system scripts by slyfox](https://github.com/slyfox1186/script-repo)
