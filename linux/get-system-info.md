@@ -50,6 +50,10 @@ title: How to get the whole System Information in a Linux Machine
 - `cat /proc/sys/kernel/random/uuid` - prints a random UUID
 - `cat /proc/sys/kernel/random/boot_id` - prints the boot ID
 
+# see `/etc` for system configurations and informations
+- `cd /etc && ls`
+- `ls /etc`
+
 ## Other helpful CLI tools (requires installation)
 - `neofetch` - prints the system information and an ASCII logo
 - `btop` - an interactive CLI system monitor (best)
