@@ -347,6 +347,8 @@ func main() {
 
 
 ## Resources
+- [Go Class in DETAIL](https://www.youtube.com/playlist?app=desktop&list=PLoILbKo9rG3skRCj37Kn5Zj803hhiuRK6&si=2Rn65jJzEayIKqN4)
+- [Complete Go Notes](https://docs.google.com/document/d/1Zb9GCWPKeEJ4Dyn2TkT-O3wJ8AFc-IMxZzTugNCjr-8/edit)
 - good intro by Melkey (from Frontend Masters): [Build Go Apps That Scale on AWS]() 
   - [GitHub Repo]()
 ### Websites
