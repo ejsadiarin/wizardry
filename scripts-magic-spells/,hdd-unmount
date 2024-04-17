@@ -6,7 +6,7 @@
 set -e
 
 mountpoint="/mnt/hdd"
-hdd_disk="/dev/sda1"
+# hdd_disk="/dev/sda1"
 
 # ensure that the mountpoint exists
 if [ -d "$mountpoint" ]; then
@@ -25,10 +25,10 @@ if [ -d "$mountpoint" ]; then
 		exit 1
 	}
 
-	sudo eject "$hdd_disk" || {
-		echo "[ ERROR ] Unable to eject the device."
-		exit 1
-	}
+	# sudo eject "$hdd_disk" || {
+	# 	echo "[ ERROR ] Unable to eject the device."
+	# 	exit 1
+	# }
 
 	echo "[ SUCCESS ] 🔒 Device is now ENCRYPTED and LOCKED. "
 	notify-send " 🔒 Device is now ENCRYPTED and LOCKED."

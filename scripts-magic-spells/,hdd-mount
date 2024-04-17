@@ -22,7 +22,7 @@ sudo cryptsetup luksOpen "$hdd_part" sda1 || {
 }
 
 # mount
-sudo mount /dev/mapper/ejsmain "$mountpoint" || {
+sudo mount /dev/mapper/sda1 "$mountpoint" || {
 	echo "[ ERROR ] Unable to mount device."
 	exit 1
 }
