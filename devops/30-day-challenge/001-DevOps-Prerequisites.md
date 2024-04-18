@@ -10,7 +10,7 @@ date: 2024-04-17T22:59
 ## Networking Basics
 - there can be multiple Network Interfaces and Adapters in one Machine
 
-## Switching, Routing, and Default Gateway
+### Switching, Routing, and Default Gateway
 
 - Switching --> can be the `192.168.1.0`
   - Switch - where all devices connect via the ethernet (eth0 network interface)
@@ -36,7 +36,7 @@ default         192.168.2.1     255.255.255.0     U     0      0        0 eth0
 ![[Pasted image 20240418214046.png]]
 
 
-### **Commands Summary:**
+*Commands Summary:*
 - `ip link` - lists all network interfaces
 - `ip addr` - lists all IP addresses assigned to those network interfaces
   - useful for seeing the IP address of the current machine (assigned/attached to the network interfaces)
@@ -119,8 +119,7 @@ insert pic here
 2. NAT
 - VMs/Machines CANNOT see and communicate with each other (isolated)
   - the Host machine acts as a router (one way outbound traffic only or internal machine to internet only)
-  - VMs/Machines DO NOT HAVE their own IP addresses
-- the Host machine acts as a router
+  - VMs/Machines DO NOT HAVE their own IP addresses the Host machine acts as a router
 - HAVE internet connectivity
 - CANNOT connect with other VMs/Machines without port-forwarding (think ssh)
 
@@ -138,4 +137,4 @@ insert pic here
 - is public or part of the LAN, which means other machines in the same LAN can access the VMs/Machines
 - HAVE internet connectivity
 
-
+## DNS
