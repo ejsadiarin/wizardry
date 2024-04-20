@@ -17,7 +17,7 @@ date: 2024-04-17T22:59
 - Routing --> how devices connect and communicate within a network
   - Routers - commonly configured as the "`.1`" `192.168.1.1`
 
-### Default Gateway (commonly as Routers)
+#### Default Gateway (commonly as Routers)
 - `default` or `0.0.0.0` - means any IP
 - `ip route add <destination> via <gateway>`
 	- can be read as: from `<gateway>` to `<destination>`
@@ -86,7 +86,7 @@ host> ssh app03
 app03> ping app01 # should be successful
 ```
 
-### Port-forwarding
+#### Port-forwarding
 - HOST (or LOCAL) and GUEST (or REMOTE)
 - if want a service from GUEST (ex. ssh on port 22 from GUEST) to HOST
   - then port-forward port 22 (from GUEST) to port 2222 (from HOST)
@@ -97,17 +97,17 @@ app03> ping app01 # should be successful
   ```
 - same concept applies to all machines, VMs, etc.
 
-### Network Interfaces
+#### Network Interfaces
 - think en0p1s3, wlan0, tailscale0, etc.
   - one for: ethernet (physical connection), wireless connection, and vpn mesh network interface 
 
-### Adapters
+#### Adapters
 - configures how machines connect with each other
 - NOTE THAT: there can be 2 or more adapters in one VM/machine (think Host-only+NAT)
 
 insert pic here
 
-**Different Types:**
+##### Different Types
 1. Host-only Network 
 - VMs/Machines can see and communicate with each other
   - VMs/Machines have their own IP addresses (in HOST/Internal Network)
@@ -137,4 +137,140 @@ insert pic here
 - is public or part of the LAN, which means other machines in the same LAN can access the VMs/Machines
 - HAVE internet connectivity
 
-## DNS
+### DNS
+- main purpose is to resolve IPs of domains
+
+*how to add domains mapped with IP addresses?*
+- say we want to ping `db` with IP: `192.168.1.11`
+- edit `/etc/hosts` file to configure the domain names mapped to their specific IPs
+![[Pasted image 20240419171809.png]]
+
+#### Name Resolution
+- in Host A:
+	- it doesn't care whatever the hostname is in Host B
+		- the `/etc/hosts` file is the only source of truth in Host A (only needs the IP address)
+- all servers/hosts should have proper configuration pointing to the IP addresses of other servers/hosts (but what if it became big/you have A LOT of servers/hosts at scale?)
+![[Pasted image 20240419171906.png]]
+
+#### why DNS?
+- Name Resolution --> editing `/etc/hosts` file for **every** server is TEDIOUS and repetitive at scale (imagine having 7769 servers/vms and connecting them altogether)
+
+*until we have decided that we need to move this into ONE server only called:*
+#### DNS server
+- instead of multiple `/etc/hosts` file edits for every server, we only have ONE that is stored inside this DNS server
+- every server is pointed to this DNS server whenever we want to resolve a domain name/subdomain
+
+*How to point HOST to a DNS server?*
+- we look at a server's `/etc/resolv.conf`
+	- and configure the nameserver and IP address (of the DNS server)
+![[Pasted image 20240419173435.png]]
+
+*in what case can we use /etc/hosts?*
+- for test servers
+- for any cases we do not need other servers to know about
+![[Pasted image 20240419173815.png]]
+
+*in HOST A, what if we have configured the same test server IP in local /etc/hosts and in the remote DNS server?*
+- `/etc/nsswitch.conf` - determines the order of where to look at first when resolving hostnames/IPs
+	- below we see the `hosts: files dns` as the order, 
+		- meaning HOST A will first look at local `/etc/hosts` files
+    - if there is no entry, then HOST A will look at the DNS server
+![[Pasted image 20240419174050.png]]
+
+*we can forward unknown hosts to a Name Server (DNS server) like in Google's 8.8.8.8*
+- instead of having `nameserver: 8.8.8.8` in HOST A (telling HOST A to also connect to Google's DNS server)
+	- we can have a DNS server that forwards all unknown requests to Google's DNS server `8.8.8.8`
+
+![[Pasted image 20240419182758.png]]
+
+#### Domain Name
+given: `www.google.com`
+- www -> subdomain
+- google -> domain name itself
+- .com -> Top Level Domain Name
+- . -> root
+
+![[Pasted image 20240419182631.png]]
+
+#### How DNS servers work to resolve domain names?
+*in public:*
+- from a client or server request (say `apps.google.com`):
+1. request goes through local `Org DNS` first
+	- if doesn't find the domain name there (or when domain name isn't cached), it goes outside:
+2. to the `Root DNS` in the public
+3. then to the Top Level DNS `.com DNS` (can be `.net DNS`, `.org DNS`, etc.)
+4. finally, to the `Google DNS` that will resolve the request to `apps.google.com` 
+  - then it goes back to local again
+**NOTE: the `org DNS` will ==cache the domain name== after it is resolved successful so that it is fast and less overhead when the domain name is requested again**
+![[Pasted image 20240419183325.png]]
+
+
+##### Search Domain
+
+*in private/local (`org DNS`, think companies or homelabs):*
+
+- **`org DNS` - has `/etc/hosts` configured to have IPs mapped to subdomains:**
+in `/etc/hosts`:
+```conf
+192.168.1.10  web.mycompany.com
+192.168.1.11  db.mycompany.com
+192.168.1.12  nfs.mycompany.com
+192.168.1.13  web-1.mycompany.com
+192.168.1.14  sql.mycompany.com
+```
+
+- **servers/hosts - has `/etc/resolv.conf` configured to know which DNS server to connect to**
+
+###### without `search` configured in `/etc/resolv.conf`
+in `/etc/resolv.conf`:
+```conf
+nameserver   192.168.1.100
+```
+- ping will only work if it matches the whole domain
+```bash
+# based on the config above in `/etc/hosts`
+ping web # will not work
+ping web.mycompany.com  # will work
+```
+
+###### with `search` configured in `/etc/resolv.conf` (mapped to root_domain_name: `mycompany.com`)
+in `/etc/resolv.conf`:
+```conf
+nameserver   192.168.1.100
+search       mycompany.com prod.mycompany.com
+```
+- HOST will search in `mycompany.com` OR `prod.mycompany.com`
+- the subdomains of `mycompany.com` are automatically configured/mapped
+  - so any requests of the host to `mycompany.com` will be resolved
+- using `ping` will automatically resolve the subdomain, even if root domain name is included
+```bash
+# can ping both successfully:
+ping web
+ping web.mycompany.com
+```
+![[Pasted image 20240419192928.png]]
+
+#### Commands for DNS servers
+- `ping` - most simple, will resolve the local `/etc/hosts` file
+- `nslookup` - queries domain name from a DNS server
+  - will **only** query domain names FROM A DNS SERVER
+  - does not consider entries in the **local** `/etc/hosts` file
+  ```bash
+  host> nslookup www.google.com
+  Server: 8.8.8.8
+  Address: 8.8.8.8#53
+
+  Non-authoritative answer:
+  Name:    www.google.com
+  Address: 172.217.0.132
+  ```
+- `dig` - same like `nslookup`
+  - more detailed output
+
+#### DNS Summary
+**best setup:**
+- `/etc/resolv.conf` - when configuring DNS (on HOST)
+	- tells which DNS server to connect to
+- `/etc/hosts` - when configuring domain names (on DNS server)
+  - on `org DNS`, etc.
+	- maps IP addresses to domain names, including subdomains
