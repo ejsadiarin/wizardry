@@ -6,6 +6,15 @@ date: 2024-04-17T22:59
 <!-- 2024-04-17-2259 (April 17, 2024 10:59:14 PM) -->
 
 # DevOps Prerequisites
+- Linux
+- Networking
+- Application Basics (Compiling, Building, Packaging)
+- Source Control Management (Git)
+- Web Server
+- Database Basics
+- Security
+- General Prerequisites like YAML and JSON/JSON Path
+- 2 Tier Application
 
 ## Networking Basics
 - there can be multiple Network Interfaces and Adapters in one Machine
@@ -274,3 +283,5 @@ ping web.mycompany.com
 - `/etc/hosts` - when configuring domain names (on DNS server)
   - on `org DNS`, etc.
 	- maps IP addresses to domain names, including subdomains
+
+##  
