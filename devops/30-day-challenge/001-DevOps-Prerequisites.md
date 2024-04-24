@@ -284,4 +284,21 @@ ping web.mycompany.com
   - on `org DNS`, etc.
 	- maps IP addresses to domain names, including subdomains
 
-##  
+## Application Basics (Compiling, Building, Packaging)
+### Java
+- `jdb`
+- `javac`
+- `jar`
+- `javadoc`
+### Nodejs
+- `node`
+- `npm`
+- `nvm`
+### Python
+- `pip` or `pipx`
+## Source Control Management (Git)
+## Web Server
+## Database Basics
+## Security
+## General Prerequisites like YAML and JSON/JSON Path
+## 2 Tier Application
