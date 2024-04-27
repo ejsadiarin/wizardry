@@ -7,6 +7,8 @@ date: 2024-04-20T3:53
 
 # Docker Wizardry
 
+## See Docker Security
+https://docs.docker.com/security/security-announcements/ 
 
 https://github.com/DoTheEvo/selfhosted-apps-docker 
 

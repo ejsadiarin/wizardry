@@ -13,6 +13,11 @@ date: 2024-04-23T17:40
 - only needs ssh (for Linux/Unix machines) or winrm (for Windows machines)
 ![[Pasted image 20240423225037.png]]
 
+## Running on Localhost
+- `ansible localhost -m setup` -> run and gather all facts:
+- `ansible localhost -m setup -a "filter=ansible_os_family"` -> filter a property (`ansible_os_family` gets the
+distro-specific)
+
 ## Configuration Files
 - ordering is from specifics to general (as default):
 ```
@@ -368,12 +373,257 @@ tasks:
 #### Modules
 - running `ansible-doc -l` will list available modules (there are A LOT of modules, refer to the docs)
 - running `ansible-doc -l` will list available modules (there are A LOT of modules, refer to the docs)
-- these are the `apt`, `service`, `command`, `script`, `shell`, `debug`, etc.
+- these are the `apt`, `service`, `command`, `script`, `shell`, `debug`, etc. (see more in Ansible Collections
+Section)
 ![[Pasted image 20240425015739.png]]
 
 #### How to Run an Ansible Playbook?
 - just do: `ansible-playbook <playbook-name>.yml`
 - see more options with: `ansible-playbook --help`
+
+### Testing Playbooks
+- dry-runs a playbook: before-after comparison of playbook changes
+- provides output/result/errors as if the playbook was run for real
+- best to avoid data loss/corruption, etc. since ansible is FORWARD-ONLY (no rollbacks after a task is run)
+
+#### 1. Syntax Check 
+`--syntax-check`
+- will run a syntax check on a playbook, etc.
+sample `configure_nginx.yml` playbook:
+```yaml
+---
+
+- hosts: webservers
+  tasks:
+    - name: Ensure the configuration line is present
+      lineinfile:
+        path: /etc/nginx/nginx.conf
+        line: 'client_max_body_size 100M;'
+      become: yes
+```
+output:
+![[Pasted image 20240427165105.png]]
+
+#### 2. Check Mode
+- NOTE: not all modules support check mode
+  - tasks that have modules that do not support `--check` will be SKIPPED.
+*with the `--check` flag*
+- example: `ansible-playbook <playbook>.yml --check`
+
+#### 3. Diff Mode
+- understand and verify the impact of playbook changes before applying them
+- runs diff
+*with the `--diff flag`*
+- example: `ansible-playbook configure_nginx.yml --check --diff`
+![[Pasted image 20240427164550.png]]
+
+### Conditionals
+- use `when` property/key
+- example: when installing nginx -> use distro-specific package manager
+```yaml
+- name: Install NGINX
+  hosts: all
+  tasks:
+    - name: Debian
+      apt:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Debian" and
+            ansible_distribution_version == "24.01"
+
+
+    - name: Arch
+      pacman:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Archlinux"
+
+    - name: RedHat
+      pacman:
+        name: nginx
+        state: present
+      when: ansible_os_family == "RedHat" or
+            ansible_os_family == "SUSE"
+```
+
+#### Conditionals in Loops
+```yaml
+- name: Install Softwares
+  hosts: all
+  vars:
+    packages:
+      - name: nginx
+        required: True
+      - name: mysql
+        required: True
+      - name: apache
+        required: False
+  tasks:
+    - name: Install "{{ item.name }}" on Debian
+      apt:
+        name: "{{ item.name }}"
+        state: present
+
+      when: item.required == True
+      loop: "{{ packages }}"
+```
+
+#### Conditionals & Register
+- remember that `register` is a variable of a `command` (`ansible.builtin.command`) or `shell` (`ansible.builtin.shell`)
+- Check status of service and email if its down (playbook):
+```yaml
+- name: Check status of service and email if its down
+  hosts: localhost
+  tasks:
+    - command: systemctl status httpd
+      register: result
+
+    - mail:
+        to: admin@company.com
+        subject: Service Alert
+        when: result.stdout.find('dead') != -1
+```
+
+## Ansible Roles
+- like in real world:
+- to become an engineer you need to: 
+	- gain degree, 
+	- gain experience, etc.
+- to become a docter you need to: 
+	- go to med school, 
+	- get residency, 
+	- get license, etc.
+- roles work the same way, instead for configuring and automating what the server will be or what service will the server serve.
+### Roles 
+- are the "identity" of what a server will be
+	- roles can be: web server, db server, dns server, etc.
+- the purpose of roles is to be reusable
+![[Pasted image 20240427180358.png]]	
+
+- see Ansible Galaxy section to see more
+- 5 directories:
+	1. tasks
+	2. vars
+	3. defaults
+	4. handlers
+	5. templates
+![[Pasted image 20240427175400.png]]
+- see hierarchy
+![[Pasted image 20240427181141.png]]
+#### How to use a Role?
+*NOTE: roles is an array, so you can have many roles*
+##### just have a `roles` property/key in the playbook:
+```yaml
+- name: Install and Configure MySQL
+  hosts: db-servers 
+  roles:
+    - mysql
+```
+##### OR for configuring more specific variables:
+```yaml
+- name: Install and Configure MySQL
+  hosts: db-servers 
+  roles:
+    - role: mysql
+      become: yes
+      vars:
+        mysql_user_name: db-user
+```
+
+## Ansible Galaxy
+- community-created roles for usage like AUR
+- use `ansible-galaxy init <role-name>` on the `roles` directory to scaffold a role config
+
+### to search for a role in `ansible-galaxy`:
+```bash
+ansible-galaxy search <role-name>
+```
+
+### to install/use a role:
+- it will be installed in default `/etc/ansible/roles` directory
+```bash
+ansible-galaxy install <role-name>
+```
+- use `-p <path>` to install in a specific path
+```bash
+ansible-galaxy install <role-name> -p ./roles
+```
+
+### how to use a role? 
+- see [how to use a role? section](#how-to-use-a-role?) in Ansible roles
+
+### how to list installed roles in system?
+```bash
+ansible-galaxy list
+```
+
+### see default paths for roles:
+- see the `DEFAULT_ROLES_PATH`
+```bash
+ansible-config dump | grep ROLE
+```
+
+## Ansible Handlers
+- are like "event-handlers"
+- handlers are executed when notified by a task
+  - tasks triggered by events/notifications
+- *purpose:*
+  - automatically restarting (auto-restart) after config update
+  - manage actions based on state/configuration changes
+- example:
+```yaml
+- name: Deploy Application
+  hosts: application_servers
+  tasks:
+    - name: Copy Application Code
+      copy:
+        src: app_code/
+        dest: /opt/application/
+      notify: Restart Application Service
+
+  handlers:
+    - name: Restart Application Service
+      service:
+        name: application_service
+        state: restarted
+```
+
+- see image for clarity:
+![[Pasted image 20240427205553.png]]
+
+## Ansible Collections / Ansible Modules
+- Package and distribute modules, roles, plugins, etc.
+- self-contained
+- community and vendor-created all via Ansible Galaxy
+
+### install collections
+```bash
+ansible-galaxy collection install network.cisco
+```
+
+### Example Collections
+*for specific infrastructure devices like:*
+  - `network.cisco`, `network.juniper`, `network.arista`, and more.
+
+*for cloud-specific vendors like:*
+  - `amazon.aws`, etc.
+
+
+### Benefits
+#### 1. Expanded Functionality
+```bash
+ansible-galaxy collection install amazon.aws
+```
+
+![[Pasted image 20240427211023.png]]
+
+#### 2. Modularity and Reusability
+![[Pasted image 20240427211057.png]]
+![[Pasted image 20240427211122.png]]
+
+#### 3. Simplified Distribution and Management
+![[Pasted image 20240427211151.png]]
+
 
 # More References and Resources
 - [Ansible - Arch Wiki](https://wiki.archlinux.org/title/Ansible)

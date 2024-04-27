@@ -176,4 +176,4 @@ ssh-copy-id <user>@<server-ip>
 - having a server with weak password (ex. root, admin, pass) or weak configurations will make your server vulnerable to these attacks.
 
 # Next Steps - Optional
-- see [[setup-cloud-vm-individual-use|Setup Cloud VM for Individual Use ]] 
+- see [[how-to-properly-setup-a-linux-machine-server|how to Properly Setup a Linux Machine ❯ How to Properly Setup a Linux Machine]]

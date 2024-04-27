@@ -2,11 +2,11 @@
 tags:
   - How-To
 date: 2024-02-25T16:05
-title: Ad just Docker Default Address Pool
+title: Adjust Docker Default Address Pool
 ---
 <!-- 2024-02-25-1605 (February 25, 2024 4:05 PM) -->
 
-# Adjust Docker Default Address Pool
+# How to Adjust Docker Default Address Pool
 
 - This is for people who are either new to using docker or who haven't been bitten by this issue yet.
 
