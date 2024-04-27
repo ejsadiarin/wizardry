@@ -1,5 +1,6 @@
 ---
-tags: []
+tags:
+  - Wizardry
 date: 2024-04-20T3:53
 ---
 <!-- 2024-04-20 (April 20, 2024 3:53 AM Saturday) -->
