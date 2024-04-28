@@ -26,10 +26,14 @@ new_todo() {
 	cat >"$todo_file" <<EOF
 # DAILY QUEST for $date_today:
 
-- [ ] 100 Pushups/Workout/Rest Day
+- [ ] 100 Pushups
+- [ ] 100 Sit-ups
+- [ ] 100 Squats
+- [ ] Workout/Rest Day
+
 - [ ] 30 day devops challenge 
 - [ ] r/linuxupskillchallenge daily
-- [ ] finish the default-responses files in \`Personal/Brain-Configuration/\`  
+- [ ] finish one file in the default-responses files in \`Personal/Brain-Configuration/\`  
 
 EOF
 }

@@ -1,14 +1,13 @@
 ---
 tags:
+  - Wizardry
   - Hacking
-  - Starters
-  - Mindset
 date: 2024-02-06T18:37
-title: Hacking Mindset
+title: Security and Hacking Wizardry
 ---
 <!-- 2024-02-06-1837 (February 6, 2024 6:37 PM) -->
 
-# Hacking mindset for starters
+# Security and Hacking Wizardry
 - identify open ports
   - use nmap or any
   ```bash
@@ -22,6 +21,10 @@ title: Hacking Mindset
   netstat -tulpn | grep -n <port> 
   # use sudo if not all processes/services could be identified
   sudo netstat -tulpn | grep -n <port> 
+  # another way to find (all, numeric, ports, udp, tcp, wide):
+  sudo netstat -anputW
+  # another way to find (all, numeric, ports, udp, tcp, wide):
+  netstat -anputW
   ```
 - what the person would be able to do depends on whats running there, if anything.
   > note that, what a person can do depends entirely on what service they're able to reach behind your http port. You could have a web server there, an ftp server, or a tea pot. 
