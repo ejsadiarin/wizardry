@@ -1,7 +1,6 @@
 ---
 tags:
-  - ASCII magic
-  - meme
+  - Fun
 date: 2024-03-06T01:09
 title: the echo ^G or echo $'\x07'
 ---

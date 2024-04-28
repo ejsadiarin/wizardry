@@ -4,6 +4,19 @@
 
 # TODO: 1: read input with options (sync all or sync specific dirs)
 # TODO: 2: add flags support
+#
+# like this:
+# case "$1" in
+# --get-updates) get_total_updates ;;
+# --print-updates) print_updates ;;
+# --update-system) update_system ;;
+# --help | *) echo -e "Updates [options]
+#
+# Options:
+# 	--get-updates		Get the number of updates available.
+# 	--print-updates		Print the number of available package to update.
+# 	--update-system		Update your system including the AUR packages.\n" ;;
+# esac
 
 usb_mountpoint="/mnt/$(whoami)/ejsmain"
 wizardry_sms="$HOME/vault/wizardry/scripts-magic-spells"
