@@ -50,7 +50,7 @@ gpg --passwd <email> # change password
 # export private key:
 gpg --export-secret-keys --armor --output private.gpg <email> # or: gpg --export-secret-keys <email> > private.gpg
 # export public key:
-gpg --export --armor --output private.gpg <email> # or: gpg --export <email> > public.gpg
+gpg --export --armor --output public.gpg <email> # or: gpg --export <email> > public.gpg
 ``` 
 
 - Importing to another machine:
