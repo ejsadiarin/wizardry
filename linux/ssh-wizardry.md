@@ -31,15 +31,148 @@ ssh <username>@<tailscale-ip>
 ssh -p 8022 <username>@<tailscale-ip>
 ```
 
-# SSH port forwarding
-- port forward from local to remote
-`ssh -L 8080:localhost:80 user@remote`
-- port forward from remote to local `ssh -R 8080:localhost:80 user@remote`
+# SSH Port Forwarding (SSH Tunneling)
+
+## Local Forwarding
+- forward traffic (or setup tunnel) on a *LOCAL* port access a service from *REMOTE* 
+- allows *LOCAL* to use a *REMOTE* service
+```bash
+# forward traffic on localhost:8080 to service.example.com:80 (different host) using gw.example.com as a jump_server
+ssh -L 8080:service.example.com:80 gw.example.com
+# ^ is the same as: ssh -L 8080:service.example.com:80 user@jump_server
+
+# using a bind address
+ssh -L 127.0.0.1:8080:service.example.com:80 gw.example.com
+ssh -L localhost:8080:service.example.com:80 gw.example.com
+
+# forwarding localhost:8080 to remote_server's localhost:80
+ssh -L 8080:localhost:80 user@remote_server
+```
+- see the `LocalForward` option in the `ssh_config` file
+- [see SSH official docs for more details (recommended)](https://www.ssh.com/academy/ssh/tunneling-example)
+
+### Use cases
+- Tunneling sessions and file transfers through jump servers
+- Connecting to a service on an internal network from the outside
+- Connecting to a remote file share over the Internet
+
+## Remote Forwarding
+- forward traffic (or setup tunnel) on a *REMOTE* port to access a service from *LOCAL*
+- allows *LOCAL* to use a *REMOTE* service
+```bash
+ssh -R 8080:localhost:80 user@remote_server
+ssh -R 8080:local_host:80 user@jump_server
+
+# if GatewayPorts clientspecified is configured:
+ssh -R <client-ip-address>:8080:localhost:80 host69.aws.example.com
+```
+- see the `GatewayPorts` option in the `ssh_config` file
+- [see SSH official docs for more details (recommended)](https://www.ssh.com/academy/ssh/tunneling-example)
+
+### Use cases
+- Share a service like a web server (running locally) to the Internet
+- Used in Minecraft servers -> allowing other people to connect to your local Minecraft server
+- Setup reverse shell
 
 more refs: [yt vid BugsWriter](https://www.youtube.com/watch?v=lKIRHDY7OhU)
 
 # SSH with `nc`
-- see [[ssh-nc|ssh with nc]]
+- see [ssh-nc](ssh-nc.md)
+
+## Using SSH -R for Reverse Shell
+- The -R option is used to set up a reverse tunnel from the remote machine to the local machine. This is particularly useful for creating a reverse shell, where the remote machine can execute commands on the local machine.
+
+### 1. **On the remote machine (the one you want to control):**
+``` bash
+ssh -R 90:localhost:22 user@your_local_machine_ip
+```
+- This command forwards port 90 on the remote machine to port 22 (SSH) on the local machine. Replace `user@your_local_machine_ip` with your actual username and the IP address of your local machine.
+
+### 2. **On the local machine (the one you want to control from):**
+- Listen on the forwarded port:
+``` bash
+nc -l -p 90
+```
+
+- Then, connect to the remote machine using the forwarded port:
+``` bash
+# Replace user with your actual username on the local machine.
+ssh -p 90 user@localhost
+```
+
+## Using SSH -L for Local Port Forwarding
+- The -L option is used to forward a port from the local machine to the remote machine. This is useful for accessing services on the remote machine as if they were running locally.
+
+- this "reverse" shell `ssh -L` is used only to access LOCAL from a REMOTE machine
+  - useful when you already have a reverse shell with `ssh -R` on a Victim PC and running this to access other PCs in the same internal network (LAN)
+
+### 1. **On the local machine:**
+``` bash
+ssh -L 90:localhost:22 user@remote_machine_ip
+```
+- This command forwards port 90 on the local machine to port 22 (SSH) on the remote machine. Replace `user@remote_machine_ip` with your actual username and the IP address of the remote machine.
+
+### 2. **On the remote machine:**
+- You can now access the local machine's SSH service through the forwarded port:
+``` bash
+# Replace user with your actual username on the local machine.
+ssh user@localhost -p 90
+```
+
+### NOTE before port forwarding anything:
+Ensure the following:
+- You have proper authentication and authorization in place.
+- You're only forwarding necessary ports.
+- You're aware of the potential for unauthorized access if the forwarded ports are exposed to the internet.
+
+## See more different approach on Port Forwarding with SSH:
+### Forwarding a service on a remote machine to be accessible on your local machine, on Linux:
+
+`~/.ssh/config`
+
+Under a Host entry:
+```
+LocalForward localIP:localPort remoteIP:remotePort
+```
+
+- Establish the ssh session, connect to localIP:localPort on your machine and you have access.
+
+- Add as many of these directives as you want. 
+- Bind them to the default port on your local machine, use any 127.x.x.x IP and set up a etc/hosts entry, make it easy on yourself. 
+- Webserver for docker? Local IP 127.1.2.3, port 80, add a hosts entry to make it docker.remote or something.
+
+## using ProxyJump directive in ~/.ssh/config
+ProxyJump is a directive you might be interested in. It's a streamlined version of ProxyCommand which is another useful directive.
+
+For the use case of connecting to an SSH server (linuxpc) behind a firewall or unroutable network, I can just run:
+```bash
+ssh linuxpc
+```
+
+With a properly configured `~/.ssh/config` this works from any network.
+
+- The `~/.ssh/config` file on the clients would look something like this:
+```config
+Host relay
+    HostName relay.public.ip
+    HostKeyAlias relay
+    Port 2222
+
+# Don't jump through the relay when on home network
+Match Host linuxpc localnetwork 192.168.1.0/24
+    ProxyJump none
+
+Host linuxpc
+    HostKeyAlias linuxpc
+    Port 22
+    User linuxuser
+    ProxyJump relay
+```
+
+- I used to do this with SSH port forwarding, then migrated to the ProxyCommand directive, and when the ProxyJump directive was introduced in OpenSSH 7.3 I started to use that because it is so simple.
+
+### How to access RDP over a reverse SSH Tunnel
+- see guide [how-to-access-rdp-over-reverse-ssh-tunnel](how-to-access-rdp-over-reverse-ssh-tunnel.md)
 
 # Securing SSH
 > None of my Arch machines are accessible to the public, but I do use fail2ban on my servers to protect *more* than just SSH. 
