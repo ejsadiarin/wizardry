@@ -2,6 +2,7 @@
 tags:
   - Go
   - Wizardry
+  - Scripting
 date: 2024-03-20T23:19
 title: Go Wizardry Ultimate
 ---
@@ -292,7 +293,7 @@ func main() {
 }
 ```
 
-## AWS
+## Go with AWS
 - cloud lead
 - biggest market share
 - many services
@@ -319,8 +320,7 @@ cdk init app --language go
     --> allows us to use languages other than typescript
     --> transpiles to typescript
 
-### creating a stack
-
+### Creating a Stack
 1. Lambda
 - NOTE: tagging in structs (to be unmarshalled) and errors are values in Go: 
 ```go
@@ -345,22 +345,72 @@ func main() {
 
 ```
 
+## Go Scripting
+<!-- 2024-03-17-1536 (March 17 2024 3:36 PM) -->
 
-## Resources
-- [Go Class in DETAIL](https://www.youtube.com/playlist?app=desktop&list=PLoILbKo9rG3skRCj37Kn5Zj803hhiuRK6&si=2Rn65jJzEayIKqN4)
-- [Complete Go Notes](https://docs.google.com/document/d/1Zb9GCWPKeEJ4Dyn2TkT-O3wJ8AFc-IMxZzTugNCjr-8/edit)
+- https://bitfieldconsulting.com/golang/scripting
+- https://github.com/traefik/yaegi
+- https://github.com/bitfield/script
+
+### Some posts
+[  ](https://www.reddit.com/r/golang/comments/1b8ud20/using_golang_for_scripting/?share_id=oGOzxCFjKoq_EO-3hNFrj)
+
+## Go Networking Wizardry - The Only Practical Guide You'll Ever Need
+- see more: [Go Networking](https://github.com/vladimirvivien/go-networking)
+
+the `net/http package`
+
+- simple http web server:
+```go
+package main
+import (
+    "fmt"
+    "net/http"
+)
+func helloHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello, World!")
+}
+func main() {
+    http.HandleFunc("/", helloHandler)
+    fmt.Println("Starting server on port 8080...")
+    http.ListenAndServe(":8080", nil)
+}
+```
+
+### Features of Go's Networking Library
+1. **TCP/IP Networking**
+- The `net` package for TCP/IP networking, including creating servers and clients.
+2. **UDP Networking**
+- The`net` package with support for creating UDP servers and clients.
+3. **HTTP Server and Client**
+- The `net/http` package allows for building HTTP servers and clients
+- perfect for creating web applications and services.
+4. **WebSockets**
+- For real-time communication, Go supports WebSockets through the `net/http` package.
+5. **TLS/SSL**
+- Secure communication can be implemented using TLS/SSL, with Go's `crypto/tls` package.
+6. **DNS Resolution**
+- The `net` package also includes functionalities for DNS
+ resolution.
+7. **IP Address Manipulation**
+- The `net` package for parsing and manipulating IP addresses.
+
+# Resources
+- [Go: End-to-end to PRODUCTION-LEVEL SOFTWARE](https://www.youtube.com/watch?v=rx6CPDK_5mU&list=PLy_6D98if3ULEtXtNSY_2qN21VCKgoQAE)
+- [Go Class in DETAIL](https://www.youtube.com/playlist?app=desktop&list=PLoILbKo9rG3skRCj37Kn5Zj803hhiuRK6&si=2Rn65jJzEayIKqN4) [Complete Go Notes](https://docs.google.com/document/d/1Zb9GCWPKeEJ4Dyn2TkT-O3wJ8AFc-IMxZzTugNCjr-8/edit)
 - good intro by Melkey (from Frontend Masters): [Build Go Apps That Scale on AWS]() 
   - [GitHub Repo]()
-### Websites
+
+## Websites
 - [Effective Go](https://go.dev/doc/effective_go/)
 - [Go by Example](https://gobyexample.com)
 - [Official Go Tour](https://go.dev/tour/)
 - [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go)
 
-### Books
+## Books
 - The Go Programming Language by Donovan Kernighan
 - Let's Go & Let's Go Further by Alex Edwards
 
-### Conference Talks
+## Conference Talks
 - Rob Pike - [Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
 - Rob Pike Conference Talks
