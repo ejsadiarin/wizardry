@@ -1,10 +1,7 @@
 ---
-id: setup
-aliases: []
 tags:
   - Homelab
-  - Architecture
-  - Bastion Setup
+  - Self-host
 date: 2024-02-05-1209 (February 05, 2024 12:09 PM)
 title: my very own setup architecture
 ---
@@ -20,14 +17,35 @@ title: my very own setup architecture
 - devices are just "interfaces", the data is the core (and the data is backed up in multiple places)
 
 # Services
+### Essentials
 - [Tailscale](https://tailscale.com/) (VPN)
   - devices are connected via tailnet
   - controlled via tailscale control server web interface (not a hub and spoke)
   - with Mullvad VPN for exit nodes as a service
+  - NOTE: can self-host coordination server via Headscale
+- Pure Wireguard (VPN)
+  - if not opting to Tailscale/Headscale
+- [PiHole](https://pi-hole.net/) (DNS)
+  - self-hosted DNS server with Ad block
+- [NTFY](https://ntfy.rtfd.io/) (Notifications)
+  - notifications for long running commands
+- [Proton Suite]()
+  - everything google-alternative:
+    - emails,
+  - with end-to-end encryption
+- [Obsidian]()
+  - note-taking and rendering everything markdown
+  - NOTE: don't use Obsidian Sync, use Syncthing instead
+### Photos (One of these)
 - [Immich](https://immich.app/docs/overview/introduction) (Backup photos and videos)
   - self-hosted backup solution for photos and videos
 - [Photoprism](https://) (Backup photos and videos)
   - self-hosted backup solution for photos and videos
+- [Ente]()
+  - cloud-based with end-to-end encryption gallery
+- [Aves]()
+  - local google photos alternative
+### Syncs
 - [Syncthing](https://syncthing.net/) (File Sync)
   - sync files between devices
   - note that this is strictly for syncing files (includes photos and videos) and not for backup
@@ -37,11 +55,10 @@ title: my very own setup architecture
   - run in a docker container or a VM
   - self-hosted cloud storage (main storage)
   - for documents, bookmarks, contact, and calendar 
-- [NTFY](https://ntfy.rtfd.io/) (Notifications)
-  - notifications for long running commands
-- [PiHole](https://pi-hole.net/) (DNS)
-  - self-hosted DNS server with Ad block
+### Git
 - [Gitea](https://gitea.com/) (Git Server)
+  - 
+- [Gitlab](https://gitea.com/) (Git Server)
   - 
 
 ## What do I need right now?
@@ -63,7 +80,7 @@ title: my very own setup architecture
 - Storage (TrueNAS) for backups and central storage (should be immutable)
 
 ## Backups
-- should consist of 4: physical copy, cloud copy, and local copy (self-hosted and/or synced)
+- `3-2-1 Rule`: 3 copies, 2 onsite, 1 offsite
 1. USB drives or external HDD/SSD
   - important photos and videos
 2. Immich running on docker (self-hosted via NAS)

@@ -1,6 +1,7 @@
 ---
 tags:
   - Encryption
+  - How-To
 date: 2024-02-10T16:00
 title: GPG
 ---
@@ -20,6 +21,7 @@ gpg --decrypt <file-or-dir>.tar.gz.gpg | pv | tar xz
 gpg --encrypt <file-or-dir>.tar.gz # encrypting a tar.gz file
 gpg --encrypt <file-or-dir> # encrypting any file or directory
 ```
+
 - gpg common commands:
 ```bash
 gpg --list-keys # list existing keys
@@ -44,6 +46,23 @@ gpg>exit # if save did not exit you to the gpg-shell
 gpg --passwd <email> # change password
 ```
 
+## Adding email or UID to an existing key
+```bash
+gpg --edit-key <email>
+gpg>adduid
+# enter details...
+gpg>O
+# make it never expire
+gpg>expire
+gpg>0
+gpg>y
+# make ultimate
+gpg>trust
+gpg>5
+# then save
+gpg>save
+```
+
 ## Backing up
 - Exporting:
 ```bash
@@ -51,9 +70,12 @@ gpg --passwd <email> # change password
 gpg --export-secret-keys --armor --output private.gpg <email> # or: gpg --export-secret-keys <email> > private.gpg
 # export public key:
 gpg --export --armor --output public.gpg <email> # or: gpg --export <email> > public.gpg
-``` 
 
-- Importing to another machine:
+# see above sections to encrypt/decrypt wil tar and gpg --symmetric
+```
+
+
+## Importing to another machine:
 ```bash
 # get keys
 scp -r user@local:/path/to/exported-keys.gpg ~/imported-keys
@@ -66,6 +88,11 @@ trust
 y # confirm
 save
 exit # if save did not exit you to the gpg-shell
+```
+
+## Revoking keys with revoke certificates
+```bash
+gpg --import revoke-cert.asc # this will automatically revoke the key
 ```
 
 ## Revoking keys with revoke certificates
