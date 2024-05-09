@@ -35,6 +35,12 @@ new_todo() {
 - [ ] r/linuxupskillchallenge daily
 - [ ] finish one file in the default-responses files in \`Personal/Brain-Configuration/\`  
 
+# Mini Backlog:
+- [ ] VLANS: https://www.youtube.com/watch?v=JszGeQPTo4w&ab_channel=CrosstalkSolutions
+- [ ] create own statusline/lualine
+- [ ] continue sort lock
+- [ ] finish the ansible playbook for machine setup - all roles
+
 EOF
 }
 
