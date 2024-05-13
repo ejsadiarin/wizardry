@@ -55,11 +55,20 @@ title: my very own setup architecture
   - run in a docker container or a VM
   - self-hosted cloud storage (main storage)
   - for documents, bookmarks, contact, and calendar 
+- [Filebrowser](https://github.com/filebrowser/filebrowser) (Web Filebrowser)
+  - run in a docker container
 ### Git
 - [Gitea](https://gitea.com/) (Git Server)
   - 
 - [Gitlab](https://gitea.com/) (Git Server)
   - 
+### Monitoring/Observability
+- Prometheus
+  - for monitoring logs and then sending to Grafana to create graphs and charts
+- Grafana
+  - for making dashboards
+- OneUptime
+  - complete open-source observability platform
 
 ## What do I need right now?
 - Dell Optiplex Line or Lenovo M900 Mini PC (Intel i5 6500T with 16 GB RAM) or HP EliteDesk
