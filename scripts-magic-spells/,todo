@@ -54,6 +54,7 @@ new_todo() {
 - [ ] look into webhooks
 
 - [ ] add networking k8s: https://www.reddit.com/r/kubernetes/s/TOZlIZ3Ggg and [THIS](https://www.reddit.com/r/kubernetes/comments/1cj88by/the_torture_starts_here/)
+- [ ] add this dotval: 0;s;1;P;c;5;u;0A0A0AFF;o;1;d;1;0b;0;1b;0;S;c;0
 
 
 EOF
