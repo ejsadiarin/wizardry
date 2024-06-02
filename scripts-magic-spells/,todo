@@ -38,6 +38,21 @@ new_todo() {
 - [ ] get groupmate for ccprog3
 - [ ] nstp form for off campus need notarized
 
+- [ ] READY FOR TWICE FANMEET TOM
+  - [ ] charge both powerbank
+  - [ ] bring uniqlo tote bag w/ small pouch black
+    - [ ] 2 powerbank
+    - [ ] wax
+    - [ ] wallet
+      - [ ] ticket inside wallet
+    - [ ] earphones
+    - [ ] AAA alkaline battery (buy in mall/711/etc.)
+    - [ ] lightstick
+
+- [ ] know how to use the sea salt spray
+
+- [ ] ready payment 2990 for mouse
+
 
 # Side Quests:
 - [ ] VLANS: https://www.youtube.com/watch?v=JszGeQPTo4w&ab_channel=CrosstalkSolutions
@@ -83,5 +98,5 @@ if [ ! -f "$todo_file" ]; then
 	new_todo
 fi
 
-nvim '+ normal gg' "$todo_file" -c ":NoNeckPain"
+nvim "$todo_file" -c ":NoNeckPain" '+ normal gg'
 # nvim '+ normal Gzzo' "$todo_file" -c :NoNeckPain
