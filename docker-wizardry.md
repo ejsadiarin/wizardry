@@ -7,7 +7,7 @@ date: 2024-04-20T3:53
 
 # Docker Wizardry
 - see "self-hostable" apps in [selfh.st](https://selfh.st/apps/) and [awesome-selfhosted](https://awesome-selfhosted.net/)
-
+- see [Docker Deep Dive](https://medium.com/@furkan.turkal/how-does-docker-actually-work-the-hard-way-a-technical-deep-diving-c5b8ea2f0422)
 ## Recommended Docker Configs
 
 ### adjust default address pool
