@@ -81,8 +81,8 @@ date: 2024-06-11T11:01
 - 32GB (RECOMMENDED)
 - DDR4-3200 
   - DDR4 range is 3600MHz-4000MHz (2666MHz for most casual use)
-- DDR5-4800 (depends on budget)
-  - 
+- DDR5-4800, DDR5-6000MHz 
+  - range is 4800 above
 
 
 # Motherboard
@@ -90,13 +90,15 @@ date: 2024-06-11T11:01
 - support overclocking
 
 ## Recommended
-
 - any B550M (Gigabyte B550M DS3H AC, MSI B550M Pro-VDH WiFi)
+- any B450M
 
 ## Budget
 - 450 or 550 (any AM4)
 
 # Storage (SSD)
+- any M.2 SSD
+
 - Lexar
 - Samsung
 
