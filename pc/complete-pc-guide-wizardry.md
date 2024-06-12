@@ -1,6 +1,7 @@
 ---
 tags:
   - How-To
+  - Wizardry
 date: 2024-06-11T11:01
 ---
 <!-- 2024-06-11-1101 (June 11, 2024 11:01:30 AM) -->
@@ -114,7 +115,12 @@ date: 2024-06-11T11:01
 
 ---
 
-# BUILDS
+# Meta BUILDS
 - Ryzen 5 7600 (CPU), RTX 4070 12GB (GPU)
-- 7600X (CPU), 4070Ti (GPU)
+- Ryzen 7600X (CPU), RTX 4070Ti (GPU)
+- Ryzen 5 7500F (CPU), and RX 6700 XT 12GB
+
+*5600/5600x with 6600/6700 meta:*
 - Ryzen 5 5600X (CPU), RX 6700XT 12GB (GPU)
+- Ryzen 5 5600 (CPU), RX 6600 8GB (GPU)
+- Ryzen 5 5600X (CPU), RX 6600/50 XT, 7600, 6700/50 XT, 3060Ti, 4060Ti
