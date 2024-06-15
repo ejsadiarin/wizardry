@@ -94,6 +94,8 @@ date: 2024-06-11T11:01
 - any B550M (Gigabyte B550M DS3H AC, MSI B550M Pro-VDH WiFi)
 - any B450M
 
+GIGABYTE A620M Gaming X - great entry-level AM5 board for $100
+
 ## Budget
 - 450 or 550 (any AM4)
 
@@ -110,6 +112,8 @@ date: 2024-06-11T11:01
 - XPG Pylon Series (650 Bronze, etc.)
 
 # Case
+- Montech Air 903 Max
+  - supports large GPUs like 4090, etc.
 
 # CPU Fan
 
@@ -121,6 +125,11 @@ date: 2024-06-11T11:01
 - Ryzen 5 7500F (CPU), and RX 6700 XT 12GB
 
 *5600/5600x with 6600/6700 meta:*
-- Ryzen 5 5600X (CPU), RX 6700XT 12GB (GPU)
+- Ryzen 5 5600X (CPU), RX 6700xt 12GB (GPU)
+- Ryzen 5 5600/5600x (CPU), RX 6650x/6650xt (GPU)
 - Ryzen 5 5600 (CPU), RX 6600 8GB (GPU)
 - Ryzen 5 5600X (CPU), RX 6600/50 XT, 7600, 6700/50 XT, 3060Ti, 4060Ti
+- Ryzen 5 5600X (CPU), RX 6600/50 XT, 7600, 6700/50 XT, 3060Ti, 4060Ti
+
+- Ryzen 7 5800x, RX 7600
+- Ryzen 5 7600/7500F,
