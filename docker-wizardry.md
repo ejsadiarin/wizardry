@@ -43,7 +43,7 @@ running)*
 TLDR: give Docker an explicit interface like `127.0.0.1:8080:80`, since just doing `ports: 80:80` will make it listen to
 `0.0.0.0`, which means all interfaces including your public interface
 
-#### POINTERS
+#### PRIORITIZE
 1. **Always verify your security setup.** It your case, a simple port scan would show this immediately. Having automated scans is even better.
 2. This is a very old issue, but people keep doing this. Sadly, most tutorials focus on 'let get it running ASAP', and not on 'let's get it running securely'.
 3. My solution is to expose only 22 (or whatever tech are you using to access your server), 80 and 443. All other stuff talks to reverse proxy via unix sockets (link).

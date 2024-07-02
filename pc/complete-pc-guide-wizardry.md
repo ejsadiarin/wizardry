@@ -62,7 +62,7 @@ date: 2024-06-11T11:01
 # GPU
 - *IMPORTANT NOTE: the CPU and GPU should be similar in performance to prevent bottlenecks* 
 - AMD: any RX
-  -  
+  -  Sapphire, XFX, PowerCool - best brands for AMD
 - NVIDIA: any GTX, RTX
   - has CUDA cores best for Ray Tracing, animations, training AI models, etc.
 

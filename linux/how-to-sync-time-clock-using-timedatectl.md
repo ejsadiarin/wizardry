@@ -29,6 +29,12 @@ timedatectl set-timezone UTC
 sudo systemctl enable systemd-timesyncd.service # or sudo systemctl start systemd-timesyncd.service for non-persistent change
 ```
 
+## If the UTC is correct but the hardware clock is not
+ref: https://bbs.archlinux.org/viewtopic.php?id=154992
+```bash
+sudo hwclock --systohc --verbose
+```
+
 ## Manually with `set-time`
 - use `set-time` flag/option like this (HH:mm:ss):
 ```bash
@@ -44,3 +50,5 @@ Failed to set time: NTP unit is active
 ```bash
 sudo systemctl disable --now chronyd
 ```
+
+#
