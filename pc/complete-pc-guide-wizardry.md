@@ -133,3 +133,32 @@ GIGABYTE A620M Gaming X - great entry-level AM5 board for $100
 
 - Ryzen 7 5800x, RX 7600
 - Ryzen 5 7600/7500F,
+- 
+
+Budget:
+
+* [Ryzen 5600 + RX6600 - £671.20](https://uk.pcpartpicker.com/list/J8J4cH)
+* [Ryzen 5600 + RX6650XT - £713.19](https://uk.pcpartpicker.com/list/VCzTQP)
+* [Ryzen 5600 + RX6750XT - £783.21](https://uk.pcpartpicker.com/list/gy4fQP)
+* [Ryzen 5600 + RX6800 - £841.46](https://uk.pcpartpicker.com/list/dRTc89)
+
+AM5:
+
+* [Ryzen 7600 + RX6650XT - £862.45](https://uk.pcpartpicker.com/list/4scnxH)
+* [Ryzen 7600 + RX6750XT - £932.47](https://uk.pcpartpicker.com/list/9zK9kJ)
+* [Ryzen 7600 + RX6800 - £990.72](https://uk.pcpartpicker.com/list/kv8BkJ)
+* [Ryzen 7600 + 7800XT - £1071.46](https://uk.pcpartpicker.com/list/fP6tz6)
+* [Ryzen 7600 + RTX 4070 - £1102.45](https://uk.pcpartpicker.com/list/xTWqjH)
+* [Ryzen 7600 + 7900GRE - £1143.45](https://uk.pcpartpicker.com/list/xwPBkJ)
+* [Ryzen 7600 + 4070 Super - £1176.44](https://uk.pcpartpicker.com/list/zwPBkJ)
+* [Ryzen 7600 + 7900XT - £1291.46](https://uk.pcpartpicker.com/list/BD8gGP)
+* [Ryzen 7600 + 4070Ti Super - £1381.46](https://uk.pcpartpicker.com/list/vZ8gGP)
+
+Or with a 7800x3D (using only GPUs more expensive than the CPU):
+
+* [Ryzen 7800x3D + 7800XT - £1246.45](https://uk.pcpartpicker.com/list/HjcnxH)
+* [Ryzen 7800x3D + RTX 4070 - £1277.44](https://uk.pcpartpicker.com/list/CxYFvj)
+* [Ryzen 7800x3D + 7900GRE - £1318.44](https://uk.pcpartpicker.com/list/Dpb9kJ)
+* [Ryzen 7800x3D + 4070 Super - £1351.43](https://uk.pcpartpicker.com/list/BLJ4cH)
+* [Ryzen 7800x3D + 7900XT - £1466.45](https://uk.pcpartpicker.com/list/qw6tz6)
+* [Ryzen 7800x3D + 4070Ti Super - £1556.45](https://uk.pcpartpicker.com/list/wZ8gGP)
