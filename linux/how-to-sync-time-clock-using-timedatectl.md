@@ -75,6 +75,14 @@ sudo systemctl enable systemd-timesyncd.service # or sudo systemctl start system
 sudo systemctl restart systemd-timesyncd.service
 ```
 
+- see status
+
+```bash
+timedatectl timesync-status
+# or
+systemctl status systemd-timesyncd.service
+```
+
 ## If the UTC is correct but the hardware clock is not
 
 ref: https://bbs.archlinux.org/viewtopic.php?id=154992
