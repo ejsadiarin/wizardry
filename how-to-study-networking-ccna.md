@@ -213,3 +213,5 @@ Mostly applied on the 'relevant octet range' step
 802.11ax - "All (a)" bands, 2.4 / 5 / 6 GHz, "Xtreme (x)" speed 4 \* 6.93 Gbps
 
 I'm not exactly good at mnemonics tbh but it helps me so I thought I'd share
+
+https://github.com/psaumur/CCNA_Course_Notes 
