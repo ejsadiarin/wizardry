@@ -108,6 +108,8 @@ title: How to get the whole System Information in a Linux Machine
 - `sudo netstat -tupln` - using `sudo` will allow to see PID/(p)rogram name
   - allows to see what services/programs are running on each ports listed
 - **INFO:** `0.0.0.0:<port>` are public, `127.0.0.1` or `127.0.1.1` are private (both are loopback addresses)
+- `lsof -nP -iTCP -sTCP:LISTEN` - display a list of ports in use
+- `lsof -nP -i:<port-number>` - check a specific port number
 
 # How to check for Linux process information (CPU usage, RAM usage, etc.)?
 
