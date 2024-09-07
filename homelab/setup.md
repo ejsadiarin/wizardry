@@ -34,7 +34,7 @@ title: my very own setup architecture
 - [PiHole](https://pi-hole.net/) (DNS)
   - self-hosted DNS server with Ad block
 - [Adguard Home](https://pi-hole.net/) (DNS)
-  - modern alternative to PiHole
+  - modern alternative to PiHole (see [how-to-setup-adguard-home](./how-to-setup-adguard-home.md))
 - [NTFY](https://ntfy.rtfd.io/) (Notifications)
   - notification server for desktop and mobile
   - notifications for long running commands
@@ -50,7 +50,7 @@ title: my very own setup architecture
   - note-taking and rendering everything markdown
   - NOTE: don't use Obsidian Sync, use Syncthing instead
 - [Caddy]() (Reverse Proxy)
-  - for reverse proxy
+  - for reverse proxy (see [harden-reverse-proxy](./harden-reverse-proxy.md))
   - dns resolution, fail2ban, etc.
 
 ### Photos (One of these)
