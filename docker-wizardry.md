@@ -100,6 +100,11 @@ ref: https://docs.docker.com/config/daemon/ipv6/
 
 ## Docker Networking
 
+1. `bridge`
+2. `host`
+3. `MACVLAN`
+4. `NAT` ??
+
 You can tell the container to use a IP that matches your actual home network, read the basics of Docker networking: https://docs.docker.com/network/
 
 And then specifically about MACVLAN and IPVLAN networks:
@@ -116,9 +121,13 @@ Basically you create a Docker network of that type with IP/Subnet that matches y
 
 ## Docker Security
 
-https://docs.docker.com/security/security-announcements/
+Read THIS: [see Docker overriding UFW rules and iptables issue](../devops/docker-overrides-ufw-rules.md)
 
-https://github.com/DoTheEvo/selfhosted-apps-docker
+- see full original ufw-docker docs here: [Solving UFW and Docker Issues](https://github.com/chaifeng/ufw-docker?tab=readme-ov-file#solving-ufw-and-docker-issues)
+
+- [https://docs.docker.com/security/security-announcements/](https://docs.docker.com/security/security-announcements/)
+
+- [https://github.com/DoTheEvo/selfhosted-apps-docker](https://github.com/DoTheEvo/selfhosted-apps-docker)
 
 - see above on [make-sure-to-scan-open-ports](#make-sure-to-scan-open-ports)
 
