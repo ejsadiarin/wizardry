@@ -8,7 +8,9 @@ title: Tailscale
 ---
 
 # Tailscale
+
 - Tailscale is a Mesh VPN service that uses WireGuard
 
 # References
+
 - [Tailscale](https://tailscale.com/)
