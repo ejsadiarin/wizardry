@@ -2,6 +2,7 @@
 tags:
   - Wizardry
   - Hacking
+  - How-To
 date: 2024-02-06T18:37
 title: Security and Hacking Wizardry
 ---

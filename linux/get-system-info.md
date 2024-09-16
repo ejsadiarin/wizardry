@@ -1,8 +1,8 @@
 ---
 tags:
-  - System Information
   - Linux
   - How-To
+  - Wizardry
 date: 2024-03-13T19:23
 title: How to get the whole System Information in a Linux Machine
 ---
@@ -111,6 +111,12 @@ title: How to get the whole System Information in a Linux Machine
 - `lsof -nP -iTCP -sTCP:LISTEN` - display a list of ports in use
 - `lsof -nP -i:<port-number>` - check a specific port number
 
+# How to see services running behind the ports?
+
+- `netstat -tulpn | grep -n <port>` - to find the service running behind the specific port, -n is to show the line numbers
+- `sudo netstat -tulpn | grep -n <port>` - use sudo if not all processes/services could be identified
+- `sudo netstat -anputW` - another way to find (all, numeric, ports, udp, tcp, wide):
+
 # How to check for Linux process information (CPU usage, RAM usage, etc.)?
 
 - `ps aux | grep <process>`
@@ -150,3 +156,7 @@ title: How to get the whole System Information in a Linux Machine
 - `fail2ban` - intrusion prevention software framework
 - `apparmor` - Mandatory Access Control (MAC) system
 - `osquery` - SQL-based operating system instrumentation, monitoring, and analytics
+
+# See more
+
+- [security-hacking-wizardry](./wizardry/linux)
