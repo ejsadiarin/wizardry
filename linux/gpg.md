@@ -5,12 +5,15 @@ tags:
 date: 2024-02-10T16:00
 title: GPG
 ---
+
 <!-- 2024-02-10-1600 (February 10, 2024 4:00 PM) -->
 
 # GPG with GnuPG
 
 ## Daily Usage
+
 - with `tar`:
+
 ```bash
 # compress and encrypt with symmetric password only (flexible)
 tar czf - <file-or-dir> | pv | gpg --symmetric -o <file-or-dir>.tar.gz.gpg
@@ -20,9 +23,11 @@ gpg --decrypt <file-or-dir>.tar.gz.gpg | pv | tar xz
 # encrypt using keypair (need to import the ultimate keypair first, see below)
 gpg --encrypt <file-or-dir>.tar.gz # encrypting a tar.gz file
 gpg --encrypt <file-or-dir> # encrypting any file or directory
+gpg -e -r <email> <file-or-dir>
 ```
 
 - gpg common commands:
+
 ```bash
 gpg --list-keys # list existing keys
 
@@ -47,6 +52,7 @@ gpg --passwd <email> # change password
 ```
 
 ## Adding email or UID to an existing key
+
 ```bash
 gpg --edit-key <email>
 gpg>adduid
@@ -64,7 +70,9 @@ gpg>save
 ```
 
 ## Backing up
+
 - Exporting:
+
 ```bash
 # export private key:
 gpg --export-secret-keys --armor --output private.gpg <email> # or: gpg --export-secret-keys <email> > private.gpg
@@ -74,8 +82,8 @@ gpg --export --armor --output public.gpg <email> # or: gpg --export <email> > pu
 # see above sections to encrypt/decrypt wil tar and gpg --symmetric
 ```
 
-
 ## Importing to another machine:
+
 ```bash
 # get keys
 scp -r user@local:/path/to/exported-keys.gpg ~/imported-keys
@@ -91,20 +99,24 @@ exit # if save did not exit you to the gpg-shell
 ```
 
 ## Revoking keys with revoke certificates
+
 ```bash
 gpg --import revoke-cert.asc # this will automatically revoke the key
 ```
 
 ## Revoking keys with revoke certificates
+
 ```bash
 gpg --import revoke-cert.asc # this will automatically revoke the key
 ```
 
 ## gpg-agent
+
 - `gpg-agent` is a daemon to manage secret keys for GPG
 - `ps -A | grep gpg-agent` - check if gpg-agent is running
 - if want, create gpg-agent.conf file in ~/.gnupg/ and add `use-standard-socket` to it for better performance
   - then restart gpg-agent
+
 ```bash
 default-cache-ttl 604800 # 7 days
 max-cache-ttl 604800 # 7 days
