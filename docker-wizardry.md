@@ -42,7 +42,7 @@ You will need to "down" any compose files already active and bring them up again
 ### make sure to scan open ports
 
 - [Security PSA - on using Docker on publicly accessible host](https://www.reddit.com/r/selfhosted/comments/1cv2l3q/security_psa_for_anyone_using_docker_on_a/?share_id=opdJEA9xzpu0nmaaf1_3-&utm_content=1&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1)
-- [see docker-overrides-ufw-rules](docker-overrides-ufw-rules.md)
+- [see docker-overrides-ufw-rules](./devops/docker-overrides-ufw-rules.md)
 
 _Gist: Docker opens ports on your machine on its own and overrides firewall configurations (as long as the container is
 running)_
@@ -109,9 +109,9 @@ You can tell the container to use a IP that matches your actual home network, re
 
 And then specifically about MACVLAN and IPVLAN networks:
 
-https://docs.docker.com/network/drivers/macvlan/
+[https://docs.docker.com/network/drivers/macvlan/](https://docs.docker.com/network/drivers/macvlan/)
 
-https://docs.docker.com/network/drivers/ipvlan/
+[https://docs.docker.com/network/drivers/ipvlan/](https://docs.docker.com/network/drivers/ipvlan/)
 
 This is probably worth a read too: https://docs.docker.com/network/network-tutorial-macvlan/
 
@@ -143,7 +143,29 @@ You don't need rootless Docker if you follow simple principles:
 
 _or just use podman (rootless containers by default)_
 
+
 ## Docker Best Practices
+
+> From someone who run containers commercially on the scale of a few thousand containers.
+
+1. Use Volumes instead of Bind mounts
+  - Bind mounts are static. Meaning you have to prepare the correct UID/GID and folder structure, where as volumes do this all for you
+
+2. For Docker Networking: basically all containers should only communicate internally, so `internal:true`, 
+  - **only the services that expose an actual service should talk to a reverse proxy on the node that is exposed via MACVLAN/IPVLAN/OVS to a VLAN on your network.**
+  - Treat the host like a hypervisor and each container as a VM (avoid using the host).
+
+  > The host network should only be used to manage the host, everything else goes in MACVLAN/IPVLAN/OVS/overlay. Just like you do with a hypervisor. 
+  >
+  > I would do PiHole like this: MACVLAN > Traefik UDP/TCP :53 > PiHole.
+  >
+  > I’m fully aware everyone else does: Host > Traefik UDP/TCP :53 > PiHole, 
+  > - **but** people need to learn to not treat the host as an actual thing that accepts connections.
+
+3. Use compose.yaml or CLI over GUI 
+  - Portainer Problem: Using portainer means you give full root access to all your containers and your host to portainer itself, which is a huge security issue since any zero day in portainer compromises your entire node and all containers and all data. I recommend not to use portainer at all. Use compose.yaml
+
+### Good Reads
 
 - [Docker Defaults Best Practices](https://www.reddit.com/r/selfhosted/s/HWqUMxyZRf)
 - [How much Docker Knowledge is Needed for DevOps](https://www.reddit.com/r/devops/comments/1cuvbkt/how_much_docker_knowledge_is_needed_for_a_job_in/)
