@@ -53,9 +53,9 @@ In case you need to set a static IP, you can follow a few simple steps below.
 cp /etc/network/interfaces /etc/network/interfaces.bak
 ```
 
-- install `net-tools` package
+- install `net-tools` package and NetworkManager
 ```bash
-apt install net-tools
+apt install net-tools network-manager
 ```
 
 - get current network interface (via `ifconfig`) and current route/gateway and netmask information (via `netstat`)
@@ -311,7 +311,8 @@ crontab -e
 0 3 * * * /usr/local/bin/upgrade.sh > /var/log/upgrade.log 2>&1
 ```
 
-**Your server should now be maintenance free**
+**Your server should now be maintenance free.**
+
 
 
 ### 4. Enable Firewall and Configure
