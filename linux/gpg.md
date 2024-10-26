@@ -122,3 +122,37 @@ default-cache-ttl 604800 # 7 days
 max-cache-ttl 604800 # 7 days
 # use-standard-socket
 ```
+
+## edit gpg key email
+
+```bash
+gpg --list-secret-keys --keyid-format=long
+gpg --edit-key <email-or-uid>
+gpg> adduid
+Real name: <Name>
+Email: <New-Email>
+Comments: <can-be-empty>
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? <O-for-Okay>
+gpg> list
+gpg> uid 2
+gpg> trust
+gpg> 5 # for ultimate
+gpg> y
+gpg> expire
+gpg> 0 # does not expire at all
+gpg> y
+gpg> uid 1 # old email uid 
+gpg> deluid
+gpg> y
+gpg> save
+```
+
+## edit gpg key password
+
+```bash
+gpg --list-secret-keys --keyid-format=long
+gpg --edit-key <email-or-uid>
+gpg> passwd
+# then just follow instructions
+gpg> save # for safety
+```
