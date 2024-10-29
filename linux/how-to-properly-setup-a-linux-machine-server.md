@@ -356,6 +356,8 @@ table inet firewall {
 }
 ```
 
+- NOTE: you may want to expose some other ports for other services (syncthing, dns, tailscale, etc.)
+
 
 #### ufw
 - check open ports/sockets and services running behind ports: `sudo ss -tupln` or `sudo netstat -tupln`
