@@ -10,6 +10,12 @@ title: GPG
 
 # GPG with GnuPG
 
+- before anything, make sure that GPG_TTY is added to .bashrc or .zshrc or any shell initialization file:
+
+```
+export GPG_TTY=$(tty)
+```
+
 ## Daily Usage
 
 - with `tar`:
@@ -156,3 +162,52 @@ gpg> passwd
 # then just follow instructions
 gpg> save # for safety
 ```
+
+## text-baed gpg PIN entry  (console mode gpg pinentry)
+
+- ref: [https://superuser.com/questions/520980/how-to-force-gpg-to-use-console-mode-pinentry-to-prompt-for-passwords](https://superuser.com/questions/520980/how-to-force-gpg-to-use-console-mode-pinentry-to-prompt-for-passwords)
+
+> [!IMPORTANT]
+> Usecases:
+> - for servers without window GUI
+> - when encountering error: `gpg: problem with the agent: Screen or window too small`
+
+### fast (temporary) solution
+
+1. first, make sure that GPG_TTY is added on .bashrc or .zshrc:
+```
+export GPG_TTY=$(tty)
+```
+
+2. then update
+```bash
+gpg-connect-agent updatestartuptty /bye >/dev/null
+```
+
+
+### permanent solution
+
+- To change the pinentry permanently, append the following to your `~/.gnupg/gpg-agent.conf`:
+
+```bash
+pinentry-program /usr/bin/pinentry-tty
+```
+
+(In older versions which lack pinentry-tty, use pinentry-curses for a 'full-terminal' dialog window.)
+
+- Tell the GPG agent to reload configuration:
+
+```bash
+gpg-connect-agent reloadagent /bye
+```
+
+
+### on Debian box
+
+1. install pinentry-tty
+```bash
+sudo apt install pinentry-tty
+sudo update-alternatives --config pinentry
+```
+
+2. select pinentry-tty
