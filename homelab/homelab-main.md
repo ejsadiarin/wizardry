@@ -11,7 +11,7 @@ tags:
 - [x] Traefik - reverse proxy
 - [ ] Adguard Home - DNS server
 
-- [ ] Authentik - central auth
+- [x] Authentik - central auth
 - [ ] Immich
 - [ ] Ntfy.sh - universal notfications
     - personal notifications
