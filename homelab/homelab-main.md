@@ -17,7 +17,7 @@ tags:
     - personal notifications
     - backups (due, when success, etc.)
     - birthdays, events, etc.
-- [ ] Portainer or Watchtower
+- [x] Portainer or Watchtower
 - [ ] Uptime Kuma
 - [ ] Blog site (maybe custom using Astro? or search a self-hosted one) 
 - [ ] Coolify (for experiment)

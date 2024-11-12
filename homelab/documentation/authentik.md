@@ -1,3 +1,10 @@
+---
+date: 2024-10-30T20:02
+tags: 
+- Homelab
+---
+<!-- 2024-10-30-2002 (October 31, 2024 08:02:51 PM) -->
+
 # Authentik Documentation
 - ref: [https://youtu.be/N5unsATNpJk?si=7xCBs01pyuwULeoM](https://youtu.be/N5unsATNpJk?si=7xCBs01pyuwULeoM)
 
