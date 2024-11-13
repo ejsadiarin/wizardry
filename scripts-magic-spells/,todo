@@ -59,7 +59,7 @@ new_todo() {
 
 ## Go
 
-- [ ] see oapi-codegen OpenAPI spec Code Generator for Go
+- [ ] see \`swag-go\ or \`oapi-codegen\` OpenAPI spec Code Generator for Go
 
 ## Kubernetes
 
@@ -98,7 +98,7 @@ new_todo() {
 
 ## What would make a candidate really stand out:
 
-- [ ] knowing how to join a Linux machine to a domain and managing ssh/sudo access to it using domain credentials instead of keys (familiarity with sssd is helpful here).
+- [ ] knowing how to join a Linux machine to a domain and managing ssh/sudo access to it using domain credentials instead of keys (familiarity with sshd is helpful here).
 - [ ] familiarity with ansible and satellite server.
 - [ ] knowing how to mount basic data disks and network shares.
 - [ ] how to grow root and swap partitions without downtime (I guess also worth saying familiarity with LVM for this one).

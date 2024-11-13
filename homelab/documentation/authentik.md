@@ -37,6 +37,9 @@ tags:
 - we use Traefik as reverse proxy (the best!)
 - we will use authentik as a middleware
 
+> [!IMPORTANT]
+> NOTE: This is only applicable for services with type: `Proxy Provider` in Authentik
+
 *refer to official documentation for the Traefik config*
 
 1. edit main `traefik.yml` file to add `config.yml` file
