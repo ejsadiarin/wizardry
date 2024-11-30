@@ -386,7 +386,7 @@ func main() {
 - The `net/http` package allows for building HTTP servers and clients
 - perfect for creating web applications and services.
 4. **WebSockets**
-- For real-time communication, Go supports WebSockets through the `net/http` package.
+- For real-time communication, Go supports WebSockets through the `net/http` package. Use `gorilla/websockets`
 5. **TLS/SSL**
 - Secure communication can be implemented using TLS/SSL, with Go's `crypto/tls` package.
 6. **DNS Resolution**
@@ -395,6 +395,8 @@ func main() {
 7. **IP Address Manipulation**
 - The `net` package for parsing and manipulating IP addresses.
 
+## Go Project Structure
+- [Simple Guide to Go project folder structures](https://medium.com/@smart_byte_labs/organize-like-a-pro-a-simple-guide-to-go-project-folder-structures-e85e9c1769c2)
 # Resources
 - [Go: End-to-end to PRODUCTION-LEVEL SOFTWARE](https://www.youtube.com/watch?v=rx6CPDK_5mU&list=PLy_6D98if3ULEtXtNSY_2qN21VCKgoQAE)
 - [Go Class in DETAIL](https://www.youtube.com/playlist?app=desktop&list=PLoILbKo9rG3skRCj37Kn5Zj803hhiuRK6&si=2Rn65jJzEayIKqN4) [Complete Go Notes](https://docs.google.com/document/d/1Zb9GCWPKeEJ4Dyn2TkT-O3wJ8AFc-IMxZzTugNCjr-8/edit)
