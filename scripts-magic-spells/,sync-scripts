@@ -21,4 +21,4 @@ else
     dest=$wiz
 fi
 
-rsync -auz "$src/" "$dest/"
+rsync -azvh --progress "$src"/ "$dest"/
