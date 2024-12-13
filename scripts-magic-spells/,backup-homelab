@@ -238,8 +238,7 @@ local_backup() {
         *)
             echo "Backing up $dir..."
             sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/ || {
-                err=$(sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/ 2>&1)
-                echo "Error on rsync [$dir]: $err"
+                echo "Error on rsync [$dir]"
                 return 1
             }
             ;;
