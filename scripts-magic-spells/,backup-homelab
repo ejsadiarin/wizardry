@@ -136,85 +136,114 @@ local_backup() {
         bn=$(basename "$dir")
         bk_dir="$backups/$bn" # example: ~/backups/traefik
         mkdir -p "$bk_dir"
-        if [[ $dir == "$traefik" ]]; then
+        case "$dir" in
+        "$traefik" | "$uptime_kuma" | "$authentik")
             # traefik - backup everything
             # src: ~/services/traefik/
             # dest: ~/backups/traefik/
             sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/ || {
-                err=$(sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/ 2>&1)
-                echo "Error on rsync [$dir]: $err"
+                echo "[x] Error on rsync [$dir]"
                 return 1
             }
-            # TODO: refactor this, assert_rsync "$dir" sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/
-        fi
-        if [[ $dir == "$portainer" ]]; then
+            ;;
+        "$portainer")
             # portainer - backup everything
             # dest: ~/backups/portainer
-            sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/ || {
-                err=$(sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/ 2>&1)
-                echo "Error on rsync [$dir]: $err"
+            {
+                sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/
+                sudo chown -R "$(whoami)":"$(whoami)" "$bk_dir"/data
+            } || {
+                echo "Error on rsync [$dir]"
                 return 1
             }
-            sudo chown -R "$(whoami)":"$(whoami)" "$bk_dir"/data
-        fi
-        if [[ $dir == "$uptime_kuma" ]]; then
-            # uptime_kuma - backup everything
-            # dest: ~/backups/uptime_kuma
-            sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/ || {
-                err=$(sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/ 2>&1)
-                echo "Error on rsync [$dir]: $err"
-                return 1
-            }
-        fi
-        if [[ $dir == "$authentik" ]]; then
-            # authentik - backup everything
-            # dest: ~/backups/authentik
-            sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/ || {
-                err=$(sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/ 2>&1)
-                echo "Error on rsync [$dir]: $err"
-                return 1
-            }
+            ;;
+        "$authentik")
             # dest: ~/backups/authentik/postgres-backup.sql
-            timestamp=$(date +%s%3N)
-            docker exec -i authentik-postgres /usr/local/bin/pg_dump --username authentik-pg-admin authentik-pg-db >"$bk_dir"/postgres-backup-"$timestamp".sql || {
-                err=$(docker exec -i authentik-postgres /usr/local/bin/pg_dump --username authentik-pg-admin authentik-pg-db 2>&1)
+            {
+                timestamp=$(date +%s%3N)
+                docker exec -i authentik-postgres /usr/local/bin/pg_dump --username authentik-pg-admin authentik-pg-db >"$bk_dir"/postgres-backup-"$timestamp".sql
+            } || {
                 echo "Error on docker pg_dump [$dir]: $err"
                 return 1
             }
-        fi
-        if [[ $dir == "$ntfy" ]]; then
+            ;;
+        "$ntfy")
             # ntfy - backup everything
             echo "Backing up NTFY..."
-            find "$dir" -maxdepth 1 -type f -print0 | xargs -0 -I {} rsync -azvh --delete --progress {} "$bk_dir" # docker-compose, env files, etc.
-            sudo rsync -azvh --delete --progress "$dir"/etc "$bk_dir"                                             # dest: ~/backups/ntfy
-            sudo rsync -azvh --delete --progress "$dir"/cache "$bk_dir"                                           # dest: ~/backups/ntfy
-        fi
-        if [[ $dir == "$gitea" ]]; then
+            {
+                # docker-compose, env files, etc.
+                find "$dir" -maxdepth 1 -type f -print0 | xargs -0 -I {} rsync -azvh --delete --progress {} "$bk_dir"
+                # dest (bk_dir): ~/backups/ntfy
+                sudo rsync -azvh --delete --progress "$dir"/etc "$bk_dir"
+                sudo rsync -azvh --delete --progress "$dir"/cache "$bk_dir"
+            } || {
+                echo "Error on rsync [$dir]"
+                return 1
+            }
+            ;;
+        "$gitea")
             # gitea - backup everything via gitea dump inside container (outputs tar.gz file)
             echo "Running gitea dump command..."
             mkdir -p "$bk_dir/dumps"
-            find "$dir" -maxdepth 1 -type f -print0 | xargs -0 -I {} rsync -azvh --delete --progress {} "$bk_dir" # docker-compose, env files, etc.
-            docker exec -u git -it -w /tmp "$(docker ps -qf 'name=^gitea$')" bash -c '/usr/local/bin/gitea dump -c /data/gitea/conf/app.ini'
-            latest_zip=$(docker exec -u git "$(docker ps -qf 'name=^gitea$')" ls /tmp -Art | tail -n 1 | tr -d '\r')
-            echo "Latest dump file: $latest_zip"
-            docker cp "$(docker ps -qf 'name=^gitea$')":/tmp/"$latest_zip" "$bk_dir/dumps/" || {
-                echo "Error: Failed to copy $latest_zip from container."
+            {
+
+                find "$dir" -maxdepth 1 -type f -print0 | xargs -0 -I {} rsync -azvh --delete --progress {} "$bk_dir" # docker-compose, env files, etc.
+                docker exec -u git -it -w /tmp "$(docker ps -qf 'name=^gitea$')" bash -c '/usr/local/bin/gitea dump -c /data/gitea/conf/app.ini'
+                latest_zip=$(docker exec -u git "$(docker ps -qf 'name=^gitea$')" ls /tmp -Art | tail -n 1 | tr -d '\r')
+                echo "Latest dump file: $latest_zip"
+                docker cp "$(docker ps -qf 'name=^gitea$')":/tmp/"$latest_zip" "$bk_dir/dumps/" || {
+                    echo "Error: Failed to copy $latest_zip from container."
+                    return 1
+                }
+                # after copy, delete the oldest one (retains 3 latest copies)
+                zip_files=(find "$bk_dir"/dumps/ -type f -name "*.zip")
+                if [ "${#zip_files[@]}" -gt 3 ]; then
+                    oldest_zip=$(ls -Art "$bk_dir"/dumps/ | head -n 1)
+                    echo "Removing oldest dump file: $oldest_zip"
+                    rm -f "$oldest_zip" || {
+                        echo "Error: Failed to remove $oldest_zip."
+                        return 1
+                    }
+                else
+                    echo "Less than 3 dump files found; skipping deletion of oldest file."
+                fi
+                echo "Gitea dump completed."
+            } || {
+                echo "Error on backing up via gitea dump [$dir]"
                 return 1
             }
-            echo "Gitea dump completed."
-        fi
-        if [[ $dir == "$immich" ]]; then
+            ;;
+        "$immich")
             # immich - backup specific dirs only
-            echo "Backing up Immich..."
-            timestamp=$(date +%s%3N)
-            sudo docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgres | gzip | sudo tee "$dir"/library/backups/immich-db-backup-"$timestamp".sql.gz >/dev/null
-            find "$dir" -maxdepth 1 -type f -print0 | xargs -0 -I {} rsync -azvh --delete --progress {} "$bk_dir" # docker-compose, env files, etc.
-            sudo rsync -azvh --delete --progress "$dir"/library/library "$bk_dir"                                 # libs
-            sudo rsync -azvh --delete --progress "$dir"/library/profile "$bk_dir"                                 # profile
-            sudo rsync -azvh --delete --progress "$dir"/library/backups "$bk_dir"                                 # database
-            sudo rsync -azvh --delete --progress "$dir"/library/upload "$bk_dir"                                  # imgs/vids
-            echo "Successfully backed up Immich"
-        fi
+            echo "Backing up immich [$dir]..."
+            {
+                timestamp=$(date +%s%3n)
+                sudo docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgres | gzip | sudo tee "$dir"/library/backups/immich-db-backup-"$timestamp".sql.gz >/dev/null
+                # docker-compose, env files, etc.
+                find "$dir" -maxdepth 1 -type f -print0 | xargs -0 -I {} rsync -azvh --delete --progress {} "$bk_dir"
+                # libs
+                sudo rsync -azvh --delete --progress "$dir"/library/library "$bk_dir"
+                # profile
+                sudo rsync -azvh --delete --progress "$dir"/library/profile "$bk_dir"
+                # database
+                sudo rsync -azvh --delete --progress "$dir"/library/backups "$bk_dir"
+                # imgs/vids
+                sudo rsync -azvh --delete --progress "$dir"/library/upload "$bk_dir"
+                echo "Successfully backed up immich"
+            } || {
+                echo "Error on rsync [$dir]"
+                return 1
+            }
+            ;;
+        *)
+            echo "Backing up $dir..."
+            sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/ || {
+                err=$(sudo rsync -azvh --delete --progress "$dir"/ "$bk_dir"/ 2>&1)
+                echo "Error on rsync [$dir]: $err"
+                return 1
+            }
+            ;;
+        esac
     done
 }
 
