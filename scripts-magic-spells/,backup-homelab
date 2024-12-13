@@ -11,7 +11,7 @@ set -e
 
 # services
 services="$HOME/services"
-NTFY_ENDPOINT="https://ntfy.local.ejsadiarin.com/homelab"
+NTFY_ENDPOINT="https://ntfy.local.ejsadiarin.com/backups"
 
 # traefik
 traefik="$HOME/services/traefik"
@@ -66,67 +66,67 @@ dry_run() {
         echo "Current bn: $bn"
         bk_dir="$backups/$bn" # example: ~/backups/traefik
         echo "Creating if not exists: $bk_dir"
-        if [[ $dir == "$traefik" ]]; then
-            # traefik - backup everything
-            # src: ~/services/traefik/
-            # dest: ~/backups/traefik/
+
+        case "$dir" in
+        "$traefik")
             echo "current dir: $dir/ with bk_dir: $bk_dir/"
             sudo rsync -azvh --delete --progress --dry-run "$dir"/ "$bk_dir"/
-        fi
-        if [[ $dir == "$portainer" ]]; then
-            # portainer - backup everything
+            ;;
+
+        "$portainer")
             echo "current dir: $dir/ with bk_dir: $bk_dir/"
             sudo rsync -azvh --delete --progress --dry-run "$dir"/ "$bk_dir"/
-        fi
-        if [[ $dir == "$uptime_kuma" ]]; then
-            # uptime_kuma - backup everything
+            ;;
+
+        "$uptime_kuma")
             echo "current dir: $dir/ with bk_dir: $bk_dir/"
             sudo rsync -azvh --delete --progress --dry-run "$dir"/ "$bk_dir"/
-        fi
-        if [[ $dir == "$authentik" ]]; then
-            # authentik - backup everything
-            # dest: ~/backups/authentik
+            ;;
+
+        "$authentik")
             echo "current dir: $dir/ with bk_dir: $bk_dir/"
             sudo rsync -azvh --delete --progress --dry-run "$dir"/ "$bk_dir"/
-            # dest: ~/backups/authentik/postgres-backup.sql
-            # docker exec -i authentik-postgres /usr/local/bin/pg_dump --username authentik-pg-admin authentik-pg-db >"$bk_dir"/postgres-backup.sql
-        fi
-        if [[ $dir == "$ntfy" ]]; then
-            # ntfy - backup everything
-            echo "current dir: $dir with bk_dir: $bk_dir"
-            ntfy_etc="$dir"/etc
-            ntfy_cache="$dir"/cache
+            echo "will run: docker exec -i authentik-postgres /usr/local/bin/pg_dump --username authentik-pg-admin authentik-pg-db >""$bk_dir""/postgres-backup.sql"
+            ;;
+
+        "$ntfy")
+            ntfy_etc="$dir/etc"
+            ntfy_cache="$dir/cache"
             echo "backing up: files (maxdepth 1) on bk_dir: $bk_dir"
-            find "$dir" -maxdepth 1 -type f -print0 | xargs -0 -I {} rsync -azvh --delete --progress --dry-run {} "$bk_dir" # docker-compose, env files, etc.
+            find "$dir" -maxdepth 1 -type f -print0 | xargs -0 -I {} rsync -azvh --delete --progress --dry-run {} "$bk_dir"
             echo "backing up: $ntfy_etc with bk_dir: $bk_dir"
-            sudo rsync -azvh --delete --progress --dry-run "$dir"/etc "$bk_dir" # dest: ~/backups/ntfy
+            sudo rsync -azvh --delete --progress --dry-run "$dir"/etc "$bk_dir"
             echo "backing up: $ntfy_cache with bk_dir: $bk_dir"
-            sudo rsync -azvh --delete --progress --dry-run "$dir"/cache "$bk_dir" # dest: ~/backups/ntfy
-        fi
-        if [[ $dir == "$gitea" ]]; then
-            # gitea - backup everything via gitea dump inside container (outputs tar.gz file)
+            sudo rsync -azvh --delete --progress --dry-run "$dir"/cache "$bk_dir"
+            ;;
+
+        "$gitea")
             echo "backing up: files (maxdepth 1) on bk_dir: $bk_dir"
-            find "$dir" -maxdepth 1 -type f -print0 | xargs -0 -I {} rsync -azvh --delete --progress --dry-run {} "$bk_dir" # docker-compose, env files, etc.
+            find "$dir" -maxdepth 1 -type f -print0 | xargs -0 -I {} rsync -azvh --delete --progress --dry-run {} "$bk_dir"
             echo "backing up: dumps to bk_dir: $bk_dir/dumps/"
-        fi
-        if [[ $dir == "$immich" ]]; then
-            # immich - backup specific dirs only
-            echo "current dir: $dir with bk_dir: $bk_dir"
-            immich_library="$dir"/library/library
-            immich_profile="$dir"/library/profile
-            immich_backups="$dir"/library/backups
-            immich_upload="$dir"/library/upload
+            ;;
+
+        "$immich")
+            immich_library="$dir/library/library"
+            immich_profile="$dir/library/profile"
+            immich_backups="$dir/library/backups"
+            immich_upload="$dir/library/upload"
             echo "backing up: files (maxdepth 1) on bk_dir: $bk_dir"
-            find "$dir" -maxdepth 1 -type f -print0 | xargs -0 -I {} rsync -azvh --delete --progress --dry-run {} "$bk_dir" # docker-compose, env files, etc.
+            find "$dir" -maxdepth 1 -type f -print0 | xargs -0 -I {} rsync -azvh --delete --progress --dry-run {} "$bk_dir"
             echo "backing up: $immich_library with bk_dir: $bk_dir"
-            sudo rsync -azvh --delete --progress --dry-run "$dir"/library/library "$bk_dir" # libs
+            sudo rsync -azvh --delete --progress --dry-run "$dir"/library/library "$bk_dir"
             echo "backing up: $immich_profile with bk_dir: $bk_dir"
-            sudo rsync -azvh --delete --progress --dry-run "$dir"/library/profile "$bk_dir" # profile
+            sudo rsync -azvh --delete --progress --dry-run "$dir"/library/profile "$bk_dir"
             echo "backing up: $immich_backups with bk_dir: $bk_dir"
-            sudo rsync -azvh --delete --progress --dry-run "$dir"/library/backups "$bk_dir" # database
+            sudo rsync -azvh --delete --progress --dry-run "$dir"/library/backups "$bk_dir"
             echo "backing up: $immich_upload with bk_dir: $bk_dir"
-            sudo rsync -azvh --delete --progress --dry-run "$dir"/library/upload "$bk_dir" # imgs/vids
-        fi
+            sudo rsync -azvh --delete --progress --dry-run "$dir"/library/upload "$bk_dir"
+            ;;
+
+        *)
+            echo "current dir: $dir/ with bk_dir: $bk_dir/"
+            ;;
+        esac
     done
 }
 
