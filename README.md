@@ -11,6 +11,8 @@ description: The legendary collection of technology, wield the power of the thin
 
 # Wizardry: The Akashic Records of Technology
 - the legendary collection of technology, wield the power of the thing closest to magic.
+> [!IMPORTANT]
+> NOTE: the scripts-magic-spells directory is moved to a separate repository [here](https://github.com/ejsadiarin/scripts-magic-spells)
 
 # Philosophy
 - I want all my data to be accessible from anywhere, securely, and privately
