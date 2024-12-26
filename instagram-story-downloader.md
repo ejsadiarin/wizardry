@@ -22,3 +22,5 @@ The below procedure works for me:
 `https://scontent.cdninstagram.com/v/t72.122/xxxxxxx.mp4?_nc_cat=109&ccb=1-7&_nc_sid=xxxx&efg=xxxxxxx&_nc_ohc=xxxx&_nc_ht=scontent.cdninstagram.comxxxxxxx`
 
 5. Now, copy this new link and paste in a new tab of the same browser and you should be able to download the video file.
+
+ref: [https://www.reddit.com/r/DataHoarder/comments/z3tp9g/comment/kcyh6i4/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button](https://www.reddit.com/r/DataHoarder/comments/z3tp9g/comment/kcyh6i4/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
