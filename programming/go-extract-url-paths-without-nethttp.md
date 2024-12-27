@@ -70,11 +70,10 @@ func main() {
 	var response string
 	if !strings.HasPrefix(string(req), "GET / HTTP/1.1") { // 3. if the header from the request has invalid URL path then return 404 Not Found
 		response = "HTTP/1.1 404 Not Found\r\n\r\n" // NOTE: the \r\n\r\n is the CRLF
-		conn.Close()
-		return
-	}
+	} else {
+        response = "HTTP/1.1 200 OK\r\n\r\n"
+    }
 
-	response = "HTTP/1.1 200 OK\r\n\r\n"
 	_, err = conn.Write([]byte(response)) // 4. otherwise (valid "/" path), return 200 OK  
 	if err != nil {
 		fmt.Println("Error writing data", err.Error())
