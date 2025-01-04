@@ -31,6 +31,7 @@ git log
 ```
 
 ## Squashing Commits via Interactive Rebase
+
 ### 1. Start Interactive Rebase:
 - the `n` is the number of latest commits you want to squash
 ```bash
@@ -54,10 +55,13 @@ squash f79gvr7934 docs: new fix
 - after editing, **SAVE AND CLOSE** the file.
 
 ### 3. Resolve Conflicts 
+
 - to resolve conflicts, open the interactive rebase:
 ```bash
 git rebase --edit-todo
+# or just open the file with the conflicts
 ```
+
 - add a final commit-message at the top of the buffer/file
 - then run:
 ```bash
@@ -73,4 +77,58 @@ git push origin <branch-name>
 - OR force push with lease -> force push but first checks if local branch is up-to-date with remote branch
 ```bash
 git push --force-with-lease origin <branch-name>
+```
+## 5. Push to two remotes/upstreams
+```
+git remote set-url --add --push origin <url>
+```
+
+- check if works
+```
+git remote -v
+```
+
+- now when you `git push origin main`, you will push to the two urls
+
+## 6. Git Submodules
+
+- if fresh repo (not yet cloned)
+```bash
+git clone <url> --recurse-submodules
+```
+
+- if already existing
+```bash
+git submodule update --init --recursive
+```
+
+- when git pulling
+```bash
+git pull --recurse-submodules
+# or
+git pull origin main --recurse-submodules
+
+# can be followed by to update submodules (if above doesn't work)
+git submodule update --recursive --remote
+```
+
+- when updating existing git submodules to latest remote changes
+```bash
+git submodule update --recursive --remote
+```
+
+- when adding a submodule
+```bash
+cd <parent-dir-of-submodule>
+git submodule add <url> <submodule-dir>
+
+# check if working
+git submodule status
+```
+
+- using `.gitmodules`
+```bash
+[submodule "<path-to-submodule-local>"]
+    path = <should-be-the-same-as-above-path>
+    url = <https-url>
 ```
