@@ -60,3 +60,15 @@ restic backup ~/backups
 restic snapshots
 ```
 
+## Restoring from Backups
+> [!IMPORTANT]
+> NOTE: Make sure that you have the configured `/etc/restic-env` and  `/etc/restic-password`
+> - this ensures that you have the necessary secret keys, remote repos endpoints, etc.
+
+- To restore a snapshot to a directory, supply the snapshot ID and specify the target directory. Restic restores all of the files from the backup, with their full paths, starting under that directory:
+```bash
+restic restore 20ee6d7b  --target /tmp/restore
+```
+
+- can also mount the restic snapshot database and browse snapshots from that:
+    - see here:[https://www.backblaze.com/docs/cloud-storage-integrate-restic-with-backblaze-b2#restore-files](https://www.backblaze.com/docs/cloud-storage-integrate-restic-with-backblaze-b2#restore-files)
