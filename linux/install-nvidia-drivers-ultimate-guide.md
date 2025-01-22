@@ -9,6 +9,9 @@ tags:
 
 # Ultimate Nvidia Guide to Install Drivers and more
 
+> [!IMPORTANT]
+> **THIS GUIDE IS ONLY FOR FEDORA 41+ users**
+
 - refs:
     - [Howto/NVIDIA](https://rpmfusion.org/Howto/NVIDIA)
     - [Howto/SecureBoot](https://rpmfusion.org/Howto/Secure%20Boot)
