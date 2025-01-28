@@ -192,7 +192,8 @@ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo | grep vend
 - for finer-grained control see documentation [PRIME Render Offload section in Howto/Optimus](https://rpmfusion.org/Howto/Optimus) 
 
 ## Switch between NVIDIA (proprietary drivers) and Nouveau
-ref: 
+
+ref: [https://rpmfusion.org/Howto/NVIDIA](https://rpmfusion.org/Howto/NVIDIA)
 
 ### NVIDIA to Nouveau
 
