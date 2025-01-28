@@ -120,10 +120,52 @@ systemctl reboot
 5. Once the module is built, check the version
 ```bash
 modinfo -F version nvidia
+# ^ should print/output a version (e.g. 565.77)
 ```
 - this should output a version (e.g. `565.77`) and not `modinfo: ERROR: Module nvidia not found.` 
 
-6. READ the [Special Notes section in Howto/NVIDIA](https://rpmfusion.org/Howto/NVIDIA)
+- also check if nouveau is disabled (not in use)
+```bash
+lsmod | grep nouveau
+# should print/output nothing
+```
+### Install other drivers for Hardware Feature Support
+
+- install NVENC/NVDEC (most likely already installed by the commands above, but won't hurt to check!)
+```bash
+sudo dnf install xorg-x11-drv-nvidia-cuda-libs
+```
+
+- VDPAU/VAAPI (video acceleration, video decoding support)
+```bash
+sudo dnf install nvidia-vaapi-driver libva-utils vdpauinfo
+```
+- to check if correctly installed (here is sample output):
+    - do `vdpauinfo`
+    ```bash
+    $ vdpauinfo
+    display: :0   screen: 0
+    API version: 1
+    Information string: NVIDIA VDPAU Driver Shared Library  565.77  Wed Nov 27 22:50:58 UTC 2024
+    ...
+    ```
+    - then `vainfo`
+    ```bash
+    $ vainfo
+    Trying display: wayland
+    libva info: VA-API version 1.22.0
+    libva info: Trying to open /usr/lib64/dri-nonfree/iHD_drv_video.so
+    libva info: Found init function __vaDriverInit_1_22
+    libva info: va_openDriver() returns 0
+    vainfo: VA-API version: 1.22 (libva 2.22.0)
+    vainfo: Driver version: Intel iHD driver for Intel(R) Gen Graphics - 24.4.4 ()
+    vainfo: Supported profile and entrypoints
+    ...
+
+- install Vulkan (again, most likely installed but still)
+```bash
+sudo dnf install vulkan
+```
 
 
 ## Using the dGPU for graphical applications
