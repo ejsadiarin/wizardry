@@ -10,6 +10,34 @@ date: 2025-01-27T18:34
 
 - for context: I have a Lenovo LOQ 15IRX9 i7-14700HX 4060 (w/ iGPU)
 
+## Application-specific
+
+* Firefox ([ref](https://www.youtube.com/watch?v=YE431SYO2Is))
+    - Hardware Acceleration (use GPU instead of CPU for video decoding, etc.)
+    - go to `about:support` -> find (ctrl + f): `Compositing`
+        > [!NOTE]
+        > if `Compositing` is `WebRender`, then GOOD (you use GPU).
+        > if `Compositing` is `WebRender Software` or something, then BAD (you use CPU).
+    - now find: `HARDWARE_VIDEO_DECODING` -> make sure it is `default: available`
+        - if not, go to `about:config` -> search `media.hardware-video-decoding.enabled` -> set to `true`
+        - may need to install `vaapi`
+            > [!NOTE]
+            > if you use NVIDIA proprietary drivers, it is already included/supported
+            >
+            > - but it won't hurt to install it:
+            >
+            >   on fedora:
+            >     ```bash
+            >     sudo dnf install nvidia-vaapi-driver libva-utils vdpauinfo
+            >     ```
+            ```
+
+* YouTube
+    - turn off ambient mode (click a video -> video settings)
+
+* TLP
+    - using TLP-UI,
+
 ## Windows
 
 ref: [https://www.reddit.com/r/GamingLaptops/comments/1ib2842/how_do_i_enhance_the_juice_of_my_laptop/?share_id=Qjb3XUewLJ-3ROiFUf4I8&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=5](https://www.reddit.com/r/GamingLaptops/comments/1ib2842/how_do_i_enhance_the_juice_of_my_laptop/?share_id=Qjb3XUewLJ-3ROiFUf4I8&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=5)
