@@ -190,3 +190,26 @@ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo | grep vend
 ```
 
 - for finer-grained control see documentation [PRIME Render Offload section in Howto/Optimus](https://rpmfusion.org/Howto/Optimus) 
+
+## Switch between NVIDIA (proprietary drivers) and Nouveau
+ref: 
+
+### NVIDIA to Nouveau
+
+* On boot (grub), press `e` on the OS you want to boot into to edit grub kernel parameters
+    - remove: `"rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1"`
+    - then finally `ctrl + x` to boot
+
+### Nouveau to NVIDIA
+
+- if you have done the NVIDIA proprietary drivers installation above, then you will boot with the proprietary driver by default
+- so just boot to the OS you want to boot into
+
+- for checking:
+    - choose OS then press `e` to edit grub kernel parameters
+    - there should be: `"rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1"`
+
+> With recent drivers as packaged with RPM Fusion, it is possible to switch easily between nouveau and nvidia while keeping the nvidia driver installed.
+> When you are about to select the kernel at the grub menu step.
+> You can edit the kernel entry, find the linux boot command line and manually remove the following options "rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1". This will allow you to boot using the nouveau driver instead of the nvidia binary driver. At this time, there is no way to make the switch at runtime. 
+
