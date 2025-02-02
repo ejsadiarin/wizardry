@@ -30,7 +30,17 @@ date: 2025-01-27T18:34
             >     ```bash
             >     sudo dnf install nvidia-vaapi-driver libva-utils vdpauinfo
             >     ```
-            ```
+    - enable: `gfx.webrender.all` and `media.ffmpeg.vaapi.enabled` ([ref](https://www.reddit.com/r/linux/comments/1fbbkly/comment/lm4f0b0/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button))
+        - to test if it is working:
+            - install `intel-gpu-tools` then run `intel_gpu_top`
+            - check if `Video` % is non-zero, if non-zero then it is working properly
+
+    > What GPU do you have? If it's Intel or AMD, run vainfo in the terminal.
+    > If it runs successfully, open Firefox and go to `about:config` and search for `vaapi`.
+    > Enable the `ffmpeg` vaapi option. Now, search for `gfx.webrender.all` and enable it.
+    > Restart Firefox and try watching a YouTube video.
+    > Install `intel-gpu-tools` and run `intel_gpu_top` on Intel GPUs and check if the Video utilisation is non zero.
+    > If it is non zero, then it is working properly 
 
 * YouTube
     - turn off ambient mode (click a video -> video settings)
@@ -120,3 +130,7 @@ Finally, to check if it has worked, run:
 ```bash
 cpufreq-info
 ```
+
+## Linux
+
+- install `auto-cpufreq` and `thermald`
