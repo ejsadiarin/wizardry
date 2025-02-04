@@ -133,4 +133,10 @@ cpufreq-info
 
 ## Linux
 
-- install `auto-cpufreq` and `thermald`
+- install `auto-cpufreq` and `thermald` (for intel CPU)
+    - `auto-cpufreq` - replaces tuned and/or power-profiles-daemon
+        > [!NOTE]
+        > **TEST if `auto-cpufreq` actually helps with watt usage (at idle, medium load, full load)**
+
+- NVIDIA:
+    - install 
