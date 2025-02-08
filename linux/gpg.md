@@ -22,9 +22,9 @@ export GPG_TTY=$(tty)
 
 ```bash
 # compress and encrypt with symmetric password only (flexible)
-tar czf - <file-or-dir> | pv | gpg --symmetric -o <file-or-dir>.tar.gz.gpg
+tar czf - <file-or-dir> | gpg --symmetric -o <file-or-dir>.tar.gz.gpg
 # decrypt and extract (will be prompted for password)
-gpg --decrypt <file-or-dir>.tar.gz.gpg | pv | tar xz
+gpg --decrypt <file-or-dir>.tar.gz.gpg | tar xz
 
 # encrypt using keypair (need to import the ultimate keypair first, see below)
 gpg --encrypt <file-or-dir>.tar.gz # encrypting a tar.gz file
@@ -85,7 +85,12 @@ gpg --export-secret-keys --armor --output private.gpg <email> # or: gpg --export
 # export public key:
 gpg --export --armor --output public.gpg <email> # or: gpg --export <email> > public.gpg
 
-# see above sections to encrypt/decrypt wil tar and gpg --symmetric
+# OPTIONAL: move keys to a directory and compress-encrypt it
+mkdir -p ultimate-gpg-keys
+# compress and encrypt with symmetric password only (flexible)
+tar czf - <file-or-dir> | gpg --symmetric -o <file-or-dir>.tar.gz.gpg
+
+# for more info: see above sections to encrypt/decrypt wil tar and gpg --symmetric
 ```
 
 ## Importing to another machine:
@@ -93,6 +98,10 @@ gpg --export --armor --output public.gpg <email> # or: gpg --export <email> > pu
 ```bash
 # get keys
 scp -r user@local:/path/to/exported-keys.gpg ~/imported-keys
+# OR decrypt and extract (will be prompted for password)
+gpg --decrypt <file-or-dir>.tar.gz.gpg | tar xz
+
+# import
 gpg --import public.gpg
 gpg --import private.gpg # will prompt for password
 gpg --edit-key <email> # will prompt for password
