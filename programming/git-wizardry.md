@@ -132,3 +132,10 @@ git submodule status
     path = <should-be-the-same-as-above-path>
     url = <https-url>
 ```
+
+## 7. Git commit on a specific date (magic technique)
+
+```bash
+# after staging (git add -A)
+GIT_AUTHOR_DATE="2023-12-25 12:00:00" GIT_COMMITTER_DATE="2023-12-25 12:00:00" git commit -m "Your commit message"
+```
