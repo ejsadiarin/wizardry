@@ -6,6 +6,7 @@ tags:
 <!-- 2024-12-12-0027 (December 12, 2024 12:27:52 AM) -->
 
 # Restic + Backblaze B2 (or any S3-compatible storage) Full Guide
+
 - ref: [https://www.backblaze.com/docs/cloud-storage-integrate-restic-with-backblaze-b2#create-a-bucket](https://www.backblaze.com/docs/cloud-storage-integrate-restic-with-backblaze-b2#create-a-bucket)
 
 1. create `restic-env` with necessary values in some path (e.g. `/etc/restic-env`)
@@ -61,6 +62,7 @@ restic snapshots
 ```
 
 ## Restoring from Backups
+
 > [!IMPORTANT]
 > NOTE: Make sure that you have the configured `/etc/restic-env` and  `/etc/restic-password`
 > - this ensures that you have the necessary secret keys, remote repos endpoints, etc.
