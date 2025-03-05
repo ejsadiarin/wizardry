@@ -172,7 +172,7 @@ gpg> passwd
 gpg> save # for safety
 ```
 
-## text-baed gpg PIN entry  (console mode gpg pinentry)
+## text-based gpg PIN entry  (console mode gpg pinentry)
 
 - ref: [https://superuser.com/questions/520980/how-to-force-gpg-to-use-console-mode-pinentry-to-prompt-for-passwords](https://superuser.com/questions/520980/how-to-force-gpg-to-use-console-mode-pinentry-to-prompt-for-passwords)
 
