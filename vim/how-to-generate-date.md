@@ -19,6 +19,7 @@ title: How to Generate (Format) Date and Time
 | %Y-%m-%d          | 	2016-11-23                         |
 | %F                | 	2016-11-23 (works on some systems) |
 | %d/%m/%y %H:%M:%S | 	27/09/07 07:36:32                  |
+| %Y-%m-%dT%H:%M    | 	2007-09-07T07:36 (my favorite)     |
 
 - generate: `2024-04-03-2156 (April 03, 2024 09:56:19 PM)`
 ```bash
