@@ -157,7 +157,7 @@ Think in project stages (SDLC):
 
 # Now each stage can be done with CI/CD tools
 
-### CI/CD tools
+## CI/CD tools
 
 - Automatically build, test code, and release deployments on every commit, push, pull request, etc.
 
@@ -168,4 +168,15 @@ Think in project stages (SDLC):
 - `Jenkins`
 - `CircleCI`
 - `Travis CI`
+
+### Process
+
+1. CI
+    - Test on multiple OS/node versions → cache dependencies → upload artifacts.
+2. CD
+    - Deploy to a cloud/self-hosted platform on merge to main.
+3. Security
+    - Scan for vulnerabilities.
+4. Notify
+    - Post results to Slack/Email.
 
