@@ -30,6 +30,11 @@ ssh <username>@<tailscale-ip>
 # from machine to termux
 ssh -p 8022 <username>@<tailscale-ip>
 ```
+# Generate SSH Keys
+
+```bash
+ssh-keygen -t ed25519 -b 4096 -C "email@domain.com"
+```
 
 # SSH Port Forwarding (SSH Tunneling)
 
