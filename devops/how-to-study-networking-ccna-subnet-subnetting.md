@@ -78,6 +78,8 @@ _THEN GET INFORMATION:_
 - CIDR/Notation, also known as Subnet Mask, is the 255 bits for each octet depending on the CIDR like 255.255.255.0
   - see the Subnet of the given CIDR and its octet
 
+---
+
 ### Example Problems
 
 Given: **198.242.237.119/26**
@@ -90,7 +92,7 @@ Given: **198.242.237.119/26**
 - _No. (#) of IP addresses:_ ?
 - _CIDR/Notation:_ ?
 
-#### Construct Subnet Table
+#### 1: Construct Subnet Table
 
 Steps:
 
@@ -119,7 +121,7 @@ _1st octet:_ /1 /2 /3 /4 /5 /6 /7 /8
 | **2nd octet**  | /9  | /10 | /11 | /12 | /13 | /14 | /15 | /16 |
 | **1st octet**  | /1  | /2  | /3  | /4  | /5  | /6  | /7  | /8  |
 
-#### Use given CIDR/mask to find column on the table
+#### 2: Use given CIDR/mask to find column on the table
 
 - **CIDR/Subnet** mask map to each other
 - Locate _Group Size_
@@ -134,7 +136,7 @@ Given: **198.242.237.119/26**
 | **2nd octet**  | /9  | /10     | /11 | /12 | /13 | /14 | /15 | /16 |
 | **1st octet**  | /1  | /2      | /3  | /4  | /5  | /6  | /7  | /8  |
 
-#### Get relevant octet range given the CIDR/Subnet
+#### 3: Get relevant octet range given the CIDR/Subnet
 
 Given: **198.242.237.119/26**
 Group Size: **64**
@@ -171,7 +173,9 @@ now get information in this order (for ease):
 - No. (#) of IP addresses: **64**
 - CIDR/Notation: **255.255.255.192**
 
-## Speed Tips
+---
+
+## Speed Tips (for Subnetting)
 
 Mostly applied on the 'relevant octet range' step
 **NOTE: that when using this, make sure the range is accurate by its group size**
@@ -195,6 +199,8 @@ Mostly applied on the 'relevant octet range' step
 | **1st octet**  | /1      | /2      | /3      | /4      | /5      | /6      | /7  | /8  |
 
 5. Start high, then subtract
+
+---
 
 # IEEE Standards for 802.1xx
 
