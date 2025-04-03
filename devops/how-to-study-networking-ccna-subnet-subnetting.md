@@ -104,12 +104,12 @@ Steps:
   - and so on...
 - then just list the octets like so:
 
-_Group Size:_ 128 64 32 16 8 4 2 1
-_Subnet:_ 128 192 224 240 248 252 254 255
-_CIDR (4th octet):_ /25 /26 /27 /28 /29 /30 /31 /32
-_3rd octet:_ /17 /18 /19 /20 /21 /22 /23 /24
-_2nd octet:_ /9 /10 /11 /12 /13 /14 /15 /16
-_1st octet:_ /1 /2 /3 /4 /5 /6 /7 /8
+_Group Size:_ 128 64 32 16 8 4 2 1  
+_Subnet:_ 128 192 224 240 248 252 254 255  
+_CIDR (4th octet):_ /25 /26 /27 /28 /29 /30 /31 /32  
+_3rd octet:_ /17 /18 /19 /20 /21 /22 /23 /24  
+_2nd octet:_ /9 /10 /11 /12 /13 /14 /15 /16  
+_1st octet:_ /1 /2 /3 /4 /5 /6 /7 /8  
 
 **Read the TABLE horizontally**
 
@@ -138,16 +138,16 @@ Given: **198.242.237.119/26**
 
 #### 3: Get relevant octet range given the CIDR/Subnet
 
-Given: **198.242.237.119/26**
-Group Size: **64**
-Octet: **4th octet**
+* Given: **198.242.237.119/26**
+* Group Size: **64**
+* Octet: **4th octet**
 
 - Start at ".0" in relevant octet
 - Increase by _Group Size_ until you PASS target IP
 
-  198.242.237.119
+  **198.242.237.119**  
 
-**.119**
+**.119**  
 .0 (same as 198.242.237.0)
 .64 (same as 198.242.237.64)
 .128 (same as 198.242.237.128)
