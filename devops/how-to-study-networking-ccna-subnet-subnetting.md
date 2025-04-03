@@ -82,13 +82,13 @@ _THEN GET INFORMATION:_
 
 Given: **198.242.237.119/26**
 
-_Network ID:_ ?
-_Broadcast IP:_ ?
-_First Host:_ ?
-_Last Host:_ ?
-_Next Network:_ ?
-_No. (#) of IP addresses:_ ?
-_CIDR/Notation:_ ?
+- _Network ID:_ ?
+- _Broadcast IP:_ ?
+- _First Host:_ ?
+- _Last Host:_ ?
+- _Next Network:_ ?
+- _No. (#) of IP addresses:_ ?
+- _CIDR/Notation:_ ?
 
 #### Construct Subnet Table
 
