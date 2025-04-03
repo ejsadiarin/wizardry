@@ -92,6 +92,8 @@ Given: **198.242.237.119/26**
 - _No. (#) of IP addresses:_ ?
 - _CIDR/Notation:_ ?
 
+---
+
 #### 1: Construct Subnet Table
 
 Steps:
@@ -121,6 +123,8 @@ _1st octet:_ /1 /2 /3 /4 /5 /6 /7 /8
 | **2nd octet**  | /9  | /10 | /11 | /12 | /13 | /14 | /15 | /16 |
 | **1st octet**  | /1  | /2  | /3  | /4  | /5  | /6  | /7  | /8  |
 
+---
+
 #### 2: Use given CIDR/mask to find column on the table
 
 - **CIDR/Subnet** mask map to each other
@@ -136,6 +140,8 @@ Given: **198.242.237.119/26**
 | **2nd octet**  | /9  | /10     | /11 | /12 | /13 | /14 | /15 | /16 |
 | **1st octet**  | /1  | /2      | /3  | /4  | /5  | /6  | /7  | /8  |
 
+---
+
 #### 3: Get relevant octet range given the CIDR/Subnet
 
 * Given: **198.242.237.119/26**
@@ -148,10 +154,10 @@ Given: **198.242.237.119/26**
   **198.242.237.119**  
 
 **.119**  
-.0 (same as 198.242.237.0)
-.64 (same as 198.242.237.64)
-.128 (same as 198.242.237.128)
---> see .119 is between .64 and .128
+.0 (same as 198.242.237.0)  
+.64 (same as 198.242.237.64)  
+.128 (same as 198.242.237.128)  
+--> see .119 is between .64 and .128  
 
 now get information in this order (for ease):
 
