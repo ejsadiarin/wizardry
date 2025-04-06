@@ -40,3 +40,25 @@ MimeType=application/x-pkt;application/x-pka;application/x-pkz;application/x-pks
 ```
 
 - this will set the environment variable before starting the application.
+
+---
+
+### If above solution doesn't work, try this
+
+- add these 2 other `env` vars to the `Exec=...` line
+```
+QT_QPA_PLATFORMTHEME=lxqt
+GTK_THEME=Default
+```
+
+- so final changes looks like this now:
+```desktop
+[Desktop Entry]
+Type=Application
+Exec=XDG_CURRENT_DESKTOP=GNOME QT_QPA_PLATFORMTHEME=lxqt GTK_THEME=Default /opt/pt/packettracer %f
+Name=Packet Tracer 8.2.2
+Icon=/opt/pt/art/app.png
+Terminal=false
+StartupNotify=true
+MimeType=application/x-pkt;application/x-pka;application/x-pkz;application/x-pks;application/x-pksz;
+```
