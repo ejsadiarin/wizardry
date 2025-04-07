@@ -15,9 +15,11 @@ tags:
 
 - on Receiving side:
 ```bash
-# normal use (-q 1 means seconds to wait after EOF on stdin)
+# normal use with zip (-q 1 means seconds to wait after EOF on stdin)
 nc -l -p 12345 -q 1 > something.zip < /dev/null
 nc -l -p 12345 -q 1 > something.zip
+
+# use tar to preserve file permissions, ownership, and timestamps
 nc -l -p 12345 -q 1 | tar xz -C </path/here>
 
 # for multi-gig large files (-q -1 means to wait forever after EOF on stdin)
