@@ -38,6 +38,13 @@ ssh-keygen -t ed25519 -b 4096 -C "email@domain.com"
 
 # SSH Port Forwarding (SSH Tunneling)
 
+## Practical Examples
+
+```bash
+# from local (forward port 8385) --> to access remote_server Syncthing instance (running on port 8384) 
+ssh -L 8385:localhost:8384 user@remote_server
+```
+
 ## Local Forwarding
 - forward traffic (or setup tunnel) on a *LOCAL* port access a service from *REMOTE* 
 - allows *LOCAL* to use a *REMOTE* service
@@ -57,6 +64,7 @@ ssh -L 8080:localhost:80 user@remote_server
 - [see SSH official docs for more details (recommended)](https://www.ssh.com/academy/ssh/tunneling-example)
 
 ### Use cases
+
 - Tunneling sessions and file transfers through jump servers
 - Connecting to a service on an internal network from the outside
 - Connecting to a remote file share over the Internet
