@@ -9,6 +9,8 @@ tags:
 
 # `virt-manager` fix no internet issue via /etc/libvirt/network.conf
 
+_as of [2025-05-16 03:30] - [May 16, 2025]:_
+
 1. in `/etc/libvirt/network.conf`, edit the `firewall_backend` to `iptables` (`firewall_backend = "iptables"`)
 
 > [!NOTE]
