@@ -1,13 +1,13 @@
 ---
 date: 2025-10-26T01:41
-title: How to format hard drive partition with `parted`
+title: How to format hard drive partition with `parted` or restore flashed drive to normal
 tags: 
     - Linux
     - How-to
 ---
 <!-- 2025-10-26-0141 (October 26, 2025 01:41:28 AM) -->
 
-# How to format hard drive partition with `parted`
+# How to format hard drive partition with `parted` or restore flashed drive to normal
 
 > [!NOTE]
 > THIS WILL **ERASE** (wipe and format) the existing drive
@@ -22,6 +22,23 @@ lsblk
 # or use fdisk for more details (see fs type, etc.)
 fdisk -l
 ```
+
+---
+
+#### 0. ERASE filesystem signature (for iso flashed drives)
+
+> [!IMPORTANT]
+> Do this if the drive was previously flashed with an ISO as a boot drive
+
+```bash
+sudo wipefs -a /dev/sdX
+sudo partprobe
+```
+
+* `wipefs` - wipe all signatures from the drive (wipes old signature cache)
+* `partprobe` - tell kernel to re-read partition tables
+
+---
 
 #### 1. Create a GPT partition table and a single partition
 
@@ -52,6 +69,8 @@ mkpart
 
 - Then `quit` parted
 
+---
+
 #### 2. Format the new partition as exFAT
 
 ```bash
@@ -63,7 +82,11 @@ sudo mkfs.exfat -n "ColdStorage" /dev/sdX1
 ```
 
 
-#### 3. Create mountpoints
+---
+
+#### 3. Create mountpoints and mount drives
+
+* Create mountpoints and mount the drives via `mount <device> <mountpoint>`
 
 ```bash
 sudo mkdir -p /mnt/sdX1
@@ -71,7 +94,10 @@ sudo mkdir -p /mnt/sdX1
 sudo mount /dev/sdX1 /mnt/sdX1
 ```
 
-### 4. (OPTIONAL for "Always-connected" Drives) Add to `/etc/fstab`
+
+---
+
+#### 4. (OPTIONAL for "Always-connected" Drives) Add to `/etc/fstab`
 
 > [!NOTE]
 > ONLY do this if the drive will be ALWAYS CONNECTED (not recommended for pluggable drives like USB, etc.)
