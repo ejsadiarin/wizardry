@@ -82,6 +82,8 @@ sudo mkfs.exfat -n "ColdStorage" /dev/sdX1
 ```
 
 
+* **Verify everything** with `lsblk -f`
+
 ---
 
 #### 3. Create mountpoints and mount drives
@@ -94,6 +96,7 @@ sudo mkdir -p /mnt/sdX1
 sudo mount /dev/sdX1 /mnt/sdX1
 ```
 
+* **Verify everything** with `lsblk -f`
 
 ---
 
