@@ -60,6 +60,7 @@ mkpart
 
     * File system type? `[ext2]`?
         * Just press Enter to accept the default. This does not matter, as we will format it in the next step.
+        * If formatting for Linux filesystem then type: `ext4`
 
     * Start?
         * Type 1MiB and press Enter.
@@ -79,8 +80,14 @@ lsblk /dev/sdX
 
 # Format with name
 sudo mkfs.exfat -n "ColdStorage" /dev/sdX1
+
 ```
 
+* if ext4 (for Linux filesystems)
+
+```bash
+sudo mkfs.ext4 -L "ColdStorage" /dev/sdX1
+  ```
 
 * **Verify everything** with `lsblk -f`
 
