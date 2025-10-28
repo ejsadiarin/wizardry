@@ -166,3 +166,20 @@ UUID=a1b2c3d4-...                        /mnt/sdb      ext4    defaults,nofail  
 * Use "KDE Partition Manager"
 * Select drive -> Properties -> Label
 * OK -> then Apply
+
+## TROUBLESHOOTING: wrong fs type, bad option, bad superblock on /dev/sdc1, missing codepage or helper program, or other error.
+
+```stderr
+mount: /mnt/Storage1: wrong fs type, bad option, bad superblock on /dev/sdc1, missing codepage or helper program, or other error.
+
+dmesg(1) may have more information after failed mount system call. 
+```
+
+- use `fsck`
+```bash
+sudo fsck -y /dev/sdc1
+```
+- mount again after:
+```bash
+sudo mount /dev/sdc1 /mnt/Storage1
+```
