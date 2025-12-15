@@ -17,6 +17,7 @@ tags:
     * this is best for subtasks, as agents are best at doing one thing excellently.
     * let agents work together (ex. output of testing agent is input -> to QA agent)
 * Adopt an incremental workflow for clean working state every session (see using `git logs`, `progress.txt` and `feature-list.json` for this)
+* **This mimics effective software development practices that top companies do (with real people), but here its with AI agents.**
 
 ## Idea (detailed)
 
