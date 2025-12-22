@@ -19,6 +19,15 @@ tags:
 * Adopt an incremental workflow for clean working state every session (see using `git logs`, `progress.txt` and `feature-list.json` for this)
 * **This mimics effective software development practices that top companies do (with real people), but here its with AI agents.**
 
+> [!IMPORTANT]
+>  Your prompts (human) should follow the following structure and technique for reproducible results:
+>  ```txt
+>  Task: (Make this simple and narrow scoped, ONE PROMPT = ONE GOAL, clear success criteria) - ex. replace "make it engaging" with "include 3 code examples"
+>  Input: (Files, text, web results, any context, etc.) - ex. use specific versions and exact requirements
+>  Constraints: (Tell AI what NOT to do explicitly) - ex. "Go code, use standard OpenAPI spec, etc."
+>  Output: (Expected result - should be REPRODUCIBLE and easy to verify) - same prompt should work next week, next month, and so on.
+>  ```
+
 ## Idea (detailed)
 
 1. Run `pwd`
@@ -59,13 +68,15 @@ tags:
 
 ## Workflow for long-running agents
 
-* Initializer (setting up repository)
-    1. Run `pwd`
-    2. **Set up a `feature-list.json` file**: Based on the input spec, set up a structured JSON file with a list of end-to-end feature descriptions
-    3. Initial git repo setup with progress logs `progress.txt` 
+* Initializer - setting up repository for this workflow (for humans, AI can help in planning as well)
+    1. **Set up a `feature-list.json` file**: Based on the input spec, set up a structured JSON file with a list of end-to-end feature descriptions - **input spec for features requires human interference**
+    2. Set up initial git repo (if not yet done)
+    3. Create a progress log `progress.txt` file for agents to write their progress to
     4. Write `init.sh` script for starting development server
+    5. Paste the prompt instructions for the agent workflow (see below).
+        * NOTE: you need to set the roles of each agent inside the prompt instructions.
 
-* Continuing from a progress state session 
+* Continuing from a progress state session (for AI agents)
     1. Run `pwd`
     2. Check the `feature-list.json` file and choose highest priority feature with `"passes": false` status
     3. Run `git log --oneline -20` to see recent work 
@@ -86,4 +97,17 @@ tags:
 <Tests basic functionality>
 [Assistant] Based on my verification testing, I can see that the fundamental functionality is working well. The core chat features, theme switching, conversation loading, and error handling are all functioning correctly. Now let me review the tests.json file more comprehensively to understand what needs to be implemented next.
 <Starts work on a new feature>
+```
+
+## Prompt Instructions
+
+```txt
+As an AI agent, when continuing from a progress state session, follow these steps:
+1.  **Understand Current Environment**: Begin by running `pwd` to confirm the current working directory and available files.
+2.  **Identify Next Task**: Read the `feature-list.json` file. Prioritize and select the highest priority feature that currently has a `"passes": false` status.
+3.  **Review Recent Work**: Execute `git log --oneline -20` to review the most recent commits and understand the progress made in previous sessions.
+4.  **Verify Fundamental Features**: Run the `init.sh` script to start the development server. Navigate the application to perform verification testing, ensuring that core fundamental features (e.g., chat, theme switching, conversation loading, error handling) are still fully functional.
+5.  **Implement and Test**: Based on the selected feature from `feature-list.json`, implement the necessary changes. After implementation, thoroughly test the feature.
+6.  **Update Feature Status**: Only if the implemented feature passes all tests, update its `"passes"` field to `true` in `feature-list.json`.
+7.  **Log Progress**: `git commit` your changes with descriptive messages and update the `progress.txt` file with a summary of your work.
 ```
