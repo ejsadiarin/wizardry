@@ -4,7 +4,6 @@ tags:
   - How-To
   - Linux
 ---
-
 <!-- 2025-01-22-1552 (January 22, 2025 15:52:59) -->
 
 # Ultimate Nvidia Guide to Install Drivers and more
@@ -12,9 +11,14 @@ tags:
 > [!IMPORTANT]
 > **THIS GUIDE IS ONLY FOR FEDORA 41+ users**
 
+> [!NOTE]
+> Secureboot must be enabled to use the NVIDIA drivers from RPMFusion (see below)
+
 - refs:
     - [Howto/NVIDIA](https://rpmfusion.org/Howto/NVIDIA)
     - [Howto/SecureBoot](https://rpmfusion.org/Howto/Secure%20Boot)
+
+---
 
 ## Drivers Installation
 
@@ -213,4 +217,31 @@ ref: [https://rpmfusion.org/Howto/NVIDIA](https://rpmfusion.org/Howto/NVIDIA)
 > With recent drivers as packaged with RPM Fusion, it is possible to switch easily between nouveau and nvidia while keeping the nvidia driver installed.
 > When you are about to select the kernel at the grub menu step.
 > You can edit the kernel entry, find the linux boot command line and manually remove the following options "rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1". This will allow you to boot using the nouveau driver instead of the nvidia binary driver. At this time, there is no way to make the switch at runtime. 
+
+---
+
+## Quickie
+
+- After a BIOS update (let BIOS know about the Secureboot key)
+```bash
+sudo mokutil --import /etc/pki/akmods/certs/public_key.der 
+```
+
+- Reinstall all (if issues arise from kernel being too new to be supported
+```bash
+# 1. Remove everything NVIDIA
+sudo dnf remove *nvidia*
+
+# 2. Reinstall the core driver packages
+sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda
+
+# 3. CRITICAL WAIT
+# Do not reboot yet. Wait 2-3 minutes.
+# Watch the build process:
+watch -n 1 "ps aux | grep akmods"
+# Wait until the 'akmods' process disappears from the list.
+
+# 4. Reboot
+sudo reboot
+```
 
