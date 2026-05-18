@@ -41,6 +41,9 @@ MimeType=application/x-pkt;application/x-pka;application/x-pkz;application/x-pks
 
 - this will set the environment variable before starting the application.
 
+> [!NOTE]
+> If system: Might need to symlink to ~/.local/share/applications `sudo ln -s /usr/local/share/applications/CiscoPacketTracer-9.0.0.desktop ~/.local/share/applications/CiscoPacketTracer-9.0.0.desktop`
+
 ---
 
 ### If above solution doesn't work, try this
